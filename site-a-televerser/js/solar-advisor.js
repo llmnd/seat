@@ -400,7 +400,7 @@
 
 	/* ---------- Scénario ---------- */
 	async function run() {
-		await say('Bonjour, je suis l’assistant solaire de SEAT Opus Global.');
+		await say('Bonjour, je suis Nour, votre assistant solaire chez SEAT Opus Global.');
 		await say('Je vous aide à estimer les panneaux, la batterie et l’onduleur qu’il vous faut. Cela prend une minute.');
 		await say('Qu’est-ce que vous souhaitez alimenter ?');
 
