@@ -15,6 +15,7 @@ $pageDetails = [
 	'realisationLampadaire.php' => ['Éclairage solaire', 'Réalisations'],
 	'realisationPompage.php' => ['Pompage solaire', 'Réalisations'],
 	'realisationSolaire.php' => ['Solutions solaires', 'Réalisations'],
+	'realisations.php' => ['Nos réalisations', 'Réalisations'],
 	'regulateur.php' => ['Régulateurs de charge', 'Produits'],
 	'service.php' => ['Nos services', 'Services'],
 	'success.php' => ['Merci pour votre message', 'Contact'],

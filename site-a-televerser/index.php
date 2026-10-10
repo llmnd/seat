@@ -8,10 +8,13 @@
 	<title>SEAT Opus Global — L’énergie, pensée pour durer</title>
 	<link rel="icon" href="images/logo.jpg">
 	<?php require __DIR__ . '/includes/site-fonts.php'; ?>
-	<link rel="stylesheet" href="css/homepage.css?v=10">
+	<link rel="stylesheet" href="css/homepage.css?v=11">
 	<link rel="stylesheet" href="css/hero.css?v=8">
 	<link rel="stylesheet" href="css/site-header.css">
+	<link rel="stylesheet" href="css/sections.css?v=2">
+	<link rel="stylesheet" href="css/solar-advisor.css?v=1">
 	<script src="js/home-hero.js?v=2" defer></script>
+	<script src="js/solar-advisor.js?v=1" defer></script>
 </head>
 <body>
 	<?php require __DIR__ . '/includes/header.php'; ?>
@@ -66,123 +69,198 @@
 			</div>
 		</section>
 
-		<section class="intro expertises-section section-space" id="expertises">
+		<!-- 1. Expertises -->
+		<section class="sx-section sx-services" id="expertises" aria-labelledby="services-title">
 			<div class="container">
-				<div class="section-heading">
-					<div class="expertise-heading">
-						<p class="eyebrow"><span></span> Ce que nous faisons</p>
-						<h2>Des solutions concrètes.<br><em>Pensées pour durer.</em></h2>
-					</div>
-					<div class="expertise-intro">
-						<span class="expertise-intro__label">De l’étude au terrain</span>
-						<p class="section-lead">Nous concevons et réalisons des solutions adaptées à vos besoins, à votre activité et aux réalités de votre site.</p>
-					</div>
+				<div class="sx-head">
+					<h2 class="sx-title" id="services-title">Des solutions concrètes,<br><em>pensées pour durer.</em></h2>
+					<p class="sx-lead">Nous concevons et réalisons des solutions adaptées à vos besoins, à votre activité et aux réalités de votre site.</p>
 				</div>
-				<div class="expertise-grid">
-					<a class="expertise-card expertise-card--solar" href="monocristallin.php">
-						<span class="expertise-card__visual">
-							<img src="images/solaire1.jpg" alt="" loading="eager" decoding="async">
-							<span class="card-index"><span>01</span> SOLAIRE</span>
-							<span class="expertise-icon" aria-hidden="true">
-								<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="1.7"/><path d="M24 4v6m0 28v6M4 24h6m28 0h6M9.86 9.86l4.24 4.24m19.8 19.8 4.24 4.24m0-28.28-4.24 4.24m-19.8 19.8-4.24 4.24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-							</span>
+
+				<div class="sx-panels">
+					<a class="sx-panel sx-panel--solar" href="monocristallin.php">
+						<img src="images/solaire1.jpg" alt="" loading="eager" decoding="async">
+						<span class="sx-panel-icon" aria-hidden="true">
+							<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="1.7"/><path d="M24 4v6m0 28v6M4 24h6m28 0h6M9.86 9.86l4.24 4.24m19.8 19.8 4.24 4.24m0-28.28-4.24 4.24m-19.8 19.8-4.24 4.24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
 						</span>
-						<span class="expertise-card__body">
-							<h3>Énergie solaire</h3>
-							<p>Étude et installation de systèmes photovoltaïques conçus selon vos besoins, votre site et vos usages.</p>
-							<span class="expertise-card__link">Découvrir nos panneaux <span aria-hidden="true">↗</span></span>
-						</span>
-					</a>
-					<a class="expertise-card expertise-card--electric" href="service.php">
-						<span class="expertise-card__visual">
-							<img src="images/realisation2.PNG" alt="" loading="eager" decoding="async">
-							<span class="card-index"><span>02</span> ÉLECTRICITÉ</span>
-							<span class="expertise-icon" aria-hidden="true">
-								<svg viewBox="0 0 48 48" fill="none"><path d="M27.5 4 11 26h11l-1.5 18L37 21H25l2.5-17Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
-							</span>
-						</span>
-						<span class="expertise-card__body">
-							<h3>Électricité générale</h3>
-							<p>Conception, installation et mise en conformité, avec méthode et sécurité à chaque étape.</p>
-							<span class="expertise-card__link">Voir nos services <span aria-hidden="true">↗</span></span>
+						<span class="sx-panel-go" aria-hidden="true">↗</span>
+						<span class="sx-panel-body">
+							<span class="sx-panel-title">Énergie solaire</span>
+							<span class="sx-panel-more"><span class="sx-panel-more-inner">
+								<span class="sx-panel-text">Étude et installation de systèmes photovoltaïques conçus selon vos besoins, votre site et vos usages.</span>
+								<span class="sx-panel-cta">Découvrir nos panneaux</span>
+							</span></span>
 						</span>
 					</a>
-					<a class="expertise-card expertise-card--water" href="realisationPompage.php">
-						<span class="expertise-card__visual">
-							<img src="images/pompage.jpg" alt="" loading="eager" decoding="async">
-							<span class="card-index"><span>03</span> POMPAGE</span>
-							<span class="expertise-icon" aria-hidden="true">
-								<svg viewBox="0 0 48 48" fill="none"><path d="M24 5s13 14 13 24a13 13 0 1 1-26 0C11 19 24 5 24 5Z" stroke="currentColor" stroke-width="1.7"/><path d="M18 30c.7 3 2.6 4.7 5.8 5.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-							</span>
+
+					<a class="sx-panel sx-panel--electric" href="service.php">
+						<img src="images/realisation2.PNG" alt="" loading="eager" decoding="async">
+						<span class="sx-panel-icon" aria-hidden="true">
+							<svg viewBox="0 0 48 48" fill="none"><path d="M27.5 4 11 26h11l-1.5 18L37 21H25l2.5-17Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
 						</span>
-						<span class="expertise-card__body">
-							<h3>Pompage solaire</h3>
-							<p>Des équipements adaptés au terrain pour répondre durablement à vos besoins en eau.</p>
-							<span class="expertise-card__link">Voir nos réalisations <span aria-hidden="true">↗</span></span>
+						<span class="sx-panel-go" aria-hidden="true">↗</span>
+						<span class="sx-panel-body">
+							<span class="sx-panel-title">Électricité générale</span>
+							<span class="sx-panel-more"><span class="sx-panel-more-inner">
+								<span class="sx-panel-text">Conception, installation et mise en conformité, avec méthode et sécurité à chaque étape.</span>
+								<span class="sx-panel-cta">Voir nos services</span>
+							</span></span>
+						</span>
+					</a>
+
+					<a class="sx-panel sx-panel--water" href="realisationPompage.php">
+						<img src="images/pompage.jpg" alt="" loading="eager" decoding="async">
+						<span class="sx-panel-icon" aria-hidden="true">
+							<svg viewBox="0 0 48 48" fill="none"><path d="M24 5s13 14 13 24a13 13 0 1 1-26 0C11 19 24 5 24 5Z" stroke="currentColor" stroke-width="1.7"/><path d="M18 30c.7 3 2.6 4.7 5.8 5.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+						</span>
+						<span class="sx-panel-go" aria-hidden="true">↗</span>
+						<span class="sx-panel-body">
+							<span class="sx-panel-title">Pompage solaire</span>
+							<span class="sx-panel-more"><span class="sx-panel-more-inner">
+								<span class="sx-panel-text">Des équipements adaptés au terrain pour répondre durablement à vos besoins en eau.</span>
+								<span class="sx-panel-cta">Voir nos réalisations</span>
+							</span></span>
 						</span>
 					</a>
 				</div>
 			</div>
 		</section>
 
-		<section class="about section-space" id="apropos">
-			<div class="container about-grid">
-				<div class="about-visual">
-					<img src="images/apropos.JPG" alt="Un technicien SEAT Opus Global lors d’une installation électrique">
-					<div class="image-caption"><span class="caption-dot"></span> Le savoir-faire, sur le terrain</div>
-					<div class="about-stamp" aria-hidden="true"><span>SEAT</span><small>OPUS GLOBAL</small></div>
-				</div>
-				<div class="about-copy">
-					<p class="eyebrow"><span></span> SEAT Opus Global</p>
-					<h2>La technique au service<br>de <em>vos ambitions.</em></h2>
-					<p class="about-lead">Membre du Groupe NS2I, SEAT Opus Global accompagne particuliers et professionnels dans leurs projets énergétiques et électriques.</p>
-					<p>Notre approche associe écoute, expertise technique et choix d’équipements professionnels. Chaque installation est pensée pour répondre à un besoin réel, avec une attention particulière portée à la qualité et à la pérennité.</p>
-					<ul class="values-list">
-						<li><span aria-hidden="true">✓</span> Des recommandations adaptées à votre projet</li>
-						<li><span aria-hidden="true">✓</span> Une attention constante à la qualité d’exécution</li>
-						<li><span aria-hidden="true">✓</span> Des techniciens qualifiés et habilités</li>
+		<!-- 2. À propos -->
+		<section class="sx-section sx-about" id="apropos" aria-labelledby="about-title">
+			<div class="container sx-about-grid">
+				<figure class="sx-about-media">
+					<img src="images/apropos.JPG" alt="Un technicien SEAT Opus Global lors d’une installation électrique" loading="lazy">
+					<figcaption class="sx-about-note">Le savoir-faire, sur le terrain <small>Membre du Groupe NS2I</small></figcaption>
+				</figure>
+
+				<div class="sx-about-copy">
+					<h2 class="sx-title" id="about-title">La technique au service<br>de <em>vos ambitions.</em></h2>
+					<p class="sx-about-lead">SEAT Opus Global accompagne particuliers et professionnels dans leurs projets énergétiques et électriques.</p>
+					<p class="sx-about-text">Notre approche associe écoute, expertise technique et choix d’équipements professionnels. Chaque installation répond à un besoin réel, avec une attention particulière portée à la qualité et à la pérennité.</p>
+					<ul class="sx-checks">
+						<li>
+							<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10.5" stroke="currentColor" stroke-width="1.4"/><path d="m7.5 12.4 3 3 6-6.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+							Des recommandations adaptées à votre projet
+						</li>
+						<li>
+							<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10.5" stroke="currentColor" stroke-width="1.4"/><path d="m7.5 12.4 3 3 6-6.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+							Une attention constante à la qualité d’exécution
+						</li>
+						<li>
+							<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10.5" stroke="currentColor" stroke-width="1.4"/><path d="m7.5 12.4 3 3 6-6.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+							Des techniciens qualifiés et habilités
+						</li>
 					</ul>
-					<a class="text-link" href="service.php">En savoir plus sur nos services <span aria-hidden="true">↗</span></a>
+					<a class="sx-btn" href="service.php">En savoir plus sur nos services <span aria-hidden="true">↗</span></a>
 				</div>
 			</div>
-		</section>
 
-		<section class="projects section-space" id="realisations">
 			<div class="container">
-				<div class="section-heading projects-heading">
-					<div>
-						<p class="eyebrow"><span></span> Du concret, sur le terrain</p>
-						<h2>Des projets qui prennent<br><em>vie avec le soleil.</em></h2>
-					</div>
-					<a class="text-link" href="realisationSolaire.php">Toutes nos réalisations <span aria-hidden="true">↗</span></a>
+				<ol class="sx-method" aria-label="Notre méthode">
+					<li>
+						<span class="sx-method-n" aria-hidden="true">1</span>
+						<h3>Écouter</h3>
+						<p>Nous partons de votre besoin réel, de votre site et de vos usages avant de proposer quoi que ce soit.</p>
+					</li>
+					<li>
+						<span class="sx-method-n" aria-hidden="true">2</span>
+						<h3>Étudier</h3>
+						<p>Nous dimensionnons la solution et choisissons des équipements professionnels adaptés à votre projet.</p>
+					</li>
+					<li>
+						<span class="sx-method-n" aria-hidden="true">3</span>
+						<h3>Installer</h3>
+						<p>Nos techniciens qualifiés et habilités réalisent l’installation avec méthode, sécurité et exigence de qualité.</p>
+					</li>
+				</ol>
+			</div>
+		</section>
+
+		<!-- Assistant solaire -->
+		<section class="sa" id="estimation" data-solar-advisor aria-labelledby="sa-title">
+			<div class="container">
+				<div class="sx-head">
+					<h2 class="sx-title" id="sa-title">Et si votre énergie<br><em>venait du soleil&nbsp;?</em></h2>
+					<p class="sx-lead">Répondez à quelques questions. Notre assistant estime les panneaux, la batterie et l’onduleur qu’il vous faut.</p>
 				</div>
-				<div class="project-grid">
-					<a class="project-card project-large project-card--feature" href="realisationSolaire.php">
+
+				<div class="sa-grid">
+					<div class="sa-chat-card">
+						<div class="sa-agent">
+							<span class="sa-avatar" aria-hidden="true">
+								<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="8" stroke="#fff" stroke-width="2.2"/><path d="M24 4v6m0 28v6M4 24h6m28 0h6M9.9 9.9l4.2 4.2m19.8 19.8 4.2 4.2m0-28.2-4.2 4.2m-19.8 19.8-4.2 4.2" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
+							</span>
+							<div><strong>Assistant solaire</strong><small>Assistant virtuel · SEAT Opus Global</small></div>
+						</div>
+						<div class="sa-log" role="log" aria-live="polite" aria-relevant="additions" data-sa-log></div>
+						<noscript><p class="sa-fine">L’assistant demande JavaScript. Vous pouvez aussi <a href="contact.php">nous écrire directement</a> pour une étude de votre projet.</p></noscript>
+					</div>
+
+					<aside class="sa-viz" data-sa-viz data-state="idle" aria-label="Simulation d’une journée solaire">
+						<p class="sa-viz-title">Une journée avec vos panneaux</p>
+						<div class="sa-chart" data-sa-chart></div>
+						<ul class="sa-legend">
+							<li><i style="background:#ffbb72"></i> Production solaire</li>
+							<li><i style="background:#7fd3f7"></i> Consommation de jour</li>
+							<li><i style="background:#0093d9"></i> Batterie, le soir et la nuit</li>
+						</ul>
+						<p class="sa-viz-note">Répondez à l’assistant : votre journée solaire se dessine ici.</p>
+						<dl class="sa-metrics">
+							<div><dt>Panneaux solaires</dt><dd data-out="panels">—</dd><small data-out="panels-sub"></small></div>
+							<div><dt>Batterie</dt><dd data-out="battery">—</dd><small data-out="battery-sub"></small></div>
+							<div><dt>Onduleur</dt><dd data-out="inverter">—</dd><small data-out="inverter-sub"></small></div>
+							<div><dt>Production moyenne</dt><dd data-out="energy">—</dd><small data-out="energy-sub"></small></div>
+						</dl>
+					</aside>
+				</div>
+			</div>
+		</section>
+
+		<!-- 3. Réalisations -->
+		<section class="sx-section sx-projects" id="realisations" aria-labelledby="projects-title">
+			<div class="container">
+				<div class="sx-head">
+					<h2 class="sx-title" id="projects-title">Des projets qui prennent<br><em>vie avec le soleil.</em></h2>
+					<a class="sx-link" href="realisations.php">Toutes nos réalisations <span aria-hidden="true">↗</span></a>
+				</div>
+
+				<div class="sx-projects-grid">
+					<a class="sx-project sx-project--feature" href="realisationSolaire.php">
 						<img src="images/realisation.PNG" alt="Centrale solaire de 100 kW destinée à l’alimentation d’un hôpital de district" loading="lazy">
-						<span class="project-overlay"></span>
-						<span class="project-capacity" aria-label="Puissance du projet : 100 kilowatts"><strong>100</strong><span>kW<br>PROJET</span></span>
-						<span class="project-meta"><span>01 — SOLAIRE · SANTÉ</span><strong>Une centrale solaire pour un hôpital de district <span aria-hidden="true">↗</span></strong></span>
+						<span class="sx-project-kw" aria-label="Puissance du projet : 100 kilowatts">100 kW</span>
+						<span class="sx-project-body">
+							<span class="sx-project-tag">Solaire · Santé</span>
+							<span class="sx-project-name">Une centrale solaire pour un hôpital de district <span aria-hidden="true">↗</span></span>
+						</span>
 					</a>
-					<a class="project-card" href="realisationPompage.php">
+
+					<a class="sx-project" href="realisationPompage.php">
 						<img src="images/pompage1.PNG" alt="Projet de pompage solaire sur le terrain" loading="lazy">
-						<span class="project-overlay"></span>
-						<span class="project-meta"><span>02 — POMPAGE SOLAIRE</span><strong>L’énergie au service de l’eau <span aria-hidden="true">↗</span></strong></span>
+						<span class="sx-project-body">
+							<span class="sx-project-tag">Pompage solaire</span>
+							<span class="sx-project-name">L’énergie au service de l’eau <span aria-hidden="true">↗</span></span>
+						</span>
 					</a>
-					<a class="project-card" href="realisationLampadaire.php">
+
+					<a class="sx-project" href="realisationLampadaire.php">
 						<img src="images/realisation1.PNG" alt="Équipement solaire installé par l’équipe SEAT" loading="lazy">
-						<span class="project-overlay"></span>
-						<span class="project-meta"><span>03 — ÉCLAIRAGE</span><strong>Des solutions pour chaque espace <span aria-hidden="true">↗</span></strong></span>
+						<span class="sx-project-body">
+							<span class="sx-project-tag">Éclairage</span>
+							<span class="sx-project-name">Des solutions pour chaque espace <span aria-hidden="true">↗</span></span>
+						</span>
 					</a>
 				</div>
 			</div>
 		</section>
 
-		<section class="partners">
-			<div class="container partners-inner">
-				<div class="partners-title"><p class="eyebrow"><span></span> À vos côtés</p><h2>Des partenaires<br><em>de confiance.</em></h2></div>
-				<div class="partner-logos" role="region" aria-label="Partenaires de confiance">
-					<div class="partner-logos__track">
-						<div class="partner-logos__group">
+		<!-- 4. Partenaires -->
+		<section class="sx-partners" aria-labelledby="partners-title">
+			<div class="container sx-partners-inner">
+				<h2 class="sx-title sx-partners-title" id="partners-title">Des partenaires<br><em>de confiance.</em></h2>
+				<div class="sx-logos" role="region" aria-label="Partenaires de confiance">
+					<div class="sx-logos-track">
+						<div class="sx-logos-group">
 							<img src="images/ns2i%20groupe.jpg" alt="NS2i Group" loading="eager">
 							<img src="images/logo%20hoppercker.jpg" alt="Hoppecke" loading="eager">
 							<img src="images/logo%20lorentz.png" alt="Lorentz" loading="eager">
@@ -196,7 +274,7 @@
 							<img src="images/CONSULTING-LOGO-OFFICIEL.png" alt="Consulting Africa Tchad" loading="eager">
 							<img src="images/logo%20steca.png" alt="Steca" loading="eager">
 						</div>
-						<div class="partner-logos__group" aria-hidden="true">
+						<div class="sx-logos-group" aria-hidden="true">
 							<img src="images/ns2i%20groupe.jpg" alt="" loading="lazy">
 							<img src="images/logo%20hoppercker.jpg" alt="" loading="lazy">
 							<img src="images/logo%20lorentz.png" alt="" loading="lazy">

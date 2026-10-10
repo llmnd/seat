@@ -1,0 +1,202 @@
+/* ==========================================================================
+   SEAT Opus Global — footer v6 (épuré)
+   Bleu nuit du hero, coins arrondis, un seul geste : le nom en filigrane.
+   Les sélecteurs commencent par "html" : ils priment sur l'ancien bloc
+   « Pied de page » de site-header.css, quel que soit l'ordre de chargement.
+   ========================================================================== */
+
+html .site-footer {
+	--f-text: #a9c2d1;
+	--f-muted: #7f9bad;
+	--f-line: rgba(255, 255, 255, .09);
+
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border-radius: clamp(28px, 4vw, 56px) clamp(28px, 4vw, 56px) 0 0;
+	color: #e1edf3;
+	background:
+		radial-gradient(70% 50% at 50% 0%, rgba(0, 147, 217, .22), transparent 70%),
+		linear-gradient(180deg, #0a2b43 0%, #071e30 100%);
+}
+
+html .site-footer > * {
+	order: 3;
+}
+
+/* ---------- Contacts : une ligne calme ---------- */
+
+html .site-footer .site-footer__utility {
+	order: 1;
+	border-bottom: 1px solid var(--f-line);
+	color: #e1edf3;
+	background: transparent;
+	font-size: 14px;
+	letter-spacing: 0;
+}
+
+html .site-footer .site-footer__utility-inner {
+	min-height: 80px;
+	padding-block: 14px;
+}
+
+html .site-footer .site-footer__contacts {
+	gap: 10px 36px;
+}
+
+html .site-footer .site-footer__contact-icon {
+	color: #7fd3f7;
+}
+
+html .site-footer .site-footer__contacts a,
+html .site-footer .site-footer__social a {
+	transition: opacity .25s ease;
+}
+
+html .site-footer .site-footer__contacts a:hover,
+html .site-footer .site-footer__social a:hover {
+	background: transparent;
+	opacity: .65;
+}
+
+html .site-footer .site-footer__social {
+	gap: 22px;
+}
+
+html .site-footer .site-footer__social a {
+	padding: 0;
+	font-size: 13px;
+}
+
+/* ---------- Corps ---------- */
+
+html .site-footer .site-footer__main {
+	grid-template-columns: 1.5fr 1fr 1.2fr;
+	gap: clamp(36px, 6vw, 84px);
+	padding-top: clamp(48px, 5vw, 72px);
+	padding-bottom: clamp(40px, 4vw, 56px);
+}
+
+html .site-footer .site-footer__brand img {
+	box-sizing: border-box;
+	width: 164px;
+	height: 58px;
+	padding: 8px 14px;
+	border-radius: 14px;
+	background: #fff;
+}
+
+html .site-footer .site-footer__brand p {
+	max-width: 310px;
+	margin-top: 22px;
+	color: var(--f-text);
+	font-size: 14px;
+	line-height: 1.75;
+}
+
+html .site-footer .site-footer__column {
+	gap: 12px;
+}
+
+html .site-footer .site-footer__column h2 {
+	margin: 0 0 6px;
+	padding: 0;
+	color: #fff;
+	font-family: Manrope, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: -.02em;
+	text-transform: none;
+}
+
+html .site-footer .site-footer__column h2::after {
+	display: none;
+}
+
+html .site-footer .site-footer__column a {
+	color: var(--f-text);
+	font-size: 14px;
+	transition: color .25s ease;
+}
+
+html .site-footer .site-footer__column a:hover,
+html .site-footer .site-footer__column a:focus-visible {
+	color: #fff;
+}
+
+html .site-footer .site-footer__column a:focus-visible {
+	outline: 2px solid #e47614;
+	outline-offset: 4px;
+	border-radius: 4px;
+}
+
+/* ---------- Le seul geste : le nom de la marque, en filigrane ---------- */
+
+html .site-footer::after {
+	order: 4;
+	display: block;
+	width: min(1180px, calc(100% - 64px));
+	margin: 0 auto;
+	padding-bottom: .1em;
+	overflow: hidden;
+	color: transparent;
+	background: linear-gradient(180deg, rgba(127, 211, 247, .26) 0%, rgba(127, 211, 247, .03) 72%, rgba(127, 211, 247, 0) 95%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	font-family: Manrope, Arial, sans-serif;
+	font-size: clamp(40px, 8.6vw, 124px);
+	font-weight: 600;
+	letter-spacing: -.06em;
+	line-height: .95;
+	white-space: nowrap;
+	content: "SEAT Opus Global";
+	content: "SEAT Opus Global" / "";
+	pointer-events: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+/* ---------- Barre inférieure ---------- */
+
+html .site-footer .site-footer__bottom {
+	order: 5;
+	min-height: 64px;
+	border-top: 1px solid var(--f-line);
+	color: var(--f-muted);
+	font-size: 13px;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+	html .site-footer::after {
+		width: min(700px, calc(100% - 44px));
+	}
+}
+
+@media (max-width: 680px) {
+	html .site-footer .site-footer__utility-inner {
+		min-height: 0;
+		padding-block: 22px;
+		gap: 16px;
+	}
+
+	html .site-footer .site-footer__social {
+		margin-left: 0;
+	}
+
+	html .site-footer .site-footer__main {
+		grid-template-columns: 1fr 1fr;
+		gap: 36px 24px;
+	}
+
+	html .site-footer::after {
+		width: calc(100% - 40px);
+	}
+
+	html .site-footer .site-footer__brand img {
+		width: 150px;
+		height: 54px;
+	}
+}

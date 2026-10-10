@@ -4,6 +4,7 @@
    Navigation en pastilles, méga-menu « soleil », header compact au défilement.
    Esthétique pure : aplats unis, formes très rondes, aucune ombre sur la nav.
    ========================================================================== */
+@import url("site-footer.css");
 
 @view-transition {
 	navigation: auto;

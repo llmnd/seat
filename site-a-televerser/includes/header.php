@@ -1,7 +1,7 @@
 <?php
 $currentPage = basename($_SERVER['SCRIPT_NAME'] ?? '');
 $productPages = ['kit.php', 'monocristallin.php', 'polycristallin.php', 'lampe.php', 'Lampadaire.php', 'batterie.php', 'tubular.php', 'convertisseurSolaire.php', 'convertisseurChargeur.php', 'chargeur.php', 'regulateur.php', 'pompe.php'];
-$realisationPages = ['realisationSolaire.php', 'realisationPompage.php', 'realisationLampadaire.php'];
+$realisationPages = ['realisations.php', 'realisationSolaire.php', 'realisationPompage.php', 'realisationLampadaire.php'];
 ?>
 <!-- Optionnel : police Inter (sinon Helvetica Neue / Arial)
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,6 +50,7 @@ $realisationPages = ['realisationSolaire.php', 'realisationPompage.php', 'realis
 				<details class="seat-nav-dropdown<?php if (in_array($currentPage, $realisationPages, true)) echo ' is-current'; ?>">
 					<summary>Réalisations <span class="seat-nav-caret" aria-hidden="true"></span></summary>
 					<div class="seat-nav-simple-menu">
+						<a href="realisations.php">Toutes les réalisations</a>
 						<a href="realisationSolaire.php">Solution solaire</a>
 						<a href="realisationPompage.php">Pompage solaire</a>
 						<a href="realisationLampadaire.php">Lampadaire solaire</a>
@@ -80,6 +81,7 @@ $realisationPages = ['realisationSolaire.php', 'realisationPompage.php', 'realis
 					</details>
 					<details class="seat-mobile-submenu">
 						<summary>Réalisations</summary>
+						<a href="realisations.php"<?php if ($currentPage === 'realisations.php') echo ' aria-current="page"'; ?>>Toutes les réalisations</a>
 						<a href="realisationSolaire.php"<?php if ($currentPage === 'realisationSolaire.php') echo ' aria-current="page"'; ?>>Solution solaire</a>
 						<a href="realisationPompage.php"<?php if ($currentPage === 'realisationPompage.php') echo ' aria-current="page"'; ?>>Pompage solaire</a>
 						<a href="realisationLampadaire.php"<?php if ($currentPage === 'realisationLampadaire.php') echo ' aria-current="page"'; ?>>Lampadaire solaire</a>

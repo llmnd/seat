@@ -9,6 +9,14 @@ document.querySelectorAll("[data-quote-choice]").forEach((choice) => {
 		Array.from(choice.querySelectorAll("[data-quote-field]"))
 			.map((field) => [field.dataset.quoteField, field])
 	);
+	const quoteParams = new URLSearchParams(window.location.search);
+	const estimateDaily = Number(quoteParams.get("daily_kwh")?.replace(",", "."));
+	const estimatePanelMin = Number(quoteParams.get("panel_min")?.replace(",", "."));
+	const estimatePanelMax = Number(quoteParams.get("panel_max")?.replace(",", "."));
+	const hasSolarEstimate = [estimateDaily, estimatePanelMin, estimatePanelMax].every(Number.isFinite)
+		&& estimateDaily > 0
+		&& estimatePanelMin > 0
+		&& estimatePanelMax >= estimatePanelMin;
 
 	const buildMessage = () => {
 		const projectType = fields.type.value.trim();
@@ -40,6 +48,9 @@ document.querySelectorAll("[data-quote-choice]").forEach((choice) => {
 		const productDetails = productTitle
 			? `Je vous contacte également au sujet de « ${productTitle} ».`
 			: "";
+		const estimateDetails = hasSolarEstimate
+			? `Le simulateur m’indique environ ${estimateDaily.toLocaleString("fr-FR")} kWh par jour et une puissance photovoltaïque à étudier de ${estimatePanelMin.toLocaleString("fr-FR")} à ${estimatePanelMax.toLocaleString("fr-FR")} kWc.`
+			: "";
 		const projectDetails = details
 			? `Voici quelques détails sur mon projet :\n${details}`
 			: "";
@@ -51,11 +62,16 @@ document.querySelectorAll("[data-quote-choice]").forEach((choice) => {
 			personalDetails,
 			contactDetails,
 			productDetails,
+			estimateDetails,
 			projectDetails,
 			"Je reste à votre disposition pour échanger sur les détails du projet.",
 			closing
 		].filter(Boolean).join("\n\n");
 	};
+
+	if (hasSolarEstimate && fields.type.value === "") {
+		fields.type.value = "Énergie solaire";
+	}
 
 	const methods = {
 		whatsapp: {
@@ -82,6 +98,8 @@ document.querySelectorAll("[data-quote-choice]").forEach((choice) => {
 		const content = methods[tabs.find((tab) => tab.getAttribute("aria-selected") === "true")?.dataset.quoteMethod];
 		if (content) action.href = content.href();
 	};
+
+	updateAction();
 
 	const selectMethod = (method, focusTab = false) => {
 		const selectedTab = tabs.find((tab) => tab.dataset.quoteMethod === method);
