@@ -40,3 +40,4 @@
 		<span>Membre du Groupe NS2I</span>
 	</div>
 </footer>
+<?php require __DIR__ . '/nour-assistant.php'; ?>

@@ -9,6 +9,69 @@
 	const root = document.querySelector('[data-solar-advisor]');
 	if (!root) return;
 
+	const backdrop = document.querySelector('[data-nour-backdrop]');
+	const launcher = document.querySelector('[data-nour-launcher]');
+	const closeButton = root.querySelector('[data-nour-close]');
+	let returnFocus = null;
+
+	const closeAssistant = () => {
+		backdrop.hidden = true;
+		document.body.classList.remove('sa-dialog-open');
+		if (returnFocus instanceof HTMLElement) returnFocus.focus({ preventScroll: true });
+	};
+
+	const openAssistant = (trigger) => {
+		returnFocus = trigger instanceof HTMLElement ? trigger : launcher;
+		backdrop.hidden = false;
+		document.body.classList.add('sa-dialog-open');
+		closeButton.focus({ preventScroll: true });
+		start();
+	};
+
+	launcher.hidden = false;
+	launcher.addEventListener('click', () => openAssistant(launcher));
+	document.querySelectorAll('[data-nour-open]').forEach((trigger) => {
+		trigger.addEventListener('click', (event) => {
+			event.preventDefault();
+			openAssistant(trigger);
+		});
+	});
+	closeButton.addEventListener('click', closeAssistant);
+	backdrop.addEventListener('click', (event) => {
+		if (event.target === backdrop) closeAssistant();
+	});
+	document.addEventListener('keydown', (event) => {
+		if (backdrop.hidden) return;
+		if (event.key === 'Escape') {
+			event.preventDefault();
+			closeAssistant();
+			return;
+		}
+
+		if (event.key !== 'Tab') return;
+		const focusable = Array.from(root.querySelectorAll(
+			'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+		)).filter((element) => element.getClientRects().length > 0);
+		if (!focusable.length) {
+			event.preventDefault();
+			root.focus();
+			return;
+		}
+
+		const first = focusable[0];
+		const last = focusable[focusable.length - 1];
+		if (!root.contains(document.activeElement)) {
+			event.preventDefault();
+			(event.shiftKey ? last : first).focus();
+		} else if (event.shiftKey && document.activeElement === first) {
+			event.preventDefault();
+			last.focus();
+		} else if (!event.shiftKey && document.activeElement === last) {
+			event.preventDefault();
+			first.focus();
+		}
+	});
+
 	const log = root.querySelector('[data-sa-log]');
 	const viz = root.querySelector('[data-sa-viz]');
 	const chartEl = root.querySelector('[data-sa-chart]');

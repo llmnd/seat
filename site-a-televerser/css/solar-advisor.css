@@ -15,6 +15,194 @@
 	isolation: isolate;
 }
 
+.sa-promo {
+	margin: clamp(20px, 3vw, 40px) auto;
+	width: min(1440px, calc(100% - 40px));
+	border-radius: clamp(28px, 4vw, 56px);
+}
+
+.sa-promo .sa-showcase-head {
+	margin-bottom: 0;
+}
+
+.sa-promo-cta {
+	margin-top: 28px;
+}
+
+.sa-launcher {
+	position: fixed;
+	right: clamp(16px, 2.5vw, 32px);
+	bottom: clamp(16px, 2.5vw, 28px);
+	z-index: 1000;
+	display: inline-flex;
+	min-height: 68px;
+	align-items: center;
+	gap: 11px;
+	padding: 7px 17px 7px 7px;
+	border: 1px solid rgba(255, 255, 255, .2);
+	border-radius: 999px;
+	color: #fff;
+	background: linear-gradient(135deg, #0c83bd, #07527d);
+	box-shadow: 0 12px 35px rgba(4, 30, 47, .32), 0 0 0 5px rgba(0, 147, 217, .12);
+	font: inherit;
+	text-align: left;
+	cursor: pointer;
+	transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.sa-launcher[hidden] {
+	display: none;
+}
+
+.sa-launcher:not([hidden]) {
+	display: inline-flex;
+}
+
+.sa-launcher:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 16px 40px rgba(4, 30, 47, .4), 0 0 0 7px rgba(0, 147, 217, .15);
+}
+
+.sa-launcher:focus-visible,
+.sa-widget-close:focus-visible {
+	outline: 3px solid #ffbb72;
+	outline-offset: 4px;
+}
+
+.sa-launcher > img {
+	width: 52px;
+	height: 52px;
+	border: 2px solid rgba(255, 255, 255, .9);
+	border-radius: 50%;
+	background: #087fbd;
+}
+
+.sa-launcher-copy strong,
+.sa-launcher-copy small {
+	display: block;
+}
+
+.sa-launcher-copy strong {
+	font-size: 13px;
+	line-height: 1.3;
+}
+
+.sa-launcher-copy small {
+	color: #d6edf8;
+	font-size: 11px;
+}
+
+.sa-launcher-online {
+	width: 9px;
+	height: 9px;
+	align-self: flex-start;
+	margin: 8px 0 0 2px;
+	border: 2px solid #0b6896;
+	border-radius: 50%;
+	background: #65dbb1;
+	box-sizing: content-box;
+}
+
+.sa-widget-backdrop[hidden] {
+	display: none;
+}
+
+.sa-widget-backdrop {
+	position: fixed;
+	inset: 0;
+	z-index: 1100;
+	display: grid;
+	place-items: center;
+	padding: 24px;
+	background: rgba(2, 15, 24, .78);
+	-webkit-backdrop-filter: blur(12px);
+	backdrop-filter: blur(12px);
+	animation: sa-backdrop-in .2s ease both;
+}
+
+.sa-widget-dialog {
+	position: relative;
+	width: min(1120px, 100%);
+	max-height: min(92dvh, 960px);
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding: clamp(20px, 3vw, 38px);
+	border: 1px solid rgba(255, 255, 255, .2);
+	border-radius: 30px;
+	box-shadow: 0 30px 100px rgba(0, 0, 0, .45);
+	scrollbar-color: rgba(255, 255, 255, .3) transparent;
+}
+
+.sa-widget-dialog .sa-grid {
+	grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+	gap: 20px;
+}
+
+.sa-widget-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 20px;
+}
+
+.sa-widget-agent {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.sa-widget-close {
+	display: grid;
+	width: 44px;
+	height: 44px;
+	flex: 0 0 auto;
+	place-items: center;
+	border: 1px solid rgba(255, 255, 255, .2);
+	border-radius: 50%;
+	color: #fff;
+	background: rgba(255, 255, 255, .08);
+	font: inherit;
+	font-size: 28px;
+	line-height: 1;
+	cursor: pointer;
+	transition: background .2s ease, transform .2s ease;
+}
+
+.sa-widget-close:hover {
+	transform: rotate(90deg);
+	background: rgba(255, 255, 255, .16);
+}
+
+.sa-widget-dialog .sa-chat-card {
+	padding: clamp(14px, 2vw, 22px);
+}
+
+.sa-widget-dialog .sa-log {
+	min-height: 250px;
+	max-height: min(48vh, 490px);
+	overflow-y: auto;
+	padding-right: 4px;
+}
+
+.sa-widget-dialog .sa-viz {
+	position: static;
+	padding: clamp(16px, 2vw, 24px);
+}
+
+.sa-widget-dialog .sa-disclaimer {
+	margin-top: 18px;
+}
+
+.sa-dialog-open {
+	overflow: hidden;
+}
+
+@keyframes sa-backdrop-in {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
 /* Soleil couchant : la lumière monte du bas de la section */
 .sa::before {
 	position: absolute;
@@ -848,6 +1036,10 @@
 		grid-template-columns: 1fr;
 	}
 
+	.sa-widget-dialog .sa-grid {
+		grid-template-columns: 1fr;
+	}
+
 	.sa-viz {
 		position: static;
 	}
@@ -858,6 +1050,63 @@
 }
 
 @media (max-width: 600px) {
+	.sa-promo {
+		width: calc(100% - 20px);
+		margin-block: 10px 24px;
+		border-radius: 26px;
+	}
+
+	.sa-widget-backdrop {
+		align-items: end;
+		padding: 0;
+	}
+
+	.sa-widget-dialog {
+		width: 100%;
+		max-height: 94dvh;
+		padding: 18px 14px max(18px, env(safe-area-inset-bottom));
+		border-radius: 26px 26px 0 0;
+	}
+
+	.sa-widget-dialog .sa-grid {
+		gap: 14px;
+	}
+
+	.sa-widget-dialog .sa-viz {
+		padding: 16px;
+	}
+
+	.sa-widget-dialog .sa-log {
+		min-height: 190px;
+		max-height: 38dvh;
+	}
+
+	.sa-widget-dialog .sa-widget-agent .sa-avatar {
+		width: 48px;
+		height: 48px;
+	}
+
+	.sa-launcher {
+		right: 14px;
+		bottom: max(14px, env(safe-area-inset-bottom));
+		min-height: 58px;
+		gap: 8px;
+		padding-right: 13px;
+	}
+
+	.sa-launcher > img {
+		width: 44px;
+		height: 44px;
+	}
+
+	.sa-launcher-copy strong {
+		font-size: 12px;
+	}
+
+	.sa-launcher-copy small {
+		font-size: 10px;
+	}
+
 	.sa {
 		padding-block: 58px;
 		border-radius: 28px;

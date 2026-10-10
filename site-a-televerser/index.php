@@ -12,9 +12,7 @@
 	<link rel="stylesheet" href="css/hero.css?v=8">
 	<link rel="stylesheet" href="css/site-header.css">
 	<link rel="stylesheet" href="css/sections.css?v=2">
-	<link rel="stylesheet" href="css/solar-advisor.css?v=3">
 	<script src="js/home-hero.js?v=2" defer></script>
-	<script src="js/solar-advisor.js?v=3" defer></script>
 </head>
 <body>
 	<?php require __DIR__ . '/includes/header.php'; ?>
@@ -69,85 +67,28 @@
 			</div>
 		</section>
 
-		<!-- Assistant solaire -->
-		<section class="sa" id="estimation" data-solar-advisor aria-labelledby="sa-title">
+		<section class="sa sa-promo" id="estimation" aria-labelledby="sa-title">
 			<div class="container">
 				<div class="sa-showcase-head">
 					<div class="sa-showcase-copy">
 						<p class="sa-kicker"><span aria-hidden="true"></span> Innovation · Assistant solaire</p>
 						<h2 class="sx-title" id="sa-title">Votre projet solaire,<br><em>prend forme ici.</em></h2>
-						<p class="sx-lead">En quelques réponses, explorez une première estimation de vos panneaux, de votre batterie et de votre onduleur.</p>
+						<p class="sx-lead">Découvrez en quelques réponses une première estimation de vos panneaux, de votre batterie et de votre onduleur.</p>
 						<div class="sa-trust">
 							<span><i aria-hidden="true">✓</i> Simple et personnalisable</span>
 							<span><i aria-hidden="true">✓</i> Gratuit, sans inscription</span>
 						</div>
+						<a class="sa-cta sa-promo-cta" href="contact.php" data-nour-open>
+							Parler avec Nour <span aria-hidden="true">↗</span>
+						</a>
 					</div>
 					<div class="sa-hero-assistant">
 						<div class="sa-hero-glow" aria-hidden="true"></div>
-						<svg class="sa-mascot" viewBox="0 0 160 160" role="img" aria-labelledby="sa-mascot-title">
-							<title id="sa-mascot-title">Nour, votre assistant solaire virtuel</title>
-							<defs>
-								<linearGradient id="sa-mascot-bg" x1="22" y1="18" x2="136" y2="146" gradientUnits="userSpaceOnUse"><stop stop-color="#41b8ed"/><stop offset="1" stop-color="#0874b4"/></linearGradient>
-								<linearGradient id="sa-mascot-shirt" x1="47" y1="94" x2="112" y2="154" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"/><stop offset="1" stop-color="#cceeff"/></linearGradient>
-							</defs>
-							<circle cx="80" cy="80" r="78" fill="url(#sa-mascot-bg)"/>
-							<circle cx="80" cy="80" r="67" fill="#fff" fill-opacity=".08"/>
-							<path d="M38 143c3-25 20-40 42-40s39 15 42 40a67 67 0 0 1-84 0Z" fill="url(#sa-mascot-shirt)"/>
-							<path d="M69 99h22v19c-6 7-16 7-22 0V99Z" fill="#c9825d"/>
-							<path d="M54 57c0-20 11-33 27-33s27 13 27 33v19c0 19-12 32-27 32S54 95 54 76V57Z" fill="#d99870"/>
-							<path d="M53 61c-3-21 8-39 29-39 20 0 30 14 27 37l-7-10c-13 1-25-3-34-11-2 9-7 16-15 23Z" fill="#183447"/>
-							<path d="M54 61c-7-2-10 3-9 10 1 6 5 10 10 9m51-19c7-2 10 3 9 10-1 6-5 10-10 9" fill="#d99870"/>
-							<path d="M68 67h1m22 0h1" stroke="#183447" stroke-width="5" stroke-linecap="round"/>
-							<path d="M71 84c5 5 13 5 18 0" stroke="#8c493d" stroke-width="2.5" stroke-linecap="round"/>
-							<path d="m68 106 12 11 12-11 13 8-7 12H62l-7-12 13-8Z" fill="#fff"/>
-							<path d="m76 117 4 4 4-4-4-4-4 4Z" fill="#f2a447"/>
-							<path d="M37 51c-1-14 7-25 19-29" stroke="#ffcf83" stroke-width="3" stroke-linecap="round"/>
-							<path d="m48 25 8-4-1 9" fill="none" stroke="#ffcf83" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="m124 39 3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7Z" fill="#ffcf83"/>
-						</svg>
+						<img class="sa-mascot" src="images/nour-assistant.svg" alt="Illustration de Nour, votre assistante solaire">
 						<div class="sa-hello"><span class="sa-hello-dot" aria-hidden="true"></span>Bonjour, moi c’est <strong>Nour</strong> !</div>
 						<p class="sa-hero-caption">Votre guide pour imaginer<br>une solution solaire adaptée.</p>
 					</div>
 				</div>
-
-				<div class="sa-grid">
-					<div class="sa-chat-card">
-						<div class="sa-agent">
-							<span class="sa-avatar" aria-hidden="true">
-								<svg viewBox="0 0 160 160" fill="none"><circle cx="80" cy="80" r="78" fill="#087fbd"/><path d="M39 145c3-25 19-40 41-40s39 15 42 40a67 67 0 0 1-83 0Z" fill="#e8f7ff"/><path d="M69 98h22v20c-6 7-16 7-22 0V98Z" fill="#c9825d"/><path d="M54 57c0-20 11-33 27-33s27 13 27 33v19c0 19-12 32-27 32S54 95 54 76V57Z" fill="#d99870"/><path d="M53 61c-3-21 8-39 29-39 20 0 30 14 27 37l-7-10c-13 1-25-3-34-11-2 9-7 16-15 23Z" fill="#183447"/><path d="M68 67h1m22 0h1" stroke="#183447" stroke-width="5" stroke-linecap="round"/><path d="M71 84c5 5 13 5 18 0" stroke="#8c493d" stroke-width="2.5" stroke-linecap="round"/><path d="m76 117 4 4 4-4-4-4-4 4Z" fill="#f2a447"/></svg>
-							</span>
-							<div><strong>Nour <span>· Assistant solaire</span></strong><small><i aria-hidden="true"></i> En ligne pour vous guider</small></div>
-						</div>
-						<div class="sa-log" role="log" aria-live="polite" aria-relevant="additions" data-sa-log></div>
-						<noscript><p class="sa-fine">L’assistant demande JavaScript. Vous pouvez aussi <a href="contact.php">nous écrire directement</a> pour une étude de votre projet.</p></noscript>
-					</div>
-
-					<aside class="sa-viz" data-sa-viz data-state="idle" aria-label="Simulation d’une journée solaire">
-						<p class="sa-viz-title">Une journée avec vos panneaux</p>
-						<div class="sa-chart" data-sa-chart></div>
-						<div class="sa-time">
-							<input class="sa-range" type="range" min="0" max="24" step="0.25" value="12" data-sa-hour aria-label="Heure de la journée" disabled>
-							<div class="sa-readout" data-sa-readout></div>
-						</div>
-						<ul class="sa-legend">
-							<li><i style="background:#ffbb72"></i> Production solaire</li>
-							<li><i style="background:#7fd3f7"></i> Consommation de jour</li>
-							<li><i style="background:#0093d9"></i> Batterie, le soir et la nuit</li>
-						</ul>
-						<p class="sa-viz-note">Répondez à Nour : votre journée solaire se dessine ici.</p>
-						<dl class="sa-metrics">
-							<div><dt>Panneaux solaires</dt><dd data-out="panels">—</dd><small data-out="panels-sub"></small></div>
-							<div><dt>Batterie</dt><dd data-out="battery">—</dd><small data-out="battery-sub"></small></div>
-							<div><dt>Onduleur</dt><dd data-out="inverter">—</dd><small data-out="inverter-sub"></small></div>
-							<div><dt>Production moyenne</dt><dd data-out="energy">—</dd><small data-out="energy-sub"></small></div>
-						</dl>
-						<details class="sa-how">
-							<summary>Comment c’est calculé</summary>
-							<div data-sa-how></div>
-						</details>
-					</aside>
-				</div>
-				<p class="sa-disclaimer"><span aria-hidden="true">i</span> Estimation indicative, à confirmer par une étude technique sur votre site.</p>
 			</div>
 		</section>
 
