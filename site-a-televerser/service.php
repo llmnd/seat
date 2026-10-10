@@ -119,7 +119,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </section>
 <!-- /services section -->
 
-<?php require __DIR__ . '/includes/contact-cta.php'; ?>
 <?php require __DIR__ . '/includes/site-footer.php'; ?>
 <a href="#" class="cd-top">Top</a>
 <!-- js files -->

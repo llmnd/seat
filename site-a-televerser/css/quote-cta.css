@@ -1,0 +1,299 @@
+.quote-cta .contact-inner {
+	gap: clamp(32px, 5vw, 72px);
+	padding-block: 48px;
+}
+
+.quote-cta__copy {
+	flex: 1 1 auto;
+}
+
+.quote-cta__choice {
+	width: min(100%, 390px);
+	flex: 0 0 min(100%, 390px);
+	padding: 20px;
+	border: 1px solid rgba(255, 255, 255, .17);
+	border-radius: 18px;
+	background: rgba(255, 255, 255, .07);
+	box-shadow: 0 16px 40px rgba(3, 24, 37, .16);
+	backdrop-filter: blur(10px);
+}
+
+.quote-request-section {
+	width: min(720px, 100%);
+	margin: 32px auto 0;
+	padding: 20px;
+	border: 1px solid rgba(16, 59, 89, .09);
+	border-radius: 22px;
+	background:
+		radial-gradient(ellipse at 100% 0%, rgba(0, 147, 217, .12), transparent 43%),
+		linear-gradient(145deg, #103b59, #0a2b43);
+	box-shadow: 0 20px 48px rgba(16, 59, 89, .13);
+}
+
+.quote-request-section .quote-cta__choice {
+	width: 100%;
+	max-width: 560px;
+	flex-basis: auto;
+	margin: 0 auto;
+	padding: 22px;
+	border: 0;
+	background: transparent;
+	box-shadow: none;
+	backdrop-filter: none;
+}
+
+.quote-request-section .quote-cta__label {
+	font-size: 14px;
+}
+
+.quote-request-section .quote-cta__panel {
+	padding-top: 12px;
+}
+
+.quote-cta__label {
+	margin: 0 0 12px;
+	color: rgba(255, 255, 255, .82);
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.quote-cta__tabs {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 4px;
+	padding: 4px;
+	border: 1px solid rgba(255, 255, 255, .15);
+	border-radius: 12px;
+	background: rgba(3, 27, 42, .34);
+}
+
+.quote-cta__tabs::before {
+	position: absolute;
+	top: 4px;
+	bottom: 4px;
+	left: 4px;
+	width: calc(50% - 4px);
+	border-radius: 9px;
+	background: #fff;
+	box-shadow: 0 3px 10px rgba(0, 0, 0, .12);
+	content: "";
+	transition: transform .28s cubic-bezier(.2, .7, .25, 1);
+}
+
+.quote-cta__tabs[data-active="email"]::before {
+	transform: translateX(100%);
+}
+
+.quote-cta__tabs button {
+	position: relative;
+	z-index: 1;
+	display: inline-flex;
+	min-height: 42px;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	padding: 8px 10px;
+	border: 0;
+	border-radius: 9px;
+	color: rgba(255, 255, 255, .83);
+	background: transparent;
+	font: inherit;
+	font-size: 13px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: color .22s ease;
+}
+
+.quote-cta__tabs button[aria-selected="true"] {
+	color: #103b59;
+}
+
+.quote-cta__tabs button:focus-visible,
+.quote-cta__action:focus-visible {
+	outline: 3px solid #f8b474;
+	outline-offset: 3px;
+}
+
+.quote-cta__tab-icon {
+	width: 17px;
+	height: 17px;
+	flex: 0 0 17px;
+	fill: none;
+	stroke: currentColor;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 1.7;
+	line-height: 1;
+}
+
+.quote-cta__brief {
+	display: grid;
+	gap: 11px;
+	margin-top: 16px;
+	padding-top: 15px;
+	border-top: 1px solid rgba(255, 255, 255, .15);
+}
+
+.quote-cta__brief-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin: 0;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.quote-cta__brief-title span {
+	color: rgba(255, 255, 255, .58);
+	font-size: 10px;
+	font-weight: 400;
+}
+
+.quote-cta__optional {
+	display: block;
+	margin-top: 2px;
+	color: rgba(255, 255, 255, .55);
+	font-size: 10px;
+	font-weight: 400;
+}
+
+.quote-cta__field-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+}
+
+.quote-cta__field {
+	display: grid;
+	min-width: 0;
+	gap: 5px;
+	color: rgba(255, 255, 255, .8);
+	font-size: 11px;
+}
+
+.quote-cta__field input,
+.quote-cta__field select,
+.quote-cta__field textarea {
+	width: 100%;
+	min-width: 0;
+	padding: 10px 11px;
+	border: 1px solid rgba(255, 255, 255, .2);
+	border-radius: 9px;
+	color: #fff;
+	background: rgba(3, 27, 42, .35);
+	font: inherit;
+	font-size: 12px;
+	line-height: 1.45;
+	transition: border-color .2s ease, background-color .2s ease;
+}
+
+.quote-cta__field select {
+	color-scheme: dark;
+}
+
+.quote-cta__field textarea {
+	min-height: 70px;
+	resize: vertical;
+}
+
+.quote-cta__field input::placeholder,
+.quote-cta__field textarea::placeholder {
+	color: rgba(255, 255, 255, .48);
+}
+
+.quote-cta__field input:focus,
+.quote-cta__field select:focus,
+.quote-cta__field textarea:focus {
+	border-color: #f8b474;
+	outline: 2px solid rgba(248, 180, 116, .24);
+	outline-offset: 1px;
+	background: rgba(3, 27, 42, .55);
+}
+
+.quote-cta__panel {
+	padding-top: 14px;
+}
+
+.quote-cta__panel p {
+	min-height: 42px;
+	margin: 0 0 12px;
+	color: rgba(255, 255, 255, .8);
+	font-size: 12px;
+	line-height: 1.65;
+	transition: opacity .18s ease, transform .18s ease;
+}
+
+.quote-cta__panel.is-changing p,
+.quote-cta__panel.is-changing .quote-cta__action {
+	opacity: 0;
+	transform: translateY(5px);
+}
+
+.quote-cta__action {
+	display: flex;
+	min-height: 48px;
+	align-items: center;
+	justify-content: space-between;
+	gap: 14px;
+	padding: 12px 15px;
+	border: 1px solid rgba(255, 255, 255, .8);
+	border-radius: 11px;
+	color: #103b59;
+	background: #fff;
+	font-size: 13px;
+	font-weight: 600;
+	text-decoration: none;
+	transition: color .2s ease, background-color .2s ease, opacity .18s ease, transform .18s ease;
+}
+
+.quote-cta__action:hover {
+	color: #103b59;
+	background: #f1f8fb;
+	transform: translateY(-2px);
+}
+
+.quote-cta__action > span:last-child {
+	color: #e47614;
+	font-size: 18px;
+}
+
+@media (max-width: 760px) {
+	.quote-cta .contact-inner {
+		min-height: 0;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 26px;
+		padding-block: 44px;
+	}
+
+	.quote-cta__choice {
+		width: 100%;
+		flex-basis: auto;
+	}
+
+	.quote-cta__field-row {
+		grid-template-columns: 1fr;
+	}
+
+	.quote-cta__panel p {
+		min-height: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.quote-cta__tabs::before,
+	.quote-cta__tabs button,
+	.quote-cta__panel p,
+	.quote-cta__action {
+		transition: none;
+	}
+
+	.quote-cta__field input,
+	.quote-cta__field select,
+	.quote-cta__field textarea {
+		transition: none;
+	}
+}

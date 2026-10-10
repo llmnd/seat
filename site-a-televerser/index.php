@@ -8,7 +8,7 @@
 	<title>SEAT Opus Global — L’énergie, pensée pour durer</title>
 	<link rel="icon" href="images/logo.jpg">
 	<?php require __DIR__ . '/includes/site-fonts.php'; ?>
-	<link rel="stylesheet" href="css/homepage.css?v=9">
+	<link rel="stylesheet" href="css/homepage.css?v=10">
 	<link rel="stylesheet" href="css/hero.css?v=8">
 	<link rel="stylesheet" href="css/site-header.css">
 	<script src="js/home-hero.js?v=2" defer></script>
@@ -157,10 +157,11 @@
 					<a class="text-link" href="realisationSolaire.php">Toutes nos réalisations <span aria-hidden="true">↗</span></a>
 				</div>
 				<div class="project-grid">
-					<a class="project-card project-large" href="realisationSolaire.php">
-						<img src="images/realisation.PNG" alt="Installation solaire réalisée par SEAT Opus Global" loading="lazy">
+					<a class="project-card project-large project-card--feature" href="realisationSolaire.php">
+						<img src="images/realisation.PNG" alt="Centrale solaire de 100 kW destinée à l’alimentation d’un hôpital de district" loading="lazy">
 						<span class="project-overlay"></span>
-						<span class="project-meta"><span>01 — ÉNERGIE SOLAIRE</span><strong>Des installations pensées pour durer <span aria-hidden="true">↗</span></strong></span>
+						<span class="project-capacity" aria-label="Puissance du projet : 100 kilowatts"><strong>100</strong><span>kW<br>PROJET</span></span>
+						<span class="project-meta"><span>01 — SOLAIRE · SANTÉ</span><strong>Une centrale solaire pour un hôpital de district <span aria-hidden="true">↗</span></strong></span>
 					</a>
 					<a class="project-card" href="realisationPompage.php">
 						<img src="images/pompage1.PNG" alt="Projet de pompage solaire sur le terrain" loading="lazy">
@@ -214,7 +215,6 @@
 			</div>
 		</section>
 
-		<?php require __DIR__ . '/includes/contact-cta.php'; ?>
 	</main>
 
 	<?php require __DIR__ . '/includes/site-footer.php'; ?>

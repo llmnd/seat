@@ -190,7 +190,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--</div>-->
 <!-- //team -->
 <!-- footer -->
-<?php require __DIR__ . '/includes/contact-cta.php'; ?>
 <?php require __DIR__ . '/includes/site-footer.php'; ?>
 <a href="#" class="cd-top">Top</a>
 <!-- js files -->

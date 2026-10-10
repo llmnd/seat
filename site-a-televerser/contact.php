@@ -42,39 +42,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<p class="text-center slideanim">
 				Pour tout services dans le domaine de l'energie renouvellable, panneau solaire,electricité, n'hesitez pas de nous rendre visite à l'adresse ci-desous.
 			</p>
+			<div class="quote-request-section" data-quote-choice>
+				<?php require __DIR__ . '/includes/quote-request.php'; ?>
+			</div>
 		</div>
-	</div>
-<br><br>
-
-	<!-- contact -->
-	<div class="w3_agile_services_grids w3_agile_contactwe_grids">
-		<form action="sendmail.php" method="post">
-			<div class="col-md-6 w3_agile_contact_grid">
-				<textarea name="message" placeholder="Votre Message..." required=""></textarea>
-			</div>
-			<div class="col-md-6 w3_agile_contact_grid">
-						<span class="input input--ichiro">
-							<input class="input__field input__field--ichiro" type="text" name="nom" id="input-25" placeholder=" " required="" />
-							<label class="input__label input__label--ichiro" for="input-25">
-								<span class="input__label-content input__label-content--ichiro">Nom & Prenom <span style="color:#ff0000;">*</span></span>
-							</label>
-						</span>
-						<span class="input input--ichiro">
-							<input class="input__field input__field--ichiro" type="email" name="email" id="input-26" placeholder=" " required="" />
-							<label class="input__label input__label--ichiro" for="input-26">
-								<span class="input__label-content input__label-content--ichiro">E-mail <span style="color:#ff0000;">*</span> </span>
-							</label>
-						</span>
-						<span class="input input--ichiro">
-							<input class="input__field input__field--ichiro" type="text" name="objet" id="input-27" placeholder=" " required="" />
-							<label class="input__label input__label--ichiro" for="input-27">
-								<span class="input__label-content input__label-content--ichiro">Objet <span style="color:#ff0000;">*</span> </span>
-							</label>
-						</span>
-				<input type="submit" name="submit" value="Envoyer">
-			</div>
-			<div class="clearfix"> </div>
-		</form>
 	</div>
 </section>
 <!-- map -->
@@ -87,7 +58,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		allowfullscreen></iframe>
 </div>
 <br><br>
-<?php require __DIR__ . '/includes/contact-cta.php'; ?>
 <?php require __DIR__ . '/includes/site-footer.php'; ?>
 <a href="#" class="cd-top">Top</a>
 <!-- js files -->
