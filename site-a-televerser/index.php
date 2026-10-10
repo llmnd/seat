@@ -12,9 +12,9 @@
 	<link rel="stylesheet" href="css/hero.css?v=8">
 	<link rel="stylesheet" href="css/site-header.css">
 	<link rel="stylesheet" href="css/sections.css?v=2">
-	<link rel="stylesheet" href="css/solar-advisor.css?v=1">
+	<link rel="stylesheet" href="css/solar-advisor.css?v=2">
 	<script src="js/home-hero.js?v=2" defer></script>
-	<script src="js/solar-advisor.js?v=1" defer></script>
+	<script src="js/solar-advisor.js?v=2" defer></script>
 </head>
 <body>
 	<?php require __DIR__ . '/includes/header.php'; ?>
@@ -200,6 +200,10 @@
 					<aside class="sa-viz" data-sa-viz data-state="idle" aria-label="Simulation d’une journée solaire">
 						<p class="sa-viz-title">Une journée avec vos panneaux</p>
 						<div class="sa-chart" data-sa-chart></div>
+						<div class="sa-time">
+							<input class="sa-range" type="range" min="0" max="24" step="0.25" value="12" data-sa-hour aria-label="Heure de la journée" disabled>
+							<div class="sa-readout" data-sa-readout></div>
+						</div>
 						<ul class="sa-legend">
 							<li><i style="background:#ffbb72"></i> Production solaire</li>
 							<li><i style="background:#7fd3f7"></i> Consommation de jour</li>
@@ -212,6 +216,10 @@
 							<div><dt>Onduleur</dt><dd data-out="inverter">—</dd><small data-out="inverter-sub"></small></div>
 							<div><dt>Production moyenne</dt><dd data-out="energy">—</dd><small data-out="energy-sub"></small></div>
 						</dl>
+						<details class="sa-how">
+							<summary>Comment c’est calculé</summary>
+							<div data-sa-how></div>
+						</details>
 					</aside>
 				</div>
 			</div>

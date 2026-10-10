@@ -51,7 +51,7 @@
 
 	const makeItem = (id, qty) => ({ id, qty, hours: APP[id].h, watts: APP[id].w });
 
-	const state = { items: [], night: true, phrase: 'votre projet', animated: false, interacted: false };
+	const state = { items: [], night: true, phrase: 'votre projet', interacted: false, hour: 12, swept: false, res: null };
 
 	/* ---------- Calcul ---------- */
 	function nextInverter(w) {
@@ -111,7 +111,9 @@
 	const fmtVA = (w) => (w >= 1000 ? `${nf.format(w / 1000)} kVA` : `${w} VA`);
 
 	/* ---------- Graphique SVG ---------- */
-	function chart(res, ghost) {
+	const STARS = [[.02,.1,1.2],[.06,.35,1],[.1,.18,1.4],[.14,.5,1],[.18,.08,1],[.21,.3,1.2],[.235,.15,1],[.77,.12,1.2],[.8,.4,1],[.84,.2,1.4],[.88,.08,1],[.92,.45,1],[.95,.22,1.2],[.985,.12,1]];
+
+	function chart(res) {
 		const W = 640, H = 300, L = 10, R = 10, T = 28, B = 38;
 		const pw = W - L - R, ph = H - T - B;
 		const X = (h) => L + (h / 24) * pw;
@@ -132,12 +134,17 @@
 			bars += `<rect x="${(X(h) + 1.5).toFixed(1)}" y="${Y(v).toFixed(1)}" width="${(pw / 24 - 3).toFixed(1)}" height="${(Y(0) - Y(v)).toFixed(1)}" rx="3" fill="${isNight ? '#0093d9' : '#7fd3f7'}" fill-opacity="${isNight ? '.9' : '.6'}"/>`;
 		});
 
+		const stars = STARS.map(([fx, fy, r]) => `<circle cx="${X(fx * 24).toFixed(1)}" cy="${(T + ph * fy * 0.8).toFixed(1)}" r="${r}" fill="#fff" fill-opacity=".55"/>`).join('');
 		const grid = [0.33, 0.66].map((f) => `<line x1="${L}" x2="${W - R}" y1="${(T + ph * f).toFixed(1)}" y2="${(T + ph * f).toFixed(1)}" stroke="#fff" stroke-opacity=".06"/>`).join('');
 		const ticks = [0, 6, 12, 18, 24].map((h) => `<text x="${X(h).toFixed(1)}" y="${H - 12}" text-anchor="${h === 0 ? 'start' : h === 24 ? 'end' : 'middle'}" fill="#86a3b5" font-size="12">${h} h</text>`).join('');
 
-		const sunX = X(12), sunY = Y(res.peak);
-		const animate = !ghost && !state.animated;
-		if (animate) state.animated = true;
+		// Le soleil suit l'heure choisie sur la courbe
+		const hh = state.hour;
+		const prod = res.k * prodShape(hh);
+		const cx = X(hh).toFixed(1), cy = Y(prod).toFixed(1);
+		const marker = prod > 0
+			? `<circle cx="${cx}" cy="${cy}" r="24" fill="url(#sa-glow)"/><circle cx="${cx}" cy="${cy}" r="7" fill="#ffd9a8"/>`
+			: `<circle cx="${cx}" cy="${cy}" r="5" fill="#9fbccd"/>`;
 
 		return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Production solaire et consommation sur 24 heures">
 			<defs>
@@ -145,17 +152,17 @@
 					<stop offset="0" stop-color="#ffbb72" stop-opacity=".6"/>
 					<stop offset="1" stop-color="#e47614" stop-opacity="0"/>
 				</linearGradient>
-				<radialGradient id="sa-glow"><stop offset="0" stop-color="#ffbb72" stop-opacity=".8"/><stop offset="1" stop-color="#ffbb72" stop-opacity="0"/></radialGradient>
+				<radialGradient id="sa-glow"><stop offset="0" stop-color="#ffbb72" stop-opacity=".85"/><stop offset="1" stop-color="#ffbb72" stop-opacity="0"/></radialGradient>
 			</defs>
-			<rect x="${X(0)}" y="${T}" width="${(X(6) - X(0)).toFixed(1)}" height="${ph}" fill="#04141f" fill-opacity=".45"/>
-			<rect x="${X(18).toFixed(1)}" y="${T}" width="${(X(24) - X(18)).toFixed(1)}" height="${ph}" fill="#04141f" fill-opacity=".45"/>
-			${grid}
+			<rect x="${X(0)}" y="${T}" width="${(X(6) - X(0)).toFixed(1)}" height="${ph}" fill="#04141f" fill-opacity=".5"/>
+			<rect x="${X(18).toFixed(1)}" y="${T}" width="${(X(24) - X(18)).toFixed(1)}" height="${ph}" fill="#04141f" fill-opacity=".5"/>
+			${stars}${grid}
 			<line x1="${L}" x2="${W - R}" y1="${Y(0)}" y2="${Y(0)}" stroke="#fff" stroke-opacity=".25"/>
 			<path d="${area}" fill="url(#sa-sun)"/>
 			${bars}
-			<path d="${line}" fill="none" stroke="#ffbb72" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" pathLength="1"${animate ? ' class="sa-draw"' : ''}/>
-			<circle cx="${sunX}" cy="${sunY.toFixed(1)}" r="20" fill="url(#sa-glow)"/>
-			<circle cx="${sunX}" cy="${sunY.toFixed(1)}" r="6" fill="#ffd9a8"/>
+			<path d="${line}" fill="none" stroke="#ffbb72" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+			<line x1="${cx}" x2="${cx}" y1="${T}" y2="${Y(0)}" stroke="#fff" stroke-opacity=".4" stroke-dasharray="3 5"/>
+			${marker}
 			<text x="${X(3)}" y="${T - 10}" text-anchor="middle" fill="#86a3b5" font-size="12">Nuit</text>
 			<text x="${X(12)}" y="${T - 10}" text-anchor="middle" fill="#cfe0ea" font-size="12">Jour</text>
 			<text x="${X(21)}" y="${T - 10}" text-anchor="middle" fill="#86a3b5" font-size="12">Nuit</text>
@@ -167,11 +174,61 @@
 	const out = (name) => viz.querySelector(`[data-out="${name}"]`);
 	const SAMPLE = compute(PRESETS[0].items.map(([id, q]) => makeItem(id, q)), true);
 
+	const slider = root.querySelector('[data-sa-hour]');
+	const readoutEl = root.querySelector('[data-sa-readout]');
+	const fmtW = (w) => (w >= 1000 ? `${nf.format(w / 1000)} kW` : `${Math.round(w)} W`);
+	const fmtTime = (h) => {
+		const hr = Math.floor(h), mn = Math.round((h - hr) * 60);
+		return mn ? `${hr} h ${String(mn).padStart(2, '0')}` : `${hr} h`;
+	};
+
+	function sentence(res, prod, cons) {
+		if (cons <= 0) return prod > 0 ? 'Les panneaux produisent, mais aucun appareil ne tourne à cette heure.' : 'Aucun appareil ne tourne à cette heure.';
+		if (prod * ETA_DIRECT >= cons) return res.batteryKwh ? 'Le soleil alimente tout et recharge la batterie.' : 'Le soleil alimente tout.';
+		if (prod > 0) return res.batteryKwh ? 'Le soleil et la batterie se partagent la charge.' : 'Le soleil couvre une partie de la charge.';
+		return 'La batterie prend le relais.';
+	}
+
+	function drawChart() {
+		const res = state.res;
+		chartEl.innerHTML = chart(res || SAMPLE);
+		if (!res) { readoutEl.innerHTML = ''; return; }
+		const prod = res.k * prodShape(state.hour);
+		const cons = res.cons[Math.min(23, Math.floor(state.hour))];
+		const text = sentence(res, prod, cons);
+		readoutEl.innerHTML = `<strong>${fmtTime(state.hour)}</strong><span>Production <b>${fmtW(prod)}</b></span><span>Consommation <b>${fmtW(cons)}</b></span><p>${text}</p>`;
+		slider.setAttribute('aria-valuetext', `${fmtTime(state.hour)} : production ${fmtW(prod)}, consommation ${fmtW(cons)}. ${text}`);
+	}
+
+	function sweep() {
+		if (reduce) return;
+		const from = 5.5, to = 12, dur = 2400, t0 = performance.now();
+		state.hour = from;
+		const step = (now) => {
+			if (state.touched) return;
+			const t = Math.min(1, (now - t0) / dur);
+			state.hour = from + (to - from) * (1 - Math.pow(1 - t, 3));
+			slider.value = state.hour;
+			drawChart();
+			if (t < 1) requestAnimationFrame(step);
+		};
+		requestAnimationFrame(step);
+	}
+
+	slider.addEventListener('input', () => {
+		state.touched = true;
+		state.hour = Number(slider.value);
+		drawChart();
+	});
+
 	function render() {
 		const res = compute(state.items, state.night);
 		const live = !!res;
+		state.res = res;
 		viz.dataset.state = live ? 'live' : 'idle';
-		chartEl.innerHTML = chart(res || SAMPLE, !live);
+		slider.disabled = !live;
+		drawChart();
+		if (live && !state.swept) { state.swept = true; sweep(); }
 
 		if (!live) {
 			['panels', 'battery', 'inverter', 'energy'].forEach((k) => { out(k).textContent = '—'; out(`${k}-sub`).textContent = ''; });
@@ -195,6 +252,19 @@
 			if (key === 'inverter') el.textContent = `≈ ${fmtVA(res.inverter)}`;
 			if (key === 'note') el.textContent = state.night ? '' : 'Sans batterie, les appareils utilisés le soir et la nuit ne sont pas alimentés.';
 		});
+	}
+
+	/* ---------- « Comment c'est calculé » : généré depuis les constantes ci-dessus ---------- */
+	const howEl = root.querySelector('[data-sa-how]');
+	if (howEl) {
+		const pct = (v) => `${Math.round(v * 100)} %`;
+		howEl.innerHTML = `<ol>
+			<li><b>Énergie de chaque appareil</b> = puissance × quantité × heures par jour × taux de fonctionnement (un réfrigérateur ne tourne qu’environ 40 % du temps).</li>
+			<li><b>Jour ou nuit.</b> Chaque appareil est rangé : le jour, le soir et la nuit, ou les deux à moitié. La batterie ne sert qu’à ce qui se consomme le soir et la nuit.</li>
+			<li><b>Panneaux</b> = (énergie de jour ÷ ${ETA_DIRECT} + énergie de nuit ÷ ${ETA_BATT}) ÷ (${PSH} h de soleil × ${LOSS}), divisé par ${PANEL_W} W et arrondi au panneau supérieur. L’énergie de nuit pèse plus lourd, car elle passe par la batterie.</li>
+			<li><b>Batterie</b> = énergie de nuit ÷ (${pct(DOD)} de décharge utile × 90 % de rendement de l’onduleur).</li>
+			<li><b>Onduleur</b> = (puissances cumulées × 70 % + surcharge de démarrage du plus gros moteur) × 1,25, arrondi au calibre standard.</li>
+		</ol><p>Hypothèses prudentes pour un climat sahélien : ${PSH} heures de soleil équivalent par jour, ${pct(1 - LOSS)} de pertes (chaleur, poussière, câbles). Un technicien affine ces valeurs sur site.</p>`;
 	}
 
 	/* ---------- Conversation ---------- */
@@ -372,7 +442,10 @@
 		log.innerHTML = '';
 		state.items = [];
 		state.night = true;
-		state.animated = false;
+		state.swept = false;
+		state.touched = false;
+		state.hour = 12;
+		slider.value = 12;
 		render();
 		run();
 	}
