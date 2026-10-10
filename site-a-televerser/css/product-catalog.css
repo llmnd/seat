@@ -1,0 +1,318 @@
+.page-hero[data-page-section="Produits"] {
+	font-family: Manrope, sans-serif;
+}
+
+.page-hero[data-page-section="Produits"] h1 {
+	font-family: Manrope, sans-serif;
+	font-weight: 500;
+	letter-spacing: -.06em;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls {
+	font-family: Manrope, sans-serif;
+	padding: 66px 0 84px;
+	background:
+		radial-gradient(ellipse at 8% 4%, rgba(0, 147, 217, .08), transparent 34%),
+		linear-gradient(180deg, #f5f9fb 0%, #edf4f7 100%);
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls > h3 {
+	margin-bottom: 30px;
+	color: #103b59;
+	font-family: Manrope, sans-serif;
+	font-size: clamp(25px, 3vw, 34px);
+	font-weight: 500;
+	letter-spacing: -.06em;
+	text-wrap: balance;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls > h3::after {
+	width: 52px;
+	height: 4px;
+	border-radius: 999px;
+	background: linear-gradient(90deg, #0093d9, #e47614);
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls > p.text-center {
+	width: min(850px, calc(100% - 40px));
+	margin: 0 auto 30px;
+	color: #586e7c;
+	font-size: 15px;
+	line-height: 1.85;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .services-page {
+	padding: 20px 0 0;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .services-page > .container {
+	width: min(1240px, calc(100% - 40px));
+	max-width: 1240px;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .agileinfo-top-grids {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	align-items: stretch;
+	gap: 24px;
+	margin: 0;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .agileinfo-top-grids::before,
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .agileinfo-top-grids::after,
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .agileinfo-top-grids > .clearfix {
+	display: none;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .agileinfo-top-grids > .container {
+	width: 100%;
+	max-width: none;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .wthree-top-grid,
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid {
+	position: relative;
+	display: flex;
+	float: none;
+	width: auto;
+	min-width: 0;
+	height: 100%;
+	flex-direction: column;
+	margin: 0;
+	padding: 15px;
+	overflow: hidden;
+	border: 1px solid rgba(16, 59, 89, .09);
+	border-radius: 20px;
+	background: #fff;
+	box-shadow: 0 12px 30px rgba(16, 59, 89, .07);
+	transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .wthree-top-grid::before,
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid::before {
+	position: absolute;
+	top: 0;
+	left: 28px;
+	width: 54px;
+	height: 4px;
+	border-radius: 0 0 4px 4px;
+	background: linear-gradient(90deg, #0093d9, #e47614);
+	content: "";
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .wthree-top-grid:hover,
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid:hover {
+	border-color: rgba(0, 147, 217, .28);
+	box-shadow: 0 20px 42px rgba(16, 59, 89, .12);
+	transform: translateY(-4px);
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .wthree-top-grid > br,
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid > br {
+	display: none;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .wthree-top-grid img,
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid > img {
+	display: block;
+	width: 100%;
+	height: 224px;
+	flex: 0 0 auto;
+	margin: 0 0 17px;
+	padding: 12px;
+	border: 1px solid rgba(16, 59, 89, .045);
+	border-radius: 14px;
+	background:
+		radial-gradient(ellipse at 50% 35%, rgba(0, 147, 217, .055), transparent 68%),
+		#f7fafb;
+	object-fit: contain;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .wthree-top-grid h4,
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid h4 {
+	margin: 0;
+	padding: 2px 3px 0;
+	color: #15394f;
+	font-family: Manrope, sans-serif;
+	font-size: 17px;
+	font-weight: 500;
+	letter-spacing: -.035em;
+	line-height: 1.45;
+	text-align: left;
+	text-transform: none;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .wthree-top-grid p,
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid p {
+	margin: 10px 3px 2px;
+	color: #5a6e7b;
+	font-size: 13px;
+	line-height: 1.75;
+	text-align: left;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grids {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	align-items: stretch;
+	gap: 24px;
+	margin: 0;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grids::before,
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grids::after {
+	display: none;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid {
+	margin-bottom: 0;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid > img {
+	max-width: 100%;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid1 .what-top,
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid1 .what-top1,
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid1 .what-top2 {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	min-height: 74px;
+	margin: 0 0 12px;
+	padding: 15px 18px;
+	border: 1px solid rgba(16, 59, 89, .09);
+	border-radius: 14px;
+	background: #fff;
+	box-shadow: 0 8px 20px rgba(16, 59, 89, .045);
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid1 .what-left {
+	display: grid;
+	width: 38px;
+	height: 38px;
+	flex: 0 0 38px;
+	place-items: center;
+	border-radius: 12px;
+	color: #087cac;
+	background: #eaf6fc;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid1 .what-right {
+	flex: 1;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid1 .what-right h4 {
+	margin: 0;
+	color: #24485d;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.6;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls.product-kit .services-page > .container {
+	width: min(1120px, calc(100% - 40px));
+	max-width: 1120px;
+	margin: 0 auto;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls.product-kit .agileinfo-top-grids {
+	display: block;
+	width: 100%;
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls.product-kit .agileinfo-top-grids > .container {
+	width: 100%;
+	max-width: none;
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls.product-kit .what-grids {
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 24px;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls.product-kit .what-grid {
+	width: auto;
+	min-width: 0;
+}
+
+.page-hero[data-page-section="Produits"] ~ section.service-w3ls.product-kit .what-grid > img {
+	height: clamp(240px, 28vw, 340px);
+}
+
+@media (max-width: 900px) {
+	.page-hero[data-page-section="Produits"] ~ section.service-w3ls .agileinfo-top-grids {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 18px;
+	}
+
+	.page-hero[data-page-section="Produits"] ~ section.service-w3ls.product-kit .what-grids {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	.page-hero[data-page-section="Produits"] ~ section.service-w3ls.product-kit .what-grid > img {
+		height: clamp(230px, 42vw, 300px);
+	}
+}
+
+@media (max-width: 600px) {
+	.page-hero[data-page-section="Produits"] ~ section.service-w3ls {
+		padding: 46px 0 58px;
+	}
+
+	.page-hero[data-page-section="Produits"] ~ section.service-w3ls > h3 {
+		width: calc(100% - 36px);
+		margin: 0 auto 20px;
+		font-size: 25px;
+	}
+
+	.page-hero[data-page-section="Produits"] ~ section.service-w3ls .services-page > .container {
+		width: calc(100% - 32px);
+	}
+
+	.page-hero[data-page-section="Produits"] ~ section.service-w3ls .agileinfo-top-grids > .container {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
+	.page-hero[data-page-section="Produits"] ~ section.service-w3ls.product-kit .services-page > .container {
+		width: calc(100% - 32px);
+	}
+
+	.page-hero[data-page-section="Produits"] ~ section.service-w3ls .agileinfo-top-grids,
+	.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grids {
+		grid-template-columns: 1fr;
+		gap: 15px;
+	}
+
+	.page-hero[data-page-section="Produits"] ~ section.service-w3ls .wthree-top-grid,
+	.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid {
+		padding: 13px;
+		border-radius: 17px;
+	}
+
+	.page-hero[data-page-section="Produits"] ~ section.service-w3ls .wthree-top-grid img,
+	.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid > img {
+		height: 205px;
+		margin-bottom: 14px;
+		border-radius: 12px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.page-hero[data-page-section="Produits"] ~ section.service-w3ls .wthree-top-grid,
+	.page-hero[data-page-section="Produits"] ~ section.service-w3ls .what-grid {
+		transition: none;
+	}
+}

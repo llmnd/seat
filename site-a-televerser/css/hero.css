@@ -1,0 +1,459 @@
+/* =========================================================
+   SEAT Opus Global — Hero « nuit bleue » (css/hero.css)
+   Autonome : charger après homepage.css.
+   ========================================================= */
+
+.hx {
+	--hx-navy: #071e30;
+	--hx-navy-2: #0a2b43;
+	--hx-sky: #7fd3f7;
+	--hx-text: #a9c2d1;
+	position: relative;
+	overflow: hidden;
+	padding-block: clamp(48px, 6.5vw, 96px) clamp(56px, 6vw, 88px);
+	border-radius: 0 0 clamp(28px, 4vw, 56px) clamp(28px, 4vw, 56px);
+	color: #fff;
+	background:
+		radial-gradient(70% 55% at 50% 0%, rgba(0, 147, 217, .30), transparent 70%),
+		radial-gradient(45% 40% at 92% 72%, rgba(228, 118, 20, .10), transparent 70%),
+		linear-gradient(180deg, var(--hx-navy-2) 0%, var(--hx-navy) 100%);
+}
+
+/* Trame ultra discrète */
+.hx::before {
+	position: absolute;
+	inset: 0;
+	background-image:
+		linear-gradient(rgba(255, 255, 255, .035) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, .035) 1px, transparent 1px);
+	background-size: 76px 76px;
+	-webkit-mask-image: radial-gradient(ellipse 70% 55% at 50% 25%, #000, transparent 75%);
+	mask-image: radial-gradient(ellipse 70% 55% at 50% 25%, #000, transparent 75%);
+	content: "";
+	pointer-events: none;
+}
+
+.hx-container {
+	position: relative;
+	display: grid;
+	grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+	align-items: center;
+	column-gap: clamp(32px, 5vw, 68px);
+}
+
+/* ---------- Tête centrée ---------- */
+.hx-head {
+	display: flex;
+	flex-direction: column;
+	grid-column: 1;
+	grid-row: 1;
+	align-items: flex-start;
+	text-align: left;
+}
+
+.hx-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	margin: 0 0 clamp(24px, 3vw, 34px);
+	padding: 9px 18px;
+	border-radius: 999px;
+	color: #bcd3e0;
+	background: rgba(255, 255, 255, .07);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: .18em;
+	line-height: 1.3;
+	text-transform: uppercase;
+}
+
+.hx-pill span {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: var(--hx-sky);
+	box-shadow: 0 0 0 4px rgba(127, 211, 247, .18), 0 0 14px rgba(127, 211, 247, .8);
+}
+
+.hx h1 {
+	max-width: 16ch;
+	margin: 0;
+	color: #fff;
+	font-family: Manrope, Arial, sans-serif;
+	font-size: clamp(42px, 3.5vw, 52px);
+	font-weight: 500;
+	letter-spacing: -.06em;
+	line-height: 1.02;
+	text-wrap: balance;
+}
+
+.hx h1 em {
+	padding-right: .06em;
+	color: var(--hx-sky);
+	font-family: var(--serif);
+	font-style: italic;
+	font-weight: 400;
+	letter-spacing: -.045em;
+}
+
+.hx-copy {
+	max-width: 400px;
+	margin: clamp(18px, 2.4vw, 26px) 0 0;
+	color: var(--hx-text);
+	font-size: clamp(15px, 1.4vw, 17px);
+	line-height: 1.65;
+}
+
+.hx-actions {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	gap: 12px;
+	margin-top: clamp(26px, 3vw, 36px);
+}
+
+.hx-btn {
+	display: inline-flex;
+	min-height: 54px;
+	align-items: center;
+	gap: 16px;
+	padding: 0 10px 0 26px;
+	border-radius: 999px;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: .01em;
+	transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.hx-btn i {
+	display: grid;
+	width: 34px;
+	height: 34px;
+	place-items: center;
+	border-radius: 50%;
+	font-size: 16px;
+	font-style: normal;
+	line-height: 1;
+	transition: transform .25s ease;
+}
+
+.hx-btn:hover {
+	transform: translateY(-2px);
+}
+
+.hx-btn:hover i {
+	transform: translate(2px, -2px);
+}
+
+.hx-btn-dark {
+	color: var(--forest);
+	background: #fff;
+	box-shadow: 0 16px 36px rgba(0, 0, 0, .28);
+}
+
+.hx-btn-dark i {
+	color: #fff;
+	background: var(--brand-blue);
+}
+
+.hx-btn-dark:hover {
+	background: #eaf6fd;
+}
+
+.hx-btn-light {
+	color: #fff;
+	background: rgba(255, 255, 255, .08);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+}
+
+.hx-btn-light i {
+	color: #fff;
+	background: rgba(255, 255, 255, .14);
+}
+
+.hx-btn-light:hover {
+	background: rgba(255, 255, 255, .14);
+}
+
+/* ---------- Badge rotatif ---------- */
+.hx-badge {
+	position: absolute;
+	top: 6px;
+	right: 0;
+	display: grid;
+	width: 112px;
+	height: 112px;
+	place-items: center;
+	color: rgba(255, 255, 255, .7);
+}
+
+.hx-badge > svg:first-child {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	animation: hx-spin 28s linear infinite;
+}
+
+.hx-badge text {
+	fill: currentColor;
+	font-family: Manrope, Arial, sans-serif;
+	font-size: 8.4px;
+	font-weight: 700;
+	letter-spacing: .1em;
+}
+
+.hx-badge-sun {
+	width: 26px;
+	height: 26px;
+	color: #f59a4a;
+}
+
+@keyframes hx-spin {
+	to { transform: rotate(360deg); }
+}
+
+/* ---------- Scène image ---------- */
+.hx-stage {
+	position: relative;
+	grid-column: 2;
+	grid-row: 1;
+	isolation: isolate;
+}
+
+/* Halo lumineux derrière l'image */
+.hx-stage::before {
+	position: absolute;
+	inset: 12% 8% -8%;
+	z-index: -1;
+	border-radius: 50%;
+	background: rgba(0, 147, 217, .38);
+	filter: blur(90px);
+	content: "";
+}
+
+.hx-frame {
+	position: relative;
+	overflow: hidden;
+	width: min(100%, 650px);
+	height: auto;
+	aspect-ratio: 4 / 3;
+	margin-inline: auto;
+	border-radius: clamp(24px, 3vw, 36px);
+	background: var(--hx-navy-2);
+	box-shadow: 0 40px 90px rgba(0, 0, 0, .45);
+	isolation: isolate;
+}
+
+.hx-frame .hero-slide {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center 52%;
+	opacity: 0;
+	transform: scale(1.015);
+	transition: opacity .9s ease, transform 5.8s ease;
+}
+
+.hx-frame .hero-slide.is-active {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.hx-frame .hero-slide-pompage {
+	object-fit: contain;
+	object-position: center;
+	background: #e5edf0;
+}
+
+.hx-shade {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	background: linear-gradient(180deg, rgba(7, 30, 48, 0) 50%, rgba(7, 30, 48, .62) 100%);
+	pointer-events: none;
+}
+
+/* Contrôles du carrousel */
+.hx .hero-slide-controls {
+	position: absolute;
+	right: 50%;
+	bottom: clamp(16px, 2vw, 26px);
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	padding: 7px;
+	border-radius: 999px;
+	background: rgba(7, 30, 48, .5);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	translate: 50% 0;
+}
+
+.hx .hero-slide-controls button {
+	display: grid;
+	width: clamp(30px, 3vw, 36px);
+	height: clamp(30px, 3vw, 36px);
+	place-items: center;
+	border: 0;
+	border-radius: 50%;
+	color: rgba(255, 255, 255, .8);
+	background: transparent;
+	font: inherit;
+	font-size: 10px;
+	cursor: pointer;
+	transition: color .2s ease, background .2s ease;
+}
+
+.hx .hero-slide-controls button:hover {
+	color: #fff;
+	background: rgba(255, 255, 255, .14);
+}
+
+.hx .hero-slide-controls button[aria-pressed="true"] {
+	color: var(--forest);
+	background: #fff;
+}
+
+/* ---------- Pied du hero ---------- */
+.hx-foot {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	grid-column: 1 / -1;
+	grid-row: 2;
+	gap: 24px;
+	margin-top: 28px;
+}
+
+.hx-foot p {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	margin: 0;
+	color: #86a3b5;
+	font-size: 13px;
+	line-height: 1.55;
+}
+
+.hx-foot p:last-child {
+	text-align: right;
+}
+
+.hx-foot p span {
+	width: 28px;
+	height: 1px;
+	background: rgba(255, 255, 255, .35);
+}
+
+/* ---------- Tablette ---------- */
+@media (max-width: 900px) {
+	.hx-container {
+		grid-template-columns: minmax(0, 1fr);
+		row-gap: 0;
+	}
+
+	.hx-head {
+		grid-column: 1;
+		grid-row: 1;
+		align-items: center;
+		text-align: center;
+	}
+
+	.hx h1 {
+		max-width: 14ch;
+		font-size: clamp(44px, 7.4vw, 76px);
+	}
+
+	.hx-actions {
+		justify-content: center;
+	}
+
+	.hx-stage {
+		grid-column: 1;
+		grid-row: 2;
+		width: min(100%, 760px);
+		margin: clamp(40px, 5vw, 56px) auto 0;
+	}
+
+	.hx-foot {
+		grid-row: 3;
+	}
+
+	.hx-badge {
+		display: none;
+	}
+
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 680px) {
+	.hx {
+		padding-block: 36px 48px;
+	}
+
+	.hx-pill {
+		padding: 8px 14px;
+		font-size: 10px;
+		letter-spacing: .12em;
+	}
+
+	.hx-actions {
+		width: 100%;
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.hx-btn {
+		justify-content: space-between;
+	}
+
+	.hx-stage {
+		margin-top: 52px;
+	}
+
+	.hx-frame {
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		border-radius: 22px;
+	}
+
+	.hx .hero-slide-controls {
+		right: 50%;
+		bottom: 12px;
+		max-width: calc(100% - 24px);
+		gap: 2px;
+		padding: 5px;
+		translate: 50% 0;
+	}
+
+	.hx .hero-slide-controls button {
+		width: clamp(27px, 8vw, 34px);
+		height: clamp(27px, 8vw, 34px);
+		font-size: 9px;
+	}
+
+	.hx-foot {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 12px;
+		margin-top: 26px;
+	}
+
+	.hx-foot p:last-child {
+		text-align: left;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hx-badge > svg:first-child {
+		animation: none;
+	}
+}
