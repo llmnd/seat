@@ -43,7 +43,7 @@
 	<div class="quote-cta__panel" id="quote-contact-panel" role="tabpanel" aria-labelledby="quote-tab-whatsapp" aria-live="polite">
 		<p data-quote-description>Complétez les détails si vous le souhaitez, puis écrivez-nous directement au +235 66 17 30 93.</p>
 		<a class="quote-cta__action" href="https://wa.me/23566173093?text=Bonjour%2C%20je%20souhaite%20obtenir%20un%20devis%20pour%20mon%20projet." target="_blank" rel="noopener noreferrer" data-quote-link>
-			<span data-quote-link-label>Demander un devis sur WhatsApp</span><span aria-hidden="true">↗</span>
+			<span data-quote-link-label>Demander un devis sur WhatsApp</span><span aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
 		</a>
 	</div>
 </div>

@@ -1987,6 +1987,19 @@ summary:focus-visible {
 	transition: transform .25s var(--sx-ease);
 }
 
+.sx-btn > span svg,
+.sx-link > svg,
+.sx-panel-go svg,
+.sx-project-name > span svg {
+	width: 18px;
+	height: 18px;
+	fill: none;
+	stroke: currentColor;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 1.8;
+}
+
 .sx-btn:hover {
 	background: var(--sx-deep);
 	transform: translateY(-2px);

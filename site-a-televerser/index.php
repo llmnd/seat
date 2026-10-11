@@ -34,8 +34,8 @@
 					<h1 id="hero-title">L’énergie de demain,<br><em>pensée pour durer.</em></h1>
 					<p class="hx-copy">Des solutions fiables, pensées pour vos projets.</p>
 					<div class="hx-actions">
-						<a class="hx-btn hx-btn-dark" href="contact.php">Parlons de votre projet <i aria-hidden="true">↗</i></a>
-						<a class="hx-btn hx-btn-light" href="realisationSolaire.php">Voir nos réalisations <i aria-hidden="true">→</i></a>
+						<a class="hx-btn hx-btn-dark" href="contact.php">Parlons de votre projet <i aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></i></a>
+						<a class="hx-btn hx-btn-light" href="realisationSolaire.php">Voir nos réalisations <i aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M5 12h14m-7-7 7 7-7 7"/></svg></i></a>
 					</div>
 				</div>
 
@@ -79,7 +79,7 @@
 							<span><i aria-hidden="true">✓</i> Gratuit, sans inscription</span>
 						</div>
 						<a class="sa-cta sa-promo-cta" href="contact.php" data-nour-open>
-							Parler avec Nour <span aria-hidden="true">↗</span>
+							Parler avec Nour <span aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
 						</a>
 					</div>
 					<div class="sa-hero-assistant">
@@ -106,7 +106,7 @@
 						<span class="sx-panel-icon" aria-hidden="true">
 							<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="1.7"/><path d="M24 4v6m0 28v6M4 24h6m28 0h6M9.86 9.86l4.24 4.24m19.8 19.8 4.24 4.24m0-28.28-4.24 4.24m-19.8 19.8-4.24 4.24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
 						</span>
-						<span class="sx-panel-go" aria-hidden="true">↗</span>
+						<span class="sx-panel-go" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
 						<span class="sx-panel-body">
 							<span class="sx-panel-title">Énergie solaire</span>
 							<span class="sx-panel-more"><span class="sx-panel-more-inner">
@@ -121,7 +121,7 @@
 						<span class="sx-panel-icon" aria-hidden="true">
 							<svg viewBox="0 0 48 48" fill="none"><path d="M27.5 4 11 26h11l-1.5 18L37 21H25l2.5-17Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
 						</span>
-						<span class="sx-panel-go" aria-hidden="true">↗</span>
+						<span class="sx-panel-go" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
 						<span class="sx-panel-body">
 							<span class="sx-panel-title">Électricité générale</span>
 							<span class="sx-panel-more"><span class="sx-panel-more-inner">
@@ -136,7 +136,7 @@
 						<span class="sx-panel-icon" aria-hidden="true">
 							<svg viewBox="0 0 48 48" fill="none"><path d="M24 5s13 14 13 24a13 13 0 1 1-26 0C11 19 24 5 24 5Z" stroke="currentColor" stroke-width="1.7"/><path d="M18 30c.7 3 2.6 4.7 5.8 5.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
 						</span>
-						<span class="sx-panel-go" aria-hidden="true">↗</span>
+						<span class="sx-panel-go" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
 						<span class="sx-panel-body">
 							<span class="sx-panel-title">Pompage solaire</span>
 							<span class="sx-panel-more"><span class="sx-panel-more-inner">
@@ -175,7 +175,7 @@
 							Des techniciens qualifiés et habilités
 						</li>
 					</ul>
-					<a class="sx-btn" href="service.php">En savoir plus sur nos services <span aria-hidden="true">↗</span></a>
+					<a class="sx-btn" href="service.php">En savoir plus sur nos services <span aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
 				</div>
 			</div>
 
@@ -205,7 +205,7 @@
 			<div class="container">
 				<div class="sx-head">
 					<h2 class="sx-title" id="projects-title">Des projets qui prennent<br><em>vie avec le soleil.</em></h2>
-					<a class="sx-link" href="realisations.php">Toutes nos réalisations <span aria-hidden="true">↗</span></a>
+					<a class="sx-link" href="realisations.php">Toutes nos réalisations <svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
 				</div>
 
 				<div class="sx-projects-grid">
@@ -214,7 +214,7 @@
 						<span class="sx-project-kw" aria-label="Puissance du projet : 100 kilowatts">100 kW</span>
 						<span class="sx-project-body">
 							<span class="sx-project-tag">Solaire · Santé</span>
-							<span class="sx-project-name">Une centrale solaire pour un hôpital de district <span aria-hidden="true">↗</span></span>
+							<span class="sx-project-name">Une centrale solaire pour un hôpital de district <span aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></span>
 						</span>
 					</a>
 
@@ -222,7 +222,7 @@
 						<img src="images/pompage1.PNG" alt="Projet de pompage solaire sur le terrain" loading="lazy">
 						<span class="sx-project-body">
 							<span class="sx-project-tag">Pompage solaire</span>
-							<span class="sx-project-name">L’énergie au service de l’eau <span aria-hidden="true">↗</span></span>
+							<span class="sx-project-name">L’énergie au service de l’eau <span aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></span>
 						</span>
 					</a>
 
@@ -230,7 +230,7 @@
 						<img src="images/realisation1.PNG" alt="Équipement solaire installé par l’équipe SEAT" loading="lazy">
 						<span class="sx-project-body">
 							<span class="sx-project-tag">Éclairage</span>
-							<span class="sx-project-name">Des solutions pour chaque espace <span aria-hidden="true">↗</span></span>
+							<span class="sx-project-name">Des solutions pour chaque espace <span aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></span>
 						</span>
 					</a>
 				</div>

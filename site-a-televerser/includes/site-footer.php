@@ -15,6 +15,10 @@
 				<a href="https://www.facebook.com/search/top/?q=seat%20opus%20global" aria-label="Facebook">Facebook</a>
 				<a href="https://www.linkedin.com/" aria-label="LinkedIn">LinkedIn</a>
 				<a href="https://twitter.com/?lang=fr" aria-label="X (Twitter)">X</a>
+				<a href="https://www.tiktok.com/@seat_opusglobal?_r=1&amp;_t=ZS-9ATaj28XNQK" aria-label="TikTok SEAT Opus Global" target="_blank" rel="noopener noreferrer">
+					<svg class="site-footer__social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.6 7.1a6.4 6.4 0 0 1-4.2-2V15a5.3 5.3 0 1 1-4.6-5.25v3.18a2.2 2.2 0 1 0 1.5 2.07V2h3.2c.2 2.2 1.7 3.9 4.1 4.2v.9Z"/></svg>
+					TikTok
+				</a>
 			</div>
 		</div>
 	</div>
@@ -32,7 +36,7 @@
 		</div>
 		<div class="site-footer__column">
 			<h2>Nous contacter</h2>
-			<a href="contact.php">Écrire à notre équipe <span aria-hidden="true">↗</span></a>
+			<a href="contact.php">Écrire à notre équipe <span aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
 		</div>
 	</div>
 	<div class="site-footer__bottom">

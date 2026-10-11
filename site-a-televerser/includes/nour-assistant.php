@@ -25,6 +25,7 @@
 
 			<aside class="sa-viz" data-sa-viz data-state="idle" aria-label="Simulation d’une journée solaire">
 				<p class="sa-viz-title">Une journée avec vos panneaux</p>
+				<p class="sa-viz-source" data-sa-source aria-live="polite">Choisissez le lieu et l’orientation pour afficher une estimation solaire locale.</p>
 				<div class="sa-chart" data-sa-chart></div>
 				<div class="sa-time">
 					<input class="sa-range" type="range" min="0" max="24" step="0.25" value="12" data-sa-hour aria-label="Heure de la journée" disabled>
@@ -33,15 +34,16 @@
 				<ul class="sa-legend">
 					<li><i style="background:#ffbb72"></i> Production solaire</li>
 					<li><i style="background:#7fd3f7"></i> Consommation de jour</li>
-					<li><i style="background:#0093d9"></i> Batterie, le soir et la nuit</li>
+					<li><i style="background:#0093d9"></i> Consommation du soir et de la nuit</li>
 				</ul>
 				<p class="sa-viz-note">Répondez à Nour : votre journée solaire se dessine ici.</p>
 				<dl class="sa-metrics">
 					<div><dt>Panneaux solaires</dt><dd data-out="panels">—</dd><small data-out="panels-sub"></small></div>
 					<div><dt>Batterie</dt><dd data-out="battery">—</dd><small data-out="battery-sub"></small></div>
 					<div><dt>Onduleur</dt><dd data-out="inverter">—</dd><small data-out="inverter-sub"></small></div>
-					<div><dt>Production moyenne</dt><dd data-out="energy">—</dd><small data-out="energy-sub"></small></div>
+					<div><dt>Production journalière</dt><dd data-out="energy">—</dd><small data-out="energy-sub"></small></div>
 				</dl>
+				<div class="sa-comparison" data-sa-comparison hidden></div>
 				<details class="sa-how">
 					<summary>Comment c’est calculé</summary>
 					<div data-sa-how></div>
