@@ -1,7 +1,5 @@
 <button class="sa-launcher" type="button" data-nour-launcher aria-label="Ouvrir l’assistant solaire Nour" aria-haspopup="dialog" aria-controls="nour-dialog" hidden>
 	<img src="images/nour-assistant.svg" alt="" aria-hidden="true">
-	<span class="sa-launcher-copy"><strong>Besoin d’aide ?</strong><small>Parler avec Nour</small></span>
-	<span class="sa-launcher-online" aria-hidden="true"></span>
 </button>
 
 <div class="sa-widget-backdrop" data-nour-backdrop hidden>

@@ -33,6 +33,7 @@
 			<a href="service.php">Nos services</a>
 			<a href="realisations.php">Nos réalisations</a>
 			<a href="index.php#apropos">L’entreprise</a>
+			<a href="index.php#preparer-projet">Préparer un projet</a>
 		</div>
 		<div class="site-footer__column">
 			<h2>Nous contacter</h2>

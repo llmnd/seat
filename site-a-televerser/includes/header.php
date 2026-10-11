@@ -56,9 +56,9 @@ $realisationPages = ['realisations.php', 'realisationSolaire.php', 'realisationP
 						<a href="realisationLampadaire.php">Lampadaire solaire</a>
 					</div>
 				</details>
+				<a href="index.php#preparer-projet">Préparer un projet</a>
 				<a href="contact.php"<?php if ($currentPage === 'contact.php') echo ' aria-current="page"'; ?>>Contact</a>
 			</nav>
-			<a class="seat-header__cta" href="contact.php">Demander un devis</a>
 			<details class="seat-header__mobile-menu">
 				<summary aria-label="Ouvrir le menu"><span></span><span></span></summary>
 				<nav aria-label="Navigation mobile">
@@ -86,8 +86,8 @@ $realisationPages = ['realisations.php', 'realisationSolaire.php', 'realisationP
 						<a href="realisationPompage.php"<?php if ($currentPage === 'realisationPompage.php') echo ' aria-current="page"'; ?>>Pompage solaire</a>
 						<a href="realisationLampadaire.php"<?php if ($currentPage === 'realisationLampadaire.php') echo ' aria-current="page"'; ?>>Lampadaire solaire</a>
 					</details>
+					<a href="index.php#preparer-projet">Préparer un projet</a>
 					<a href="contact.php"<?php if ($currentPage === 'contact.php') echo ' aria-current="page"'; ?>>Contact</a>
-					<a class="seat-mobile-cta" href="contact.php">Demander un devis</a>
 				</nav>
 			</details>
 		</div>

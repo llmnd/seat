@@ -10,6 +10,9 @@ document.querySelectorAll("[data-quote-choice]").forEach((choice) => {
 			.map((field) => [field.dataset.quoteField, field])
 	);
 	const quoteParams = new URLSearchParams(window.location.search);
+	const requestedProjectType = quoteParams.get("project_type");
+	const requestedCity = quoteParams.get("city");
+	const requestedDetails = quoteParams.get("details");
 	const estimateDaily = Number(quoteParams.get("daily_kwh")?.replace(",", "."));
 	const estimatePanelMin = Number(quoteParams.get("panel_min")?.replace(",", "."));
 	const estimatePanelMax = Number(quoteParams.get("panel_max")?.replace(",", "."));
@@ -72,6 +75,12 @@ document.querySelectorAll("[data-quote-choice]").forEach((choice) => {
 	if (hasSolarEstimate && fields.type.value === "") {
 		fields.type.value = "Énergie solaire";
 	}
+	if (fields.type.value === "" && requestedProjectType
+		&& Array.from(fields.type.options).some((option) => option.value === requestedProjectType || option.textContent.trim() === requestedProjectType)) {
+		fields.type.value = requestedProjectType;
+	}
+	if (fields.city.value === "" && requestedCity) fields.city.value = requestedCity;
+	if (fields.details.value === "" && requestedDetails) fields.details.value = requestedDetails;
 
 	const methods = {
 		whatsapp: {

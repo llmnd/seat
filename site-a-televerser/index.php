@@ -12,7 +12,9 @@
 	<link rel="stylesheet" href="css/hero.css?v=8">
 	<link rel="stylesheet" href="css/site-header.css">
 	<link rel="stylesheet" href="css/sections.css?v=2">
+	<link rel="stylesheet" href="css/project-planner.css?v=2">
 	<script src="js/home-hero.js?v=2" defer></script>
+	<script src="js/project-planner.js?v=1" defer></script>
 </head>
 <body>
 	<?php require __DIR__ . '/includes/header.php'; ?>
@@ -233,6 +235,94 @@
 							<span class="sx-project-name">Des solutions pour chaque espace <span aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></span>
 						</span>
 					</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="project-planner" id="preparer-projet" data-project-planner aria-labelledby="planner-title">
+			<div class="project-planner__print-brand" aria-hidden="true">
+				<img src="images/logo1.jfif" alt="">
+				<div><strong>SEAT Opus Global</strong><span>Carnet de préparation de projet</span></div>
+			</div>
+			<div class="container project-planner__layout">
+				<div class="project-planner__intro">
+					<p class="project-planner__eyebrow"><span aria-hidden="true"></span> Votre projet, mieux préparé</p>
+					<h2 id="planner-title">Faisons le point<br><em>sur vos besoins.</em></h2>
+					<p>En quelques choix, préparez un brief clair à transmettre à notre équipe. Pas de calcul automatique : ces informations nous aident à mieux comprendre votre demande.</p>
+					<ol class="project-planner__steps" aria-label="Étapes du carnet de projet">
+						<li><span>01</span> Décrivez votre projet</li>
+						<li><span>02</span> Choisissez vos priorités</li>
+						<li><span>03</span> Partagez votre récapitulatif</li>
+					</ol>
+					<p class="project-planner__privacy">Vos réponses restent dans votre navigateur jusqu’à ce que vous choisissiez de les partager.</p>
+				</div>
+
+				<div class="project-planner__card">
+					<form data-planner-form>
+						<label class="project-planner__field">
+							<span>Quel type de projet préparez-vous ?</span>
+							<select name="type" required>
+								<option value="">Choisir un domaine</option>
+								<option value="Énergie solaire">Énergie solaire</option>
+								<option value="Pompage solaire">Pompage solaire</option>
+								<option value="Électricité générale">Électricité générale</option>
+								<option value="Éclairage solaire">Éclairage solaire</option>
+								<option value="Autre besoin">Autre besoin</option>
+							</select>
+						</label>
+
+						<div class="project-planner__fields">
+							<label class="project-planner__field">
+								<span>Ville du projet</span>
+								<input name="city" type="text" autocomplete="address-level2" maxlength="100" placeholder="Ex. N’Djamena" required>
+							</label>
+							<label class="project-planner__field">
+								<span>Où en êtes-vous ?</span>
+								<select name="stage">
+									<option value="Je découvre les solutions possibles">Je découvre les solutions possibles</option>
+									<option value="J’ai déjà un site ou un bâtiment">J’ai déjà un site ou un bâtiment</option>
+									<option value="J’ai des informations techniques">J’ai des informations techniques</option>
+									<option value="Je souhaite planifier une visite">Je souhaite planifier une visite</option>
+								</select>
+							</label>
+						</div>
+
+						<fieldset class="project-planner__priorities">
+							<legend>Quelles sont vos priorités ? <span>Plusieurs choix possibles</span></legend>
+							<label><input type="checkbox" name="priority" value="Assurer une alimentation électrique plus régulière"><span>Assurer une alimentation plus régulière</span></label>
+							<label><input type="checkbox" name="priority" value="Réduire la dépendance au réseau ou au carburant"><span>Réduire la dépendance au réseau ou au carburant</span></label>
+							<label><input type="checkbox" name="priority" value="Alimenter une pompe ou sécuriser l’accès à l’eau"><span>Alimenter une pompe ou sécuriser l’accès à l’eau</span></label>
+							<label><input type="checkbox" name="priority" value="Améliorer l’éclairage d’un espace"><span>Améliorer l’éclairage d’un espace</span></label>
+							<label><input type="checkbox" name="priority" value="Installer ou mettre aux normes une installation électrique"><span>Installer ou mettre aux normes une installation électrique</span></label>
+						</fieldset>
+
+						<label class="project-planner__field">
+							<span>Un détail utile à préciser ? <span>Facultatif</span></span>
+							<textarea name="details" rows="3" maxlength="600" placeholder="Ex. type de bâtiment, équipement à alimenter, contrainte particulière…"></textarea>
+						</label>
+
+						<div class="project-planner__preview" aria-labelledby="planner-preview-title">
+							<div class="project-planner__preview-head">
+								<span class="project-planner__preview-icon" aria-hidden="true">
+									<svg viewBox="0 0 24 24" fill="none"><path d="M7 3h7l5 5v13H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 3v5h5M9 13h6M9 17h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+								</span>
+								<div><h3 id="planner-preview-title">Votre carnet de projet</h3><p>Le récapitulatif se met à jour avec vos réponses.</p></div>
+							</div>
+							<div class="project-planner__summary" data-planner-summary>
+								<p>Choisissez un domaine et indiquez la ville pour commencer votre brief.</p>
+							</div>
+							<p class="project-planner__status" data-planner-status aria-live="polite"></p>
+							<div class="project-planner__actions">
+								<button type="button" class="project-planner__button project-planner__button--primary" data-planner-whatsapp disabled>
+									<span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 9.2c.5 2 1.8 3.3 3.8 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+									Préparer sur WhatsApp
+								</button>
+								<button type="button" class="project-planner__button" data-planner-copy disabled>Copier le brief</button>
+								<button type="button" class="project-planner__button" data-planner-print disabled>Imprimer / PDF</button>
+								<a class="project-planner__text-link" href="contact.php" data-planner-contact>Compléter une demande de devis <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</section>
