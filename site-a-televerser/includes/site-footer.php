@@ -20,7 +20,7 @@
 	</div>
 	<div class="site-footer__main">
 		<div class="site-footer__brand">
-			<a href="index.php" aria-label="SEAT Opus Global — accueil"><img src="images/logo1.jpg" alt="SEAT Opus Global"></a>
+			<a href="index.php" aria-label="SEAT Opus Global — accueil"><img src="images/logo1.jfif" alt="SEAT Opus Global"></a>
 			<p>Des solutions énergétiques et électriques pensées autour de vos besoins.</p>
 		</div>
 		<div class="site-footer__column">
