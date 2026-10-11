@@ -144,7 +144,7 @@
 }
 
 .sa-widget-dialog .sa-grid {
-	grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+	grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
 	gap: 20px;
 }
 
@@ -189,8 +189,8 @@
 }
 
 .sa-widget-dialog .sa-log {
-	min-height: 250px;
-	max-height: min(48vh, 490px);
+	min-height: 320px;
+	max-height: min(58vh, 560px);
 	overflow-y: auto;
 	padding-right: 4px;
 }
@@ -1242,8 +1242,8 @@
 	}
 
 	.sa-widget-dialog .sa-log {
-		min-height: 190px;
-		max-height: 38dvh;
+		min-height: 280px;
+		max-height: 52dvh;
 	}
 
 	.sa-widget-dialog .sa-widget-agent .sa-avatar {
