@@ -11,13 +11,197 @@
 	<link rel="stylesheet" href="css/site-header.css">
 	<link rel="stylesheet" href="css/pages.css">
 	<link rel="stylesheet" href="css/solar-tools.css?v=1">
+	<link rel="stylesheet" href="css/realisation-reveal.css?v=1">
 	<?php require __DIR__ . '/includes/site-fonts.php'; ?>
 	<script src="js/solar-tools.js?v=1" defer></script>
+	<script src="js/realisation-reveal.js?v=1" defer></script>
 </head>
 <body>
 	<?php require __DIR__ . '/includes/header.php'; ?>
 	<main>
 		<?php require __DIR__ . '/includes/page-intro.php'; ?>
+		<section class="realisation-reveal" data-realisation-reveal aria-labelledby="realisation-reveal-title">
+			<div class="realisation-reveal__layout">
+				<div class="realisation-reveal__copy">
+					<p class="realisation-reveal__eyebrow"><span aria-hidden="true"></span> Une réalisation à découvrir</p>
+					<h2 id="realisation-reveal-title">Du site à équiper<br><em>à l’énergie en action.</em></h2>
+					<p>Parcourez nos réalisations solaires, de pompage et d’éclairage. Choisissez une photo, puis faites glisser le curseur pour la découvrir.</p>
+					<p class="realisation-reveal__note">Le visuel en regard est une illustration pédagogique d’un site à équiper, pas une photo « avant » prise sur le projet.</p>
+					<a class="realisation-reveal__link" href="realisationSolaire.php">Explorer les réalisations solaires
+						<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+					</a>
+				</div>
+
+				<figure class="realisation-reveal__figure">
+					<div class="realisation-reveal__viewport" data-reveal-viewport>
+						<div class="realisation-reveal__illustration" aria-hidden="true">
+							<svg viewBox="0 0 960 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<defs>
+									<linearGradient id="reveal-sky" x1="480" y1="0" x2="480" y2="600" gradientUnits="userSpaceOnUse">
+										<stop stop-color="#B9DCEB"/>
+										<stop offset=".72" stop-color="#E7F0E9"/>
+										<stop offset="1" stop-color="#D7E5D9"/>
+									</linearGradient>
+									<linearGradient id="reveal-roof" x1="480" y1="270" x2="480" y2="600" gradientUnits="userSpaceOnUse">
+										<stop stop-color="#C6D0CE"/>
+										<stop offset="1" stop-color="#8F9F9F"/>
+									</linearGradient>
+									<radialGradient id="reveal-glow">
+										<stop stop-color="#FFF4D0" stop-opacity=".88"/>
+										<stop offset="1" stop-color="#FFF4D0" stop-opacity="0"/>
+									</radialGradient>
+								</defs>
+								<rect width="960" height="600" fill="url(#reveal-sky)"/>
+								<circle cx="790" cy="112" r="139" fill="url(#reveal-glow)"/>
+								<circle cx="790" cy="112" r="29" fill="#F6C769"/>
+								<path d="M0 347 172 282l163 66 182-97 182 88 139-61 122 42v280H0V347Z" fill="#91B1A2" fill-opacity=".58"/>
+								<path d="m0 413 172-64 169 66 178-94 181 88 138-59 122 43v207H0V413Z" fill="#6E9485" fill-opacity=".35"/>
+								<path d="M129 261h700v153H129V261Z" fill="#E9E7DD"/>
+								<path d="M105 258h748l-31-34H137l-32 34Z" fill="#D2D8D2"/>
+								<path d="M148 281h660v113H148V281Z" fill="#DCE4DF"/>
+								<path d="M148 281h660" stroke="#C3CEC8" stroke-width="4"/>
+								<path d="M175 309h124v85H175v-85Zm153 0h124v85H328v-85Zm153 0h124v85H481v-85Zm153 0h124v85H634v-85Z" fill="#CFDAD4"/>
+								<path d="M194 328h86m-86 17h86m-86 17h86m-86 17h86m-67-51v51m27-51v51m27-51v51m-27-51h-86v51h86m67-51v51m27-51v51m27-51v51m-27-51h-86v51h86m67-51v51m27-51v51m27-51v51m-27-51h-86v51h86m67-51v51m27-51v51m27-51v51m-27-51h-86v51h86" stroke="#BBCAC4" stroke-width="2"/>
+								<path d="M96 415h768l96 185H0l96-185Z" fill="url(#reveal-roof)"/>
+								<path d="M96 415h768" stroke="#F8FAF8" stroke-opacity=".8" stroke-width="5"/>
+								<path d="m96 415-58 111h880l-58-111" stroke="#E1E8E4" stroke-opacity=".45" stroke-width="3"/>
+								<path d="M242 483h476m-515 47h554m-594 47h633" stroke="#7D9290" stroke-opacity=".36" stroke-width="3"/>
+								<path d="m479 420-30 99m42-99 8 99m-19-99-82 99m118-99 83 99" stroke="#758987" stroke-opacity=".55" stroke-width="3"/>
+								<rect x="581" y="176" width="17" height="48" rx="2" fill="#B8C9C4"/>
+								<path d="M578 176h23l-4-9h-15l-4 9Z" fill="#D3DFD9"/>
+								<path d="M96 600h768" stroke="#FFF" stroke-opacity=".5" stroke-width="5"/>
+								<g fill="#fff" fill-opacity=".7">
+									<circle cx="115" cy="119" r="3"/><circle cx="310" cy="86" r="2"/>
+									<circle cx="422" cy="153" r="3"/><circle cx="661" cy="78" r="2"/>
+									<circle cx="877" cy="206" r="3"/>
+								</g>
+							</svg>
+						</div>
+						<div class="realisation-reveal__after" data-reveal-after>
+							<img src="images/solaire1.PNG" alt="Techniciens de SEAT installant des panneaux photovoltaïques sur le toit d’un établissement de santé" decoding="async">
+						</div>
+						<span class="realisation-reveal__label realisation-reveal__label--after" data-reveal-photo-label aria-hidden="true">Installation · énergie solaire</span>
+						<span class="realisation-reveal__label realisation-reveal__label--before" aria-hidden="true">Illustration pédagogique</span>
+						<span class="realisation-reveal__divider" data-reveal-divider aria-hidden="true">
+							<span><svg viewBox="0 0 24 24" focusable="false"><path d="m14 7-5 5 5 5M10 7l5 5-5 5"/></svg></span>
+						</span>
+						<label class="realisation-reveal__visually-hidden" for="realisation-reveal-range">Déplacer le curseur pour révéler la photo sélectionnée sur l’illustration pédagogique</label>
+						<input id="realisation-reveal-range" class="realisation-reveal__range" data-reveal-range type="range" min="0" max="100" value="50" step="1" aria-valuetext="Moitié illustration, moitié photo du projet">
+					</div>
+					<figcaption class="realisation-reveal__caption">
+						<span data-reveal-caption-title>Une centrale solaire prend forme sur le terrain.</span>
+						<span data-reveal-caption-detail>Énergie solaire · établissement de santé</span>
+					</figcaption>
+				</figure>
+				<div class="realisation-reveal__gallery" data-reveal-gallery>
+					<div class="realisation-reveal__gallery-heading">
+						<h3>Quelques réalisations en images</h3>
+						<p>Choisissez un domaine, puis une photo pour l’afficher en grand.</p>
+					</div>
+					<div class="realisation-reveal__categories" role="group" aria-label="Choisir un domaine de réalisation">
+						<button type="button" data-reveal-category="solaire" aria-controls="realisation-photos-solaire" aria-pressed="true">Solaire</button>
+						<button type="button" data-reveal-category="pompage" aria-controls="realisation-photos-pompage" aria-pressed="false">Pompage</button>
+						<button type="button" data-reveal-category="eclairage" aria-controls="realisation-photos-eclairage" aria-pressed="false">Éclairage</button>
+					</div>
+					<div class="realisation-reveal__photos" id="realisation-photos-solaire" data-reveal-photos data-category="solaire">
+						<button class="realisation-reveal__photo is-active" type="button" data-reveal-photo
+							data-src="images/solaire1.PNG"
+							data-alt="Techniciens de SEAT installant des panneaux photovoltaïques sur le toit d’un établissement de santé"
+							data-caption="Une centrale solaire prend forme sur le terrain."
+							data-detail="Énergie solaire · établissement de santé"
+							data-label="Installation · énergie solaire"
+							aria-pressed="true">
+							<img src="images/solaire1.PNG" alt="" loading="lazy" decoding="async">
+							<span>Installation solaire</span>
+						</button>
+						<button class="realisation-reveal__photo" type="button" data-reveal-photo
+							data-src="images/solaire3.PNG"
+							data-alt="Équipe SEAT travaillant sur une installation photovoltaïque"
+							data-caption="Des équipes mobilisées pour l’installation."
+							data-detail="Énergie solaire · installation photovoltaïque"
+							data-label="Équipe · installation solaire"
+							aria-pressed="false">
+							<img src="images/solaire3.PNG" alt="" loading="lazy" decoding="async">
+							<span>Équipe sur site</span>
+						</button>
+						<button class="realisation-reveal__photo" type="button" data-reveal-photo
+							data-src="images/solaire5.PNG"
+							data-alt="Panneaux photovoltaïques d’une installation solaire réalisée par SEAT"
+							data-caption="Des panneaux photovoltaïques installés sur le site."
+							data-detail="Énergie solaire · équipements photovoltaïques"
+							data-label="Panneaux · installation solaire"
+							aria-pressed="false">
+							<img src="images/solaire5.PNG" alt="" loading="lazy" decoding="async">
+							<span>Panneaux installés</span>
+						</button>
+					</div>
+					<div class="realisation-reveal__photos" id="realisation-photos-pompage" data-reveal-photos data-category="pompage" hidden>
+						<button class="realisation-reveal__photo is-active" type="button" data-reveal-photo
+							data-src="images/pompage1.PNG"
+							data-alt="Techniciens SEAT réalisant des travaux sur une installation de pompage solaire"
+							data-caption="Une équipe réalise les travaux sur le terrain."
+							data-detail="Pompage solaire · installation sur site"
+							data-label="Équipe · pompage solaire"
+							aria-pressed="true">
+							<img src="images/pompage1.PNG" alt="" loading="lazy" decoding="async">
+							<span>Travaux sur site</span>
+						</button>
+						<button class="realisation-reveal__photo" type="button" data-reveal-photo
+							data-src="images/pompage2.PNG"
+							data-alt="Équipement de pompage solaire préparé pour son installation"
+							data-caption="Les équipements sont préparés pour l’installation."
+							data-detail="Pompage solaire · préparation des équipements"
+							data-label="Équipements · pompage solaire"
+							aria-pressed="false">
+							<img src="images/pompage2.PNG" alt="" loading="lazy" decoding="async">
+							<span>Équipements</span>
+						</button>
+						<button class="realisation-reveal__photo" type="button" data-reveal-photo
+							data-src="images/pompage3.PNG"
+							data-alt="Installation de pompage solaire réalisée par les équipes SEAT"
+							data-caption="Une solution de pompage solaire installée."
+							data-detail="Pompage solaire · réalisation SEAT"
+							data-label="Installation · pompage solaire"
+							aria-pressed="false">
+							<img src="images/pompage3.PNG" alt="" loading="lazy" decoding="async">
+							<span>Pompage solaire</span>
+						</button>
+					</div>
+					<div class="realisation-reveal__photos" id="realisation-photos-eclairage" data-reveal-photos data-category="eclairage" hidden>
+						<button class="realisation-reveal__photo is-active" type="button" data-reveal-photo
+							data-src="images/realisation2.PNG"
+							data-alt="Technicien SEAT installant un lampadaire solaire"
+							data-caption="Un lampadaire solaire installé par nos équipes."
+							data-detail="Éclairage solaire · lampadaire"
+							data-label="Installation · éclairage solaire"
+							aria-pressed="true">
+							<img src="images/realisation2.PNG" alt="" loading="lazy" decoding="async">
+							<span>Installation</span>
+						</button>
+						<button class="realisation-reveal__photo" type="button" data-reveal-photo
+							data-src="images/realisation.PNG"
+							data-alt="Technicien SEAT travaillant sur un lampadaire solaire"
+							data-caption="Une intervention sur un équipement d’éclairage solaire."
+							data-detail="Éclairage solaire · intervention sur site"
+							data-label="Équipe · éclairage solaire"
+							aria-pressed="false">
+							<img src="images/realisation.PNG" alt="" loading="lazy" decoding="async">
+							<span>Intervention</span>
+						</button>
+						<button class="realisation-reveal__photo" type="button" data-reveal-photo
+							data-src="images/realisation1.PNG"
+							data-alt="Équipement d’éclairage solaire installé par SEAT Opus Global"
+							data-caption="Un équipement d’éclairage solaire prêt à l’usage."
+							data-detail="Éclairage solaire · réalisation SEAT"
+							data-label="Équipement · éclairage solaire"
+							aria-pressed="false">
+							<img src="images/realisation1.PNG" alt="" loading="lazy" decoding="async">
+							<span>Éclairage solaire</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</section>
 		<section class="realisation-gallery" data-realisation-filters aria-labelledby="realisation-gallery-title">
 			<div class="container">
 				<div class="realisation-gallery__heading">

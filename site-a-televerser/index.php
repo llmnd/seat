@@ -359,65 +359,133 @@
 				<div class="project-planner__intro">
 					<p class="project-planner__eyebrow"><span aria-hidden="true"></span> Votre projet, mieux préparé</p>
 					<h2 id="planner-title">Faisons le point<br><em>sur vos besoins.</em></h2>
-					<p>En quelques choix, préparez un brief clair à transmettre à notre équipe. Pas de calcul automatique : ces informations nous aident à mieux comprendre votre demande.</p>
+					<p>Quelques étapes guidées pour clarifier votre besoin et préparer un brief prêt à partager avec notre équipe.</p>
 					<ol class="project-planner__steps" aria-label="Étapes du carnet de projet">
-						<li><span>01</span> Décrivez votre projet</li>
-						<li><span>02</span> Choisissez vos priorités</li>
-						<li><span>03</span> Partagez votre récapitulatif</li>
+						<li><span>01</span> Précisez votre besoin</li>
+						<li><span>02</span> Situez votre projet</li>
+						<li><span>03</span> Partagez votre brief</li>
 					</ol>
 					<p class="project-planner__privacy">Vos réponses restent dans votre navigateur jusqu’à ce que vous choisissiez de les partager.</p>
 				</div>
 
 				<div class="project-planner__card">
 					<form data-planner-form>
-						<label class="project-planner__field">
-							<span>Quel type de projet préparez-vous ?</span>
-							<select name="type" required>
-								<option value="">Choisir un domaine</option>
-								<option value="Énergie solaire">Énergie solaire</option>
-								<option value="Pompage solaire">Pompage solaire</option>
-								<option value="Électricité générale">Électricité générale</option>
-								<option value="Éclairage solaire">Éclairage solaire</option>
-								<option value="Autre besoin">Autre besoin</option>
-							</select>
-						</label>
-
-						<div class="project-planner__fields">
-							<label class="project-planner__field">
-								<span>Ville du projet</span>
-								<input name="city" type="text" autocomplete="address-level2" maxlength="100" placeholder="Ex. N’Djamena" required>
-							</label>
-							<label class="project-planner__field">
-								<span>Où en êtes-vous ?</span>
-								<select name="stage">
-									<option value="Je découvre les solutions possibles">Je découvre les solutions possibles</option>
-									<option value="J’ai déjà un site ou un bâtiment">J’ai déjà un site ou un bâtiment</option>
-									<option value="J’ai des informations techniques">J’ai des informations techniques</option>
-									<option value="Je souhaite planifier une visite">Je souhaite planifier une visite</option>
-								</select>
-							</label>
+						<div class="project-planner__wizard-head">
+							<div class="project-planner__wizard-status">
+								<span data-planner-progress-label>Étape 1 sur 4</span>
+								<span data-planner-progress-percent>25 %</span>
+							</div>
+							<div class="project-planner__progress-track" aria-hidden="true"><span data-planner-progress></span></div>
+							<div class="project-planner__stepper" role="group" aria-label="Étapes de préparation du projet">
+								<button type="button" data-planner-step-button="0" aria-current="step"><span>01</span><span>Besoin</span></button>
+								<button type="button" data-planner-step-button="1"><span>02</span><span>Lieu</span></button>
+								<button type="button" data-planner-step-button="2"><span>03</span><span>Priorités</span></button>
+								<button type="button" data-planner-step-button="3"><span>04</span><span>Brief</span></button>
+							</div>
 						</div>
 
-						<fieldset class="project-planner__priorities">
-							<legend>Quelles sont vos priorités ? <span>Plusieurs choix possibles</span></legend>
-							<label><input type="checkbox" name="priority" value="Assurer une alimentation électrique plus régulière"><span>Assurer une alimentation plus régulière</span></label>
-							<label><input type="checkbox" name="priority" value="Réduire la dépendance au réseau ou au carburant"><span>Réduire la dépendance au réseau ou au carburant</span></label>
-							<label><input type="checkbox" name="priority" value="Alimenter une pompe ou sécuriser l’accès à l’eau"><span>Alimenter une pompe ou sécuriser l’accès à l’eau</span></label>
-							<label><input type="checkbox" name="priority" value="Améliorer l’éclairage d’un espace"><span>Améliorer l’éclairage d’un espace</span></label>
-							<label><input type="checkbox" name="priority" value="Installer ou mettre aux normes une installation électrique"><span>Installer ou mettre aux normes une installation électrique</span></label>
-						</fieldset>
+						<section class="project-planner__panel is-active" data-planner-panel="0" aria-labelledby="planner-step-title-0">
+							<div class="project-planner__panel-heading">
+								<span>01 — Le point de départ</span>
+								<h3 id="planner-step-title-0">Quel projet avez-vous en tête ?</h3>
+								<p>Choisissez le domaine qui se rapproche le plus de votre besoin.</p>
+							</div>
+							<fieldset class="project-planner__type-choices">
+								<legend class="project-planner__visually-hidden">Type de projet</legend>
+								<label class="project-planner__type-choice">
+									<input type="radio" name="type" value="Énergie solaire" required>
+									<span class="project-planner__type-choice-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="5" stroke="currentColor" stroke-width="1.8"/><path d="M16 2v5m0 18v5M2 16h5m18 0h5M6.1 6.1l3.5 3.5m12.8 12.8 3.5 3.5m0-19.8-3.5 3.5M9.6 22.4l-3.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+									<span><strong>Énergie solaire</strong><small>Panneaux, autonomie, stockage</small></span>
+									<span class="project-planner__choice-check" aria-hidden="true"></span>
+								</label>
+								<label class="project-planner__type-choice">
+									<input type="radio" name="type" value="Pompage solaire" required>
+									<span class="project-planner__type-choice-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M16 3C16 3 7 14 7 20a9 9 0 1 0 18 0c0-6-9-17-9-17Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 21a4 4 0 0 0 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+									<span><strong>Pompage solaire</strong><small>Pompe, forage, accès à l’eau</small></span>
+									<span class="project-planner__choice-check" aria-hidden="true"></span>
+								</label>
+								<label class="project-planner__type-choice">
+									<input type="radio" name="type" value="Électricité générale" required>
+									<span class="project-planner__type-choice-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="m18.5 2-13 17h9l-1 11 14-18h-9l.5-10Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>
+									<span><strong>Électricité générale</strong><small>Installation, rénovation, conformité</small></span>
+									<span class="project-planner__choice-check" aria-hidden="true"></span>
+								</label>
+								<label class="project-planner__type-choice">
+									<input type="radio" name="type" value="Éclairage solaire" required>
+									<span class="project-planner__type-choice-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M11 21h10m-9 4h8m-6 4h4m-2-27a10 10 0 0 0-6 18c1.1.8 1.8 1.8 2 3h8c.2-1.2.9-2.2 2-3a10 10 0 0 0-6-18Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 6v4m-5-2 2.5 3m7.5-3-2.5 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+									<span><strong>Éclairage solaire</strong><small>Éclairage de cour, rue ou site</small></span>
+									<span class="project-planner__choice-check" aria-hidden="true"></span>
+								</label>
+								<label class="project-planner__type-choice">
+									<input type="radio" name="type" value="Autre besoin" required>
+									<span class="project-planner__type-choice-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.8"/><path d="M16 14v8m0-13v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+									<span><strong>Autre besoin</strong><small>Parlons de votre idée</small></span>
+									<span class="project-planner__choice-check" aria-hidden="true"></span>
+								</label>
+							</fieldset>
+						</section>
 
-						<label class="project-planner__field">
-							<span>Un détail utile à préciser ? <span>Facultatif</span></span>
-							<textarea name="details" rows="3" maxlength="600" placeholder="Ex. type de bâtiment, équipement à alimenter, contrainte particulière…"></textarea>
-						</label>
+						<section class="project-planner__panel" data-planner-panel="1" aria-labelledby="planner-step-title-1" hidden>
+							<div class="project-planner__panel-heading">
+								<span>02 — Le lieu et le moment</span>
+								<h3 id="planner-step-title-1">Où en est votre projet ?</h3>
+								<p>Ces repères nous aident à comprendre le contexte de votre demande.</p>
+							</div>
+							<div class="project-planner__fields">
+								<label class="project-planner__field">
+									<span>Ville du projet</span>
+									<input name="city" type="text" autocomplete="address-level2" maxlength="100" placeholder="Ex. N’Djamena" required>
+								</label>
+								<label class="project-planner__field">
+									<span>Où en êtes-vous ?</span>
+									<select name="stage">
+										<option value="Je découvre les solutions possibles">Je découvre les solutions possibles</option>
+										<option value="J’ai déjà un site ou un bâtiment">J’ai déjà un site ou un bâtiment</option>
+										<option value="J’ai des informations techniques">J’ai des informations techniques</option>
+										<option value="Je souhaite planifier une visite">Je souhaite planifier une visite</option>
+									</select>
+								</label>
+							</div>
+							<div class="project-planner__tip"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M12 11v5m0-8v.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg> Une localisation approximative suffit pour commencer.</div>
+						</section>
 
-						<div class="project-planner__preview" aria-labelledby="planner-preview-title">
+						<section class="project-planner__panel" data-planner-panel="2" aria-labelledby="planner-step-title-2" hidden>
+							<div class="project-planner__panel-heading">
+								<span>03 — Ce qui compte pour vous</span>
+								<h3 id="planner-step-title-2">Quelles sont vos priorités ?</h3>
+								<p>Plusieurs réponses possibles. Vous pouvez aussi ajouter un détail utile.</p>
+							</div>
+							<fieldset class="project-planner__priorities">
+								<legend class="project-planner__visually-hidden">Priorités du projet</legend>
+								<label><input type="checkbox" name="priority" value="Assurer une alimentation électrique plus régulière"><span>Assurer une alimentation plus régulière</span></label>
+								<label><input type="checkbox" name="priority" value="Réduire la dépendance au réseau ou au carburant"><span>Réduire la dépendance au réseau ou au carburant</span></label>
+								<label><input type="checkbox" name="priority" value="Alimenter une pompe ou sécuriser l’accès à l’eau"><span>Alimenter une pompe ou sécuriser l’accès à l’eau</span></label>
+								<label><input type="checkbox" name="priority" value="Améliorer l’éclairage d’un espace"><span>Améliorer l’éclairage d’un espace</span></label>
+								<label><input type="checkbox" name="priority" value="Installer ou mettre aux normes une installation électrique"><span>Installer ou mettre aux normes une installation électrique</span></label>
+							</fieldset>
+							<label class="project-planner__field">
+								<span>Un détail utile à préciser ? <span>Facultatif</span></span>
+								<textarea name="details" rows="3" maxlength="600" placeholder="Ex. type de bâtiment, équipement à alimenter, contrainte particulière…"></textarea>
+							</label>
+						</section>
+
+						<div class="project-planner__wizard-navigation" data-planner-navigation>
+							<button type="button" class="project-planner__back" data-planner-back disabled>
+								<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5m7 7-7-7 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+								Précédent
+							</button>
+							<button type="button" class="project-planner__next" data-planner-next>
+								Continuer
+								<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+							</button>
+						</div>
+
+						<div class="project-planner__preview project-planner__panel" data-planner-panel="3" aria-labelledby="planner-preview-title" hidden>
 							<div class="project-planner__preview-head">
 								<span class="project-planner__preview-icon" aria-hidden="true">
 									<svg viewBox="0 0 24 24" fill="none"><path d="M7 3h7l5 5v13H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M14 3v5h5M9 13h6M9 17h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
 								</span>
-								<div><h3 id="planner-preview-title">Votre carnet de projet</h3><p>Le récapitulatif se met à jour avec vos réponses.</p></div>
+								<div><h3 id="planner-preview-title">Votre brief est prêt.</h3><p>Relisez-le, puis choisissez comment le partager.</p></div>
 							</div>
 							<div class="project-planner__summary" data-planner-summary>
 								<p>Choisissez un domaine et indiquez la ville pour commencer votre brief.</p>

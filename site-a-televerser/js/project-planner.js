@@ -6,12 +6,76 @@ document.querySelectorAll("[data-project-planner]").forEach((planner) => {
 	const copyButton = planner.querySelector("[data-planner-copy]");
 	const printButton = planner.querySelector("[data-planner-print]");
 	const contactLink = planner.querySelector("[data-planner-contact]");
+	const panels = Array.from(form.querySelectorAll("[data-planner-panel]"));
+	const stepButtons = Array.from(form.querySelectorAll("[data-planner-step-button]"));
+	const progress = form.querySelector("[data-planner-progress]");
+	const progressLabel = form.querySelector("[data-planner-progress-label]");
+	const progressPercent = form.querySelector("[data-planner-progress-percent]");
+	const previousButton = form.querySelector("[data-planner-back]");
+	const nextButton = form.querySelector("[data-planner-next]");
+	const navigation = form.querySelector("[data-planner-navigation]");
+	let currentStep = 0;
 	const fields = {
 		type: form.elements.namedItem("type"),
 		city: form.elements.namedItem("city"),
 		stage: form.elements.namedItem("stage"),
 		details: form.elements.namedItem("details"),
 		priorities: Array.from(form.querySelectorAll('input[name="priority"]')),
+	};
+
+	const showStep = (index) => {
+		currentStep = Math.max(0, Math.min(panels.length - 1, index));
+		panels.forEach((panel, panelIndex) => {
+			const active = panelIndex === currentStep;
+			panel.hidden = !active;
+			panel.classList.toggle("is-active", active);
+		});
+
+		stepButtons.forEach((button, buttonIndex) => {
+			const active = buttonIndex === currentStep;
+			const complete = buttonIndex < currentStep;
+			button.classList.toggle("is-active", active);
+			button.classList.toggle("is-complete", complete);
+			if (active) button.setAttribute("aria-current", "step");
+			else button.removeAttribute("aria-current");
+		});
+
+		const percentage = Math.round(((currentStep + 1) / panels.length) * 100);
+		progress.style.width = `${percentage}%`;
+		progressLabel.textContent = `Étape ${currentStep + 1} sur ${panels.length}`;
+		progressPercent.textContent = `${percentage} %`;
+		previousButton.disabled = currentStep === 0;
+		nextButton.hidden = currentStep === panels.length - 1;
+		navigation.hidden = currentStep === panels.length - 1;
+	};
+
+	const validateStep = (index) => {
+		const invalid = Array.from(panels[index].querySelectorAll(":invalid"))[0];
+		if (!invalid) return true;
+		invalid.reportValidity();
+		return false;
+	};
+
+	const navigateToStep = (index) => {
+		const target = Math.max(0, Math.min(panels.length - 1, index));
+		if (target > currentStep) {
+			for (let step = currentStep; step < target; step += 1) {
+				showStep(step);
+				if (!validateStep(step)) {
+					return;
+				}
+			}
+		} else if (target > 0 && !form.querySelector('input[name="type"]:checked')) {
+			showStep(0);
+			validateStep(0);
+			return;
+		} else if (target > 1 && !fields.city.value.trim()) {
+			showStep(1);
+			validateStep(1);
+			return;
+		}
+
+		showStep(target);
 	};
 
 	const getBrief = () => {
@@ -73,10 +137,21 @@ document.querySelectorAll("[data-project-planner]").forEach((planner) => {
 			details: ready ? getContactDetails() : "",
 		});
 		contactLink.href = `contact.php?${params.toString()}`;
+
+		stepButtons[0].classList.toggle("is-complete", fields.type.value !== "");
+		stepButtons[1].classList.toggle("is-complete", fields.city.value.trim() !== "");
+		stepButtons[2].classList.toggle("is-complete", priorities.length > 0 || fields.details.value.trim() !== "");
 	};
 
 	form.addEventListener("input", update);
 	form.addEventListener("change", update);
+	previousButton.addEventListener("click", () => navigateToStep(currentStep - 1));
+	nextButton.addEventListener("click", () => {
+		if (validateStep(currentStep)) navigateToStep(currentStep + 1);
+	});
+	stepButtons.forEach((button) => {
+		button.addEventListener("click", () => navigateToStep(Number(button.dataset.plannerStepButton)));
+	});
 
 	whatsappButton.addEventListener("click", () => {
 		if (!form.reportValidity()) return;
@@ -102,5 +177,6 @@ document.querySelectorAll("[data-project-planner]").forEach((planner) => {
 		window.print();
 	});
 
+	showStep(0);
 	update();
 });
