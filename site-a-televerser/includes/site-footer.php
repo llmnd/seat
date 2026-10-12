@@ -45,4 +45,12 @@
 		<span>Membre du Groupe NS2I</span>
 	</div>
 </footer>
+<aside class="pwa-install" data-pwa-install aria-label="Installer l’application SEAT Opus Global" hidden>
+	<div class="pwa-install__copy">
+		<strong>SEAT Opus Global sur votre téléphone</strong>
+		<span>Installez l’application pour retrouver le site plus facilement.</span>
+	</div>
+	<button class="pwa-install__button" type="button" data-pwa-install-button>Installer</button>
+	<button class="pwa-install__close" type="button" data-pwa-install-dismiss aria-label="Fermer">×</button>
+</aside>
 <?php require __DIR__ . '/nour-assistant.php'; ?>
