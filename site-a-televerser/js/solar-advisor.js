@@ -13,10 +13,14 @@
 	const backdrop = document.querySelector('[data-nour-backdrop]');
 	const launcher = document.querySelector('[data-nour-launcher]');
 	const closeButton = root.querySelector('[data-nour-close]');
+	const viewToggle = root.querySelector('[data-sa-view-toggle]');
 	let returnFocus = null;
 
 	const closeAssistant = () => {
 		backdrop.hidden = true;
+		root.classList.remove('sa-show-viz');
+		viewToggle.setAttribute('aria-expanded', 'false');
+		viewToggle.textContent = 'Résultat';
 		document.body.classList.remove('sa-dialog-open');
 		if (returnFocus instanceof HTMLElement) returnFocus.focus({ preventScroll: true });
 	};
@@ -38,6 +42,12 @@
 		});
 	});
 	closeButton.addEventListener('click', closeAssistant);
+	viewToggle.addEventListener('click', () => {
+		const showViz = !root.classList.contains('sa-show-viz');
+		root.classList.toggle('sa-show-viz', showViz);
+		viewToggle.setAttribute('aria-expanded', String(showViz));
+		viewToggle.textContent = showViz ? 'Chat' : 'Résultat';
+	});
 	backdrop.addEventListener('click', (event) => {
 		if (event.target === backdrop) closeAssistant();
 	});
@@ -209,7 +219,9 @@
 	const STARS = [[.02,.1,1.2],[.06,.35,1],[.1,.18,1.4],[.14,.5,1],[.18,.08,1],[.21,.3,1.2],[.235,.15,1],[.77,.12,1.2],[.8,.4,1],[.84,.2,1.4],[.88,.08,1],[.92,.45,1],[.95,.22,1.2],[.985,.12,1]];
 
 	function chart(res) {
-		const W = 640, H = 300, L = 10, R = 10, T = 28, B = 38;
+		const small = window.matchMedia('(max-width: 600px)').matches;
+		const FS = small ? 21 : 12;
+		const W = 640, H = small ? 280 : 300, L = 10, R = 10, T = small ? 36 : 28, B = small ? 46 : 38;
 		const pw = W - L - R, ph = H - T - B;
 		const X = (h) => L + (h / 24) * pw;
 		const max = Math.max(res.peak, res.consMax, 1) * 1.2;
@@ -238,7 +250,7 @@
 			return `<circle cx="${X(starHour).toFixed(1)}" cy="${(T + ph * fy * 0.8).toFixed(1)}" r="${r}" fill="#fff" fill-opacity=".55"/>`;
 		}).join('');
 		const grid = [0.33, 0.66].map((f) => `<line x1="${L}" x2="${W - R}" y1="${(T + ph * f).toFixed(1)}" y2="${(T + ph * f).toFixed(1)}" stroke="#fff" stroke-opacity=".06"/>`).join('');
-		const ticks = [0, 6, 12, 18, 24].map((h) => `<text x="${X(h).toFixed(1)}" y="${H - 12}" text-anchor="${h === 0 ? 'start' : h === 24 ? 'end' : 'middle'}" fill="#86a3b5" font-size="12">${h} h</text>`).join('');
+		const ticks = [0, 6, 12, 18, 24].map((h) => `<text x="${X(h).toFixed(1)}" y="${H - 14}" text-anchor="${h === 0 ? 'start' : h === 24 ? 'end' : 'middle'}" fill="#86a3b5" font-size="${FS}">${h} h</text>`).join('');
 
 		// Le soleil suit l'heure choisie sur la courbe
 		const hh = state.hour;
@@ -265,9 +277,9 @@
 			<path d="${line}" fill="none" stroke="#ffbb72" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
 			<line x1="${cx}" x2="${cx}" y1="${T}" y2="${Y(0)}" stroke="#fff" stroke-opacity=".4" stroke-dasharray="3 5"/>
 			${marker}
-			<text x="${X(daylight.sunrise / 2)}" y="${T - 10}" text-anchor="middle" fill="#86a3b5" font-size="12">Nuit</text>
-			<text x="${X(dayMidpoint)}" y="${T - 10}" text-anchor="middle" fill="#cfe0ea" font-size="12">Jour</text>
-			<text x="${X((daylight.sunset + 24) / 2)}" y="${T - 10}" text-anchor="middle" fill="#86a3b5" font-size="12">Nuit</text>
+			<text x="${X(daylight.sunrise / 2)}" y="${T - 12}" text-anchor="middle" fill="#86a3b5" font-size="${FS}">Nuit</text>
+			<text x="${X(dayMidpoint)}" y="${T - 12}" text-anchor="middle" fill="#cfe0ea" font-size="${FS}">Jour</text>
+			<text x="${X((daylight.sunset + 24) / 2)}" y="${T - 12}" text-anchor="middle" fill="#86a3b5" font-size="${FS}">Nuit</text>
 			${ticks}
 		</svg>`;
 	}
@@ -333,6 +345,7 @@
 		state.res = res;
 		viz.dataset.state = live ? 'live' : 'idle';
 		slider.disabled = !live;
+		viewToggle.dataset.live = live ? 'true' : 'false';
 		drawChart();
 		if (live && !state.swept) { state.swept = true; sweep(); }
 
@@ -419,8 +432,11 @@
 		return node;
 	}
 
-	function reveal(node) {
-		if (state.interacted) node.scrollIntoView({ block: 'nearest', behavior: reduce ? 'auto' : 'smooth' });
+	function reveal() {
+		if (!state.interacted) return;
+		requestAnimationFrame(() => {
+			log.scrollTo({ top: log.scrollHeight, behavior: reduce ? 'auto' : 'smooth' });
+		});
 	}
 
 	async function say(html, cls) {
@@ -429,7 +445,7 @@
 		typing.innerHTML = '<i></i><i></i><i></i>';
 		log.appendChild(typing);
 		reveal(typing);
-		await sleep(Math.min(1100, 450 + html.replace(/<[^>]+>/g, '').length * 9));
+		await sleep(Math.min(700, 300 + html.replace(/<[^>]+>/g, '').length * 5));
 		const msg = el('div', `sa-msg${cls ? ` ${cls}` : ''}`);
 		msg.innerHTML = html;
 		typing.replaceWith(msg);
@@ -493,7 +509,7 @@
 			box.append(label, input, search, status, results, attribution);
 			log.appendChild(box);
 			reveal(box);
-			input.focus({ preventScroll: true });
+			if (!window.matchMedia('(max-width: 600px)').matches) input.focus({ preventScroll: true });
 
 			const find = async () => {
 				const query = input.value.trim();
@@ -586,7 +602,7 @@
 			tiltWrap.append(tilt, tiltValue);
 
 			const hint = el('small', 'sa-place-attribution');
-			hint.textContent = `Pour ${location.latitude >= 0 ? 'l’hémisphère nord' : 'l’hémisphère sud'}, l’orientation proposée par défaut est tournée vers l’équateur. Gardez la pente proposée si vous ne la connaissez pas.`;
+			hint.textContent = 'Gardez les valeurs proposées si vous ne les connaissez pas.';
 			const submit = el('button', 'sa-chip');
 			submit.type = 'button';
 			submit.textContent = 'Calculer le potentiel solaire';
@@ -746,17 +762,16 @@
 
 	/* ---------- Scénario ---------- */
 	async function run() {
-		await say('Bonjour, je suis Nour, votre assistant solaire chez SEAT Opus Global.');
-		await say('Je vous aide à estimer les panneaux, la batterie et l’onduleur qu’il vous faut. Cela prend une minute.');
-		await say('Qu’est-ce que vous souhaitez alimenter ?');
+		await say('Bonjour, je suis Nour. Je calcule vos panneaux, batterie et onduleur en une minute.');
+		await say('Que voulez-vous alimenter ?');
 
 		const preset = PRESETS[await ask(PRESETS.map((p) => p.label))];
 		state.items = preset.items.map(([id, q]) => makeItem(id, q));
 		state.phrase = preset.phrase;
 
 		await say(preset.items.length
-			? `Très bien. Voici les appareils que j’ai prévus pour ${preset.phrase}. Ajustez les quantités et les heures d’usage : je recalcule à chaque changement, à droite.`
-			: 'D’accord. Ajoutez vos appareils un par un : je recalcule à chaque changement, à droite.');
+			? 'Ajustez les quantités et les heures. Le résultat se met à jour en direct.'
+			: 'Ajoutez vos appareils un par un. Le résultat se met à jour en direct.');
 
 		const widget = buildWidget();
 		log.appendChild(widget);
@@ -769,17 +784,17 @@
 			await say('Ajoutez au moins un appareil pour que je puisse calculer.');
 		}
 
-		await say('Voulez-vous aussi de l’électricité le soir et la nuit ?');
-		state.night = (await ask(['Oui, avec batteries', 'Non, seulement le jour'])) === 0;
+		await say('Courant le soir et la nuit ?');
+		state.night = (await ask(['Oui, avec batteries', 'Non, le jour seulement'])) === 0;
 		render();
 
-		await say('Dans quelle ville se trouve le projet solaire ? La ville sert à récupérer les données historiques de rayonnement solaire ; votre liste d’appareils reste dans cette page.');
+		await say('Dans quelle ville ? Elle sert uniquement à récupérer l’ensoleillement.');
 		state.location = await askLocation();
 		const setup = await askPanelSetup(state.location);
 		state.source = 'none';
 		state.solar = null;
 		render();
-		await say('Je consulte les données solaires historiques pour ce lieu et cette orientation.');
+		await say('Je récupère les données solaires…');
 		while (state.source === 'none') {
 			try {
 				state.solar = await loadSolarResource(state.location, setup);
@@ -787,8 +802,8 @@
 				state.source = 'pvgis';
 			} catch (error) {
 				const message = error instanceof Error ? error.message : 'Une erreur inconnue est survenue.';
-				await say(`${message} Vous pouvez réessayer ou continuer avec l’estimation générale.`);
-				const fallback = await ask(['Réessayer', 'Continuer avec l’estimation générale']);
+				await say(`${message} Réessayer ou continuer avec une estimation générale ?`);
+				const fallback = await ask(['Réessayer', 'Estimation générale']);
 				if (fallback === 1) {
 					state.source = 'generic';
 					state.solar = null;
@@ -807,7 +822,7 @@
 				<li><span>Onduleur</span><b data-bind="inverter"></b></li>
 			</ul>
 			<p class="sa-fine" data-bind="note"></p>
-			<p class="sa-fine">${basis} Les 15 % de pertes restent une hypothèse générale. Le panneau de droite compare aussi les scénarios avec et sans batterie. Une étude sur site reste nécessaire.</p>
+			<p class="sa-fine">${basis} Détail et comparaison dans « Résultat ». Étude sur site nécessaire.</p>
 			<a class="sa-cta" href="contact.php">Demander une étude personnalisée <span aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>`);
 		render();
 

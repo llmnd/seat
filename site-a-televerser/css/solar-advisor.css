@@ -130,6 +130,10 @@
 	margin-bottom: 20px;
 }
 
+.sa-widget-view-toggle {
+	display: none;
+}
+
 .sa-widget-agent {
 	margin: 0;
 	padding: 0;
@@ -1195,36 +1199,378 @@
 		border-radius: 26px;
 	}
 
+	/* ---------- Plein écran ---------- */
 	.sa-widget-backdrop {
-		align-items: end;
+		height: 100dvh;
+		align-items: stretch;
 		padding: 0;
+		background: #071e30;
+		-webkit-backdrop-filter: none;
+		backdrop-filter: none;
 	}
 
 	.sa-widget-dialog {
+		display: flex;
 		width: 100%;
-		max-height: 94dvh;
-		padding: 18px 14px max(18px, env(safe-area-inset-bottom));
-		border-radius: 26px 26px 0 0;
+		height: 100%;
+		max-height: none;
+		flex-direction: column;
+		overflow: hidden;
+		padding: max(10px, env(safe-area-inset-top)) 12px max(10px, env(safe-area-inset-bottom));
+		border: 0;
+		border-radius: 0;
+		box-shadow: none;
+		touch-action: manipulation;
+		-webkit-tap-highlight-color: transparent;
 	}
 
-	.sa-widget-dialog .sa-grid {
-		gap: 14px;
+	.sa-widget-dialog::before,
+	.sa-widget-dialog .sa-disclaimer,
+	.sa-widget-dialog .sa-chat-card > .sa-agent,
+	.sa-widget-agent small,
+	.sa-viz-note {
+		display: none;
 	}
 
-	.sa-widget-dialog .sa-viz {
-		padding: 16px;
+	/* ---------- En-tête compact ---------- */
+	.sa-widget-top {
+		flex: 0 0 auto;
+		gap: 8px;
+		margin-bottom: 8px;
+		padding-bottom: 8px;
+		border-bottom: 1px solid rgba(255, 255, 255, .1);
 	}
 
-	.sa-widget-dialog .sa-log {
-		min-height: 280px;
-		max-height: 52dvh;
+	.sa-widget-agent {
+		min-width: 0;
+		flex: 1 1 auto;
+		gap: 10px;
 	}
 
 	.sa-widget-dialog .sa-widget-agent .sa-avatar {
-		width: 48px;
-		height: 48px;
+		width: 38px;
+		height: 38px;
+		box-shadow: none;
 	}
 
+	.sa-widget-agent strong {
+		font-size: 15px;
+		line-height: 1.2;
+	}
+
+	.sa-widget-agent strong span {
+		display: block;
+		font-size: 11px;
+		font-weight: 400;
+	}
+
+	.sa-widget-close,
+	.sa-widget-view-toggle {
+		height: 44px;
+		min-height: 44px;
+	}
+
+	.sa-widget-close {
+		width: 44px;
+	}
+
+	.sa-widget-view-toggle {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0 16px;
+		border: 1px solid rgba(255, 255, 255, .22);
+		border-radius: 999px;
+		color: #fff;
+		background: rgba(255, 255, 255, .08);
+		font: inherit;
+		font-size: 14px;
+		font-weight: 600;
+		cursor: pointer;
+	}
+
+	.sa-widget-view-toggle[data-live="true"]::after {
+		position: absolute;
+		top: 8px;
+		right: 8px;
+		width: 9px;
+		height: 9px;
+		border-radius: 50%;
+		background: #ffbb72;
+		box-shadow: 0 0 0 3px rgba(255, 187, 114, .25);
+		content: "";
+	}
+
+	.sa-widget-view-toggle[aria-expanded="true"]::after {
+		display: none;
+	}
+
+	.sa-widget-view-toggle:focus-visible {
+		outline: 3px solid #ffbb72;
+		outline-offset: 3px;
+	}
+
+	/* ---------- Deux vues : conversation / résultat ---------- */
+	.sa-widget-dialog .sa-grid {
+		display: flex;
+		min-height: 0;
+		flex: 1 1 auto;
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.sa-widget-dialog .sa-chat-card {
+		display: flex;
+		min-height: 0;
+		flex: 1 1 auto;
+		flex-direction: column;
+		padding: 0;
+		border: 0;
+		background: none;
+		-webkit-backdrop-filter: none;
+		backdrop-filter: none;
+	}
+
+	.sa-widget-dialog.sa-show-viz .sa-chat-card {
+		display: none;
+	}
+
+	.sa-widget-dialog .sa-viz {
+		display: none;
+		min-height: 0;
+		flex: 1 1 auto;
+		flex-direction: column;
+		overflow-y: auto;
+		overscroll-behavior: contain;
+		padding: 4px 2px 12px;
+		border: 0;
+		background: none;
+		-webkit-backdrop-filter: none;
+		backdrop-filter: none;
+	}
+
+	.sa-widget-dialog.sa-show-viz .sa-viz {
+		display: flex;
+	}
+
+	/* Résultat d’abord, graphique ensuite */
+	.sa-viz-title { order: 0; font-size: 16px; }
+	.sa-metrics { order: 1; margin-top: 10px; }
+	.sa-chart { order: 2; margin-top: 18px; }
+	.sa-time { order: 3; }
+	.sa-legend { order: 4; }
+	.sa-comparison { order: 5; }
+	.sa-how { order: 6; }
+	.sa-viz-source { order: 7; margin: 16px 0 0; }
+
+	.sa-metrics {
+		grid-template-columns: 1fr 1fr;
+		gap: 0 16px;
+	}
+
+	.sa-metrics dd {
+		font-size: 22px;
+	}
+
+	.sa-range {
+		height: 10px;
+		margin-top: 12px;
+	}
+
+	.sa-range::-webkit-slider-thumb {
+		width: 32px;
+		height: 32px;
+	}
+
+	.sa-range::-moz-range-thumb {
+		width: 24px;
+		height: 24px;
+	}
+
+	.sa-readout {
+		min-height: 0;
+		margin-top: 14px;
+	}
+
+	.sa-comparison-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.sa-how summary {
+		min-height: 44px;
+	}
+
+	/* ---------- Conversation ---------- */
+	.sa-widget-dialog .sa-log {
+		min-height: 0;
+		max-height: none;
+		flex: 1 1 auto;
+		gap: 8px;
+		padding: 4px 0 0;
+		overflow-y: auto;
+		overscroll-behavior: contain;
+		scrollbar-width: none;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.sa-widget-dialog .sa-log::-webkit-scrollbar {
+		display: none;
+	}
+
+	.sa-widget-dialog .sa-msg {
+		max-width: 88%;
+		padding: 11px 14px;
+		font-size: 15px;
+		line-height: 1.5;
+	}
+
+	.sa-widget-dialog .sa-msg--widget {
+		max-width: 100%;
+		padding: 4px 14px 14px;
+	}
+
+	/* Réponses ancrées en bas, sous le pouce */
+	.sa-widget-dialog .sa-chips {
+		position: sticky;
+		bottom: 0;
+		z-index: 2;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 8px;
+		margin-top: auto;
+		padding: 18px 0 2px;
+		background: linear-gradient(to top, #0b2a40 72%, rgba(11, 42, 64, 0));
+	}
+
+	.sa-widget-dialog .sa-chip {
+		width: 100%;
+		min-height: 52px;
+		justify-content: center;
+		padding: 10px 16px;
+		border-color: rgba(255, 255, 255, .38);
+		font-size: 16px;
+		text-align: center;
+	}
+
+	.sa-widget-dialog .sa-chip:active {
+		color: #0a2b43;
+		background: #fff;
+	}
+
+	/* ---------- Appareils : nom en haut, deux compteurs dessous ---------- */
+	.sa-widget-dialog .sa-row {
+		position: relative;
+		grid-template-columns: 1fr 1fr;
+		gap: 10px 12px;
+		padding: 14px 0;
+	}
+
+	.sa-widget-dialog .sa-row-name {
+		grid-column: 1 / -1;
+		padding-right: 44px;
+	}
+
+	.sa-widget-dialog .sa-row-name strong {
+		font-size: 15px;
+	}
+
+	.sa-widget-dialog .sa-row-name small {
+		flex-wrap: wrap;
+		margin-top: 4px;
+		font-size: 13px;
+	}
+
+	.sa-widget-dialog .sa-row-name select {
+		height: 40px;
+		font-size: 16px;
+	}
+
+	.sa-widget-dialog .sa-row-name input {
+		width: 80px;
+		height: 40px;
+		font-size: 16px;
+	}
+
+	.sa-widget-dialog .sa-row > div:nth-child(2),
+	.sa-widget-dialog .sa-row > div:nth-child(3) {
+		grid-column: auto;
+	}
+
+	.sa-widget-dialog .sa-row .sa-cap {
+		font-size: 11px;
+	}
+
+	.sa-widget-dialog .sa-step {
+		width: 100%;
+		justify-content: space-between;
+		padding: 3px;
+		border: 1px solid rgba(255, 255, 255, .16);
+		border-radius: 999px;
+	}
+
+	.sa-widget-dialog .sa-step button {
+		width: 44px;
+		height: 44px;
+		font-size: 20px;
+	}
+
+	.sa-widget-dialog .sa-step output {
+		min-width: 0;
+		flex: 1;
+		font-size: 15px;
+	}
+
+	.sa-widget-dialog .sa-row > .sa-x {
+		position: absolute;
+		top: 4px;
+		right: -8px;
+		width: 44px;
+		height: 44px;
+		grid-column: auto;
+		grid-row: auto;
+		font-size: 24px;
+	}
+
+	.sa-widget-dialog .sa-add select {
+		height: 52px;
+		font-size: 16px;
+	}
+
+	/* ---------- Ville et orientation ---------- */
+	.sa-widget-dialog .sa-place-input,
+	.sa-widget-dialog .sa-panel-setup select {
+		height: 52px;
+		font-size: 16px;
+	}
+
+	.sa-widget-dialog .sa-place-result {
+		min-height: 52px;
+		justify-content: flex-start;
+		text-align: left;
+	}
+
+	.sa-widget-dialog .sa-tilt-control input {
+		height: 32px;
+	}
+
+	.sa-widget-dialog .sa-tilt-control output {
+		font-size: 16px;
+	}
+
+	/* ---------- Résultat dans le chat ---------- */
+	.sa-widget-dialog .sa-result li {
+		padding: 12px 0;
+	}
+
+	.sa-widget-dialog .sa-cta {
+		width: 100%;
+		min-height: 56px;
+		justify-content: space-between;
+		font-size: 15px;
+	}
+
+	/* ---------- Lanceur ---------- */
 	.sa-launcher {
 		right: 14px;
 		bottom: max(14px, env(safe-area-inset-bottom));
@@ -1239,6 +1585,7 @@
 		height: 44px;
 	}
 
+	/* ---------- Section promo sur la page ---------- */
 	.sa {
 		padding-block: 58px;
 		border-radius: 28px;
@@ -1281,43 +1628,7 @@
 	.sa-hero-caption {
 		display: none;
 	}
-
-	.sa-chat-card {
-		padding: 16px;
-		border-radius: 22px;
-	}
-
-	.sa-msg {
-		max-width: 100%;
-	}
-
-	.sa-row {
-		grid-template-columns: 1fr 1fr 34px;
-	}
-
-	.sa-row-name {
-		grid-column: 1 / -1;
-	}
-
-	.sa-metrics {
-		gap: 0 18px;
-	}
-
-	.sa-comparison-grid {
-		grid-template-columns: 1fr;
-	}
-
-	.sa-chip {
-		width: 100%;
-		justify-content: center;
-	}
-
-	.sa-cta {
-		width: 100%;
-		justify-content: space-between;
-	}
 }
-
 @media (prefers-reduced-motion: reduce) {
 	.sa-mascot,
 	.sa-msg,
