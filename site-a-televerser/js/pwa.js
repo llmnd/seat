@@ -5,7 +5,47 @@
 	var installPanel = document.querySelector('[data-pwa-install]');
 	var installButton = document.querySelector('[data-pwa-install-button]');
 	var dismissButton = document.querySelector('[data-pwa-install-dismiss]');
+	var splash = document.querySelector('[data-pwa-splash]');
 	var dismissedKey = 'seat-pwa-install-dismissed';
+	var splashShownKey = 'seat-pwa-splash-shown';
+
+	function showLaunchSplash() {
+		var isStandalone = window.matchMedia('(display-mode: standalone)').matches
+			|| window.navigator.standalone === true;
+		if (!isStandalone || !splash || window.sessionStorage.getItem(splashShownKey) === 'yes') return;
+
+		window.sessionStorage.setItem(splashShownKey, 'yes');
+		splash.hidden = false;
+		splash.classList.add('is-visible');
+
+		var startedAt = Date.now();
+		var minimumDuration = 1300;
+		var dismissalStarted = false;
+		var failSafe = window.setTimeout(hideLaunchSplash, 3500);
+
+		function hideLaunchSplash() {
+			if (dismissalStarted) return;
+			dismissalStarted = true;
+			window.clearTimeout(failSafe);
+			var delay = Math.max(0, minimumDuration - (Date.now() - startedAt));
+			window.setTimeout(function () {
+				splash.classList.remove('is-visible');
+				splash.classList.add('is-leaving');
+				window.setTimeout(function () {
+					splash.hidden = true;
+					splash.classList.remove('is-leaving');
+				}, 350);
+			}, delay);
+		}
+
+		if (document.readyState === 'complete') {
+			hideLaunchSplash();
+		} else {
+			window.addEventListener('load', hideLaunchSplash, { once: true });
+		}
+	}
+
+	showLaunchSplash();
 
 	if ('serviceWorker' in navigator) {
 		window.addEventListener('load', function () {

@@ -45,6 +45,38 @@
 		<span>Membre du Groupe NS2I</span>
 	</div>
 </footer>
+<div class="pwa-splash" data-pwa-splash hidden role="status" aria-label="SEAT Opus Global démarre">
+	<div class="pwa-splash__content">
+		<svg class="pwa-splash__scene" viewBox="0 0 240 196" aria-hidden="true" focusable="false">
+			<defs>
+				<linearGradient id="pwa-panel-fill" x1="0" y1="0" x2="1" y2="1">
+					<stop offset="0" stop-color="#1aa2d0"/>
+					<stop offset="1" stop-color="#07527d"/>
+				</linearGradient>
+				<radialGradient id="pwa-sun-glow">
+					<stop offset="0" stop-color="#ffc45b" stop-opacity=".35"/>
+					<stop offset="1" stop-color="#ffc45b" stop-opacity="0"/>
+				</radialGradient>
+			</defs>
+			<circle class="pwa-splash__sun-glow" cx="120" cy="67" r="61" fill="url(#pwa-sun-glow)"/>
+			<g class="pwa-splash__rays" fill="none" stroke="#ffc45b" stroke-linecap="round" stroke-width="3">
+				<path d="M120 14V5m0 124v-9M67 67h-9m124 0h-9M82 29l-7-7m90 90-7-7m0-76 7-7m-90 90 7-7"/>
+			</g>
+			<circle class="pwa-splash__sun" cx="120" cy="67" r="25" fill="#ffc45b"/>
+			<path class="pwa-splash__sunbeam" d="m104 94 13 38m19-38-9 38"/>
+			<path d="m27 127 186 0-19 59H46z" fill="#f7f8f4"/>
+			<path d="m39 135 162 0-14 43H53z" fill="url(#pwa-panel-fill)"/>
+			<g fill="none" stroke="#b9e2ed" stroke-width="2">
+				<path d="m92 135-7 43m58-43-2 43m52-43 5 43M42 157h151"/>
+			</g>
+			<path class="pwa-splash__panel-shine" d="m51 135 52 0-14 43H65z" fill="#fff" opacity=".34"/>
+			<path d="M76 191h88" fill="none" stroke="#ffc45b" stroke-linecap="round" stroke-width="5"/>
+		</svg>
+		<p class="pwa-splash__eyebrow">SEAT OPUS GLOBAL</p>
+		<p class="pwa-splash__tagline">L’énergie de demain,<br><strong>pensée pour durer.</strong></p>
+		<span class="pwa-splash__progress" aria-hidden="true"><i></i></span>
+	</div>
+</div>
 <aside class="pwa-install" data-pwa-install aria-label="Installer l’application SEAT Opus Global" hidden>
 	<div class="pwa-install__copy">
 		<strong>SEAT Opus Global sur votre téléphone</strong>

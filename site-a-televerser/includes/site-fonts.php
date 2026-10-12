@@ -5,8 +5,8 @@
 <meta name="apple-mobile-web-app-title" content="SEAT Opus Global">
 <link rel="icon" href="images/pwa-icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="images/pwa-icon-192.png">
-<link rel="stylesheet" href="css/pwa.css?v=1">
-<script src="js/pwa.js?v=1" defer></script>
+<link rel="stylesheet" href="css/pwa.css?v=2">
+<script src="js/pwa.js?v=2" defer></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
