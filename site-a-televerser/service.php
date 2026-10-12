@@ -379,6 +379,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.pogo-slider.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/services-motion.js?v=1" defer></script>
+<script src="js/energy-scene-extra.js?v=1" defer></script>
 <!-- /js files -->
 </body>
 </html>
