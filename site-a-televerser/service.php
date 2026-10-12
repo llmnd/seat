@@ -27,6 +27,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="css/site-header.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/pages.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/services-motion.css?v=1" type="text/css" media="all">
+	<!-- Nouvelle version de la scène énergie (chargée après services-motion.css) -->
+	<link rel="stylesheet" href="css/energy-scene.css?v=2" type="text/css" media="all">
 	<!-- /css files -->
 	<!-- js files -->
 	<script src="js/modernizr.custom.js"></script>
@@ -44,6 +46,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<p class="energy-scene__eyebrow"><span aria-hidden="true"></span> Comprendre l’énergie en mouvement</p>
 			<h2 id="energy-scene-title">Du soleil<br><em>à vos usages.</em></h2>
 			<p>Suivez une journée solaire et découvrez comment l’énergie circule entre les panneaux, le stockage et les équipements.</p>
+
+			<!-- Indicateurs : pilotés en CSS par data-phase, aucun JS requis -->
+			<ul class="energy-scene__metrics" aria-hidden="true">
+				<li class="energy-scene__metric energy-scene__metric--solar">
+					<span class="energy-scene__metric-name">Production</span>
+					<span class="energy-scene__metric-bar"><i></i></span>
+				</li>
+				<li class="energy-scene__metric energy-scene__metric--battery">
+					<span class="energy-scene__metric-name">Stockage</span>
+					<span class="energy-scene__metric-bar"><i></i></span>
+				</li>
+				<li class="energy-scene__metric energy-scene__metric--home">
+					<span class="energy-scene__metric-name">Consommation</span>
+					<span class="energy-scene__metric-bar"><i></i></span>
+				</li>
+			</ul>
+
 			<p class="energy-scene__note">Animation pédagogique : les flux illustrent le principe d’une installation, pas les mesures d’un site réel.</p>
 		</div>
 
@@ -57,20 +76,55 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<desc id="energy-svg-desc">Le soleil suit sa course au-dessus des panneaux. Des lignes animées montrent l’énergie qui rejoint le convertisseur, la batterie et une maison.</desc>
 					<defs>
 						<linearGradient id="energy-ground" x1="0" x2="1" y1="0" y2="1">
-							<stop offset="0" stop-color="#dff1e9"/>
+							<stop offset="0" stop-color="#e3f3ea"/>
 							<stop offset="1" stop-color="#b4d8cd"/>
 						</linearGradient>
+						<linearGradient id="energy-ground-2" x1="0" x2="0" y1="0" y2="1">
+							<stop offset="0" stop-color="#a7cfc2"/>
+							<stop offset="1" stop-color="#8fbfb0"/>
+						</linearGradient>
 						<linearGradient id="energy-panel" x1="0" x2="1" y1="0" y2="1">
-							<stop offset="0" stop-color="#167cab"/>
-							<stop offset="1" stop-color="#103b59"/>
+							<stop offset="0" stop-color="#1b8cc0"/>
+							<stop offset=".55" stop-color="#124a6d"/>
+							<stop offset="1" stop-color="#0d3550"/>
 						</linearGradient>
 						<linearGradient id="energy-house" x1="0" x2="0" y1="0" y2="1">
 							<stop offset="0" stop-color="#fff"/>
-							<stop offset="1" stop-color="#eaf4f5"/>
+							<stop offset="1" stop-color="#e8f2f4"/>
 						</linearGradient>
+						<linearGradient id="energy-roof" x1="0" x2="0" y1="0" y2="1">
+							<stop offset="0" stop-color="#e29458"/>
+							<stop offset="1" stop-color="#c76f3b"/>
+						</linearGradient>
+						<linearGradient id="energy-shine" x1="0" x2="1" y1="0" y2="0">
+							<stop offset="0" stop-color="#fff" stop-opacity="0"/>
+							<stop offset=".5" stop-color="#fff" stop-opacity=".5"/>
+							<stop offset="1" stop-color="#fff" stop-opacity="0"/>
+						</linearGradient>
+						<radialGradient id="energy-sun-glow">
+							<stop offset="0" stop-color="#fff2b8" stop-opacity=".9"/>
+							<stop offset=".45" stop-color="#ffd56a" stop-opacity=".28"/>
+							<stop offset="1" stop-color="#ffd56a" stop-opacity="0"/>
+						</radialGradient>
+						<radialGradient id="energy-ground-shadow">
+							<stop offset="0" stop-color="#16394a" stop-opacity=".22"/>
+							<stop offset="1" stop-color="#16394a" stop-opacity="0"/>
+						</radialGradient>
+						<clipPath id="energy-panel-clip"><path d="m82 322 237-10 45 98-254 8Z"/></clipPath>
 					</defs>
+
+					<!-- Étoiles (visibles la nuit) -->
+					<g class="energy-scene__stars" aria-hidden="true">
+						<circle cx="120" cy="70" r="1.8"/><circle cx="230" cy="130" r="1.3"/>
+						<circle cx="340" cy="52" r="2"/><circle cx="470" cy="108" r="1.4"/>
+						<circle cx="590" cy="60" r="1.8"/><circle cx="700" cy="140" r="1.3"/>
+						<circle cx="820" cy="80" r="2"/><circle cx="905" cy="150" r="1.4"/>
+						<circle cx="60" cy="170" r="1.4"/><circle cx="640" cy="190" r="1.2"/>
+					</g>
+
 					<path class="energy-scene__sun-path" d="M83 303C228 40 707 34 874 300"/>
 					<g class="energy-scene__sun" data-energy-sun transform="translate(83 303)">
+						<circle class="energy-scene__sun-aura" r="120" fill="url(#energy-sun-glow)"/>
 						<circle class="energy-scene__sun-halo" r="49"/>
 						<circle class="energy-scene__sun-core" r="24"/>
 						<path class="energy-scene__sun-rays" d="M0-39v-12m0 102v12m39-51h12m-102 0h12m66-27 9-9m-72 72 9-9m54 0 9 9m-72-72 9 9"/>
@@ -78,12 +132,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<path class="energy-scene__sunbeam" d="M360 195 285 322"/>
 					<path class="energy-scene__sunbeam" d="M408 204 333 330"/>
 
-					<path d="M0 385c134-48 227-26 344 2 128 31 230-36 363-20 87 10 166 49 253 24v129H0Z" fill="url(#energy-ground)"/>
-					<path d="M0 421c166-33 264 9 390 19 136 11 262-37 400-14 70 12 116 29 170 28v66H0Z" fill="#a7cfc2" opacity=".72"/>
+					<!-- Décor : collines, arbres -->
+					<g class="energy-scene__ground">
+						<path d="M0 385c134-48 227-26 344 2 128 31 230-36 363-20 87 10 166 49 253 24v129H0Z" fill="url(#energy-ground)"/>
+						<path d="M0 421c166-33 264 9 390 19 136 11 262-37 400-14 70 12 116 29 170 28v66H0Z" fill="url(#energy-ground-2)" opacity=".8"/>
+						<ellipse cx="228" cy="452" rx="150" ry="14" fill="url(#energy-ground-shadow)"/>
+						<ellipse cx="725" cy="440" rx="120" ry="12" fill="url(#energy-ground-shadow)"/>
+						<g class="energy-scene__tree" transform="translate(898 392)">
+							<path d="M0 0v34" stroke="#7a5b45" stroke-width="5" stroke-linecap="round"/>
+							<circle cy="-8" r="19" fill="#8fc1a9"/><circle cx="-12" cy="3" r="13" fill="#9ccdb6"/><circle cx="12" cy="4" r="12" fill="#86b9a2"/>
+						</g>
+						<g class="energy-scene__tree" transform="translate(40 410) scale(.8)">
+							<path d="M0 0v34" stroke="#7a5b45" stroke-width="5" stroke-linecap="round"/>
+							<circle cy="-8" r="19" fill="#8fc1a9"/><circle cx="-12" cy="3" r="13" fill="#9ccdb6"/><circle cx="12" cy="4" r="12" fill="#86b9a2"/>
+						</g>
+					</g>
 
 					<g class="energy-scene__panel" aria-hidden="true">
-						<path d="m82 322 237-10 45 98-254 8Z" fill="url(#energy-panel)" stroke="#fff" stroke-opacity=".82" stroke-width="3"/>
-						<path d="m106 320 39 94m33-96 37 95m32-97 35 96m31-97 34 96M95 350l273-10m-259 39 275-10" fill="none" stroke="#a8d9ee" stroke-opacity=".68" stroke-width="2"/>
+						<path d="m82 322 237-10 45 98-254 8Z" fill="url(#energy-panel)" stroke="#fff" stroke-opacity=".85" stroke-width="3"/>
+						<path d="m106 320 39 94m33-96 37 95m32-97 35 96m31-97 34 96M95 350l273-10m-259 39 275-10" fill="none" stroke="#a8d9ee" stroke-opacity=".55" stroke-width="1.6"/>
+						<g clip-path="url(#energy-panel-clip)">
+							<rect class="energy-scene__shine" x="40" y="300" width="70" height="140" fill="url(#energy-shine)" transform="skewX(-18)"/>
+						</g>
 						<path d="m184 418-10 26m108-28 8 25m-129 0h153" fill="none" stroke="#526f7b" stroke-linecap="round" stroke-width="7"/>
 					</g>
 
@@ -111,15 +181,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</g>
 
 					<g class="energy-scene__home" aria-hidden="true">
-						<path d="m622 305 95-73 95 73" fill="#d7824a" stroke="#a95e37" stroke-linejoin="round" stroke-width="9"/>
+						<path d="m622 305 95-73 95 73" fill="url(#energy-roof)" stroke="#a95e37" stroke-linejoin="round" stroke-width="9"/>
+						<rect x="768" y="238" width="18" height="40" rx="2" fill="#b9714a"/>
 						<path d="M641 300v119h152V300l-76-59Z" fill="url(#energy-house)" stroke="#d6e1e3" stroke-width="2"/>
 						<path d="M696 419v-59a22 22 0 0 1 44 0v59" fill="#b8ced3"/>
+						<circle cx="730" cy="394" r="2.5" fill="#6f8c96"/>
+						<circle class="energy-scene__attic" cx="717" cy="285" r="10" fill="#c3e4ed" stroke="#fff" stroke-width="3"/>
 						<rect class="energy-scene__window" x="657" y="324" width="27" height="27" rx="3"/>
 						<path d="M670.5 324v27m-13.5-13.5h27" stroke="#fff" stroke-opacity=".9" stroke-width="2"/>
 						<rect class="energy-scene__window" x="751" y="324" width="27" height="27" rx="3"/>
 						<path d="M764.5 324v27m-13.5-13.5h27" stroke="#fff" stroke-opacity=".9" stroke-width="2"/>
 						<path d="M671 430h94" stroke="#b8ced3" stroke-linecap="round" stroke-width="4"/>
 					</g>
+
 					<g class="energy-scene__label" aria-hidden="true">
 						<rect x="98" y="458" width="175" height="34" rx="17"/>
 						<text x="185" y="480" text-anchor="middle">PANNEAUX SOLAIRES</text>
@@ -132,6 +206,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</g>
 				</svg>
 				<div class="energy-scene__daylight" aria-hidden="true"><span data-energy-daylight></span></div>
+			</div>
+
+			<div class="energy-scene__stats" aria-hidden="true">
+				<div class="energy-scene__stat energy-scene__stat--solar">
+					<span class="energy-scene__stat-label">Puissance solaire</span>
+					<span class="energy-scene__stat-value"><b data-energy-kw>0,0</b><small>kW</small></span>
+				</div>
+				<div class="energy-scene__stat energy-scene__stat--solar">
+					<span class="energy-scene__stat-label">Produit aujourd’hui</span>
+					<span class="energy-scene__stat-value"><b data-energy-kwh>0,0</b><small>kWh</small></span>
+				</div>
+				<div class="energy-scene__stat">
+					<span class="energy-scene__stat-label">Consommation</span>
+					<span class="energy-scene__stat-value"><b data-energy-load>0,0</b><small>kW</small></span>
+				</div>
+				<div class="energy-scene__stat energy-scene__stat--battery">
+					<span class="energy-scene__stat-label">Batterie</span>
+					<span class="energy-scene__stat-value"><b data-energy-soc>0</b><small>%</small></span>
+				</div>
 			</div>
 
 			<div class="energy-scene__controls">
