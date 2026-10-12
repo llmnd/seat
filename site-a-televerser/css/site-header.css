@@ -189,8 +189,8 @@
 .seat-header__desktop-nav > a[aria-current="page"],
 .seat-nav-dropdown.is-current > summary {
 	color: #fff;
-	background: var(--blue);
-	box-shadow: 0 5px 12px rgba(0, 147, 217, .2);
+	background: var(--blue-night);
+	box-shadow: none;
 }
 
 .seat-header__desktop-nav > a[aria-current="page"]:hover,
