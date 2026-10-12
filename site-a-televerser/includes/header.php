@@ -56,11 +56,14 @@ $realisationPages = ['realisations.php', 'realisationSolaire.php', 'realisationP
 						<a href="realisationLampadaire.php">Lampadaire solaire</a>
 					</div>
 				</details>
-				<a href="index.php#preparer-projet">Préparer un projet</a>
+				<a class="seat-header__project-link" href="index.php#preparer-projet">
+					Préparer un projet
+					<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg>
+				</a>
 				<a href="contact.php"<?php if ($currentPage === 'contact.php') echo ' aria-current="page"'; ?>>Contact</a>
 			</nav>
 			<details class="seat-header__mobile-menu">
-				<summary aria-label="Ouvrir le menu"><span></span><span></span></summary>
+				<summary aria-label="Menu de navigation"><span></span><span></span></summary>
 				<nav aria-label="Navigation mobile">
 					<a href="index.php"<?php if ($currentPage === 'index.php') echo ' aria-current="page"'; ?>>Accueil</a>
 					<a href="service.php"<?php if ($currentPage === 'service.php') echo ' aria-current="page"'; ?>>Services</a>
@@ -86,7 +89,10 @@ $realisationPages = ['realisations.php', 'realisationSolaire.php', 'realisationP
 						<a href="realisationPompage.php"<?php if ($currentPage === 'realisationPompage.php') echo ' aria-current="page"'; ?>>Pompage solaire</a>
 						<a href="realisationLampadaire.php"<?php if ($currentPage === 'realisationLampadaire.php') echo ' aria-current="page"'; ?>>Lampadaire solaire</a>
 					</details>
-					<a href="index.php#preparer-projet">Préparer un projet</a>
+					<a class="seat-mobile-project-link" href="index.php#preparer-projet">
+						Préparer un projet
+						<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg>
+					</a>
 					<a href="contact.php"<?php if ($currentPage === 'contact.php') echo ' aria-current="page"'; ?>>Contact</a>
 				</nav>
 			</details>
