@@ -40,7 +40,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <?php require __DIR__ . '/includes/page-intro.php'; ?>
 
-<section class="energy-scene" data-energy-scene aria-labelledby="energy-scene-title">
+<?php
+// Réglages du simulateur (à ajuster avec SEAT Opus Global)
+$energy_whatsapp   = '';          // ex. '23566000000' (indicatif + numéro, sans « + »). Vide = renvoi vers la page contact
+$energy_fuel_price = 750;         // prix du gasoil en FCFA par litre (hypothèse à valider)
+$energy_contact    = 'contact.php';
+?>
+<section class="energy-scene" id="energie" data-energy-scene
+	data-wa="<?= htmlspecialchars($energy_whatsapp, ENT_QUOTES) ?>"
+	data-fuel-price="<?= (int) $energy_fuel_price ?>"
+	data-contact="<?= htmlspecialchars($energy_contact, ENT_QUOTES) ?>"
+	aria-labelledby="energy-scene-title">
 	<div class="energy-scene__inner">
 		<div class="energy-scene__heading">
 			<p class="energy-scene__eyebrow"><span aria-hidden="true"></span> Comprendre l’énergie en mouvement</p>
@@ -67,10 +77,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 
 		<div class="energy-scene__stage">
+			<div class="energy-scene__tabs" role="tablist" aria-label="Type d’installation">
+				<button type="button" role="tab" class="energy-scene__tab" data-energy-scenario="home" aria-selected="true">Maison</button>
+				<button type="button" role="tab" class="energy-scene__tab" data-energy-scenario="pump" aria-selected="false" tabindex="-1">Pompage agricole</button>
+				<button type="button" role="tab" class="energy-scene__tab" data-energy-scenario="shop" aria-selected="false" tabindex="-1">Commerce &amp; froid</button>
+			</div>
 			<div class="energy-scene__sky">
 				<div class="energy-scene__sky-glow" aria-hidden="true"></div>
 				<div class="energy-scene__cloud energy-scene__cloud--one" aria-hidden="true"></div>
 				<div class="energy-scene__cloud energy-scene__cloud--two" aria-hidden="true"></div>
+				<div class="energy-scene__cloud energy-scene__cloud--three" aria-hidden="true"></div>
+				<div class="energy-scene__cloud energy-scene__cloud--four" aria-hidden="true"></div>
 				<svg class="energy-scene__drawing" viewBox="0 0 960 520" role="img" aria-labelledby="energy-svg-title energy-svg-desc">
 					<title id="energy-svg-title">Animation du trajet de l’énergie solaire</title>
 					<desc id="energy-svg-desc">Le soleil suit sa course au-dessus des panneaux. Des lignes animées montrent l’énergie qui rejoint le convertisseur, la batterie et une maison.</desc>
@@ -148,7 +165,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</g>
 					</g>
 
-					<g class="energy-scene__panel" aria-hidden="true">
+					<g class="energy-scene__panel energy-scene__part" data-energy-part="panels" role="button" tabindex="0" aria-label="Panneaux solaires : afficher l’explication">
 						<path d="m82 322 237-10 45 98-254 8Z" fill="url(#energy-panel)" stroke="#fff" stroke-opacity=".85" stroke-width="3"/>
 						<path d="m106 320 39 94m33-96 37 95m32-97 35 96m31-97 34 96M95 350l273-10m-259 39 275-10" fill="none" stroke="#a8d9ee" stroke-opacity=".55" stroke-width="1.6"/>
 						<g clip-path="url(#energy-panel-clip)">
@@ -164,7 +181,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<path class="energy-scene__pulse energy-scene__pulse--battery" data-energy-pulse-battery d="M505 305h50v120h52"/>
 					<path class="energy-scene__pulse energy-scene__pulse--home" data-energy-pulse-home d="M505 305h68v14h40"/>
 
-					<g class="energy-scene__inverter" aria-hidden="true">
+					<g class="energy-scene__inverter energy-scene__part" data-energy-part="inverter" role="button" tabindex="0" aria-label="Convertisseur : afficher l’explication">
 						<rect x="447" y="258" width="60" height="94" rx="12" fill="#fff" stroke="#c5d8df" stroke-width="2"/>
 						<rect x="457" y="270" width="40" height="24" rx="6" fill="#e8f5f8"/>
 						<path d="M462 282h7l4-6 6 12 4-6h7" fill="none" stroke="#0785bd" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3"/>
@@ -172,7 +189,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<path d="M462 335h30" stroke="#a8bbc3" stroke-linecap="round" stroke-width="3"/>
 					</g>
 
-					<g class="energy-scene__battery" aria-hidden="true">
+					<g class="energy-scene__battery energy-scene__part" data-energy-part="battery" role="button" tabindex="0" aria-label="Batterie : afficher l’explication">
 						<rect x="610" y="379" width="73" height="91" rx="11" fill="#f9fcfd" stroke="#bdcfd6" stroke-width="2"/>
 						<path d="M633 373h27v6h-27z" fill="#69828d"/>
 						<rect class="energy-scene__battery-fill" data-energy-battery-fill x="620" y="390" width="53" height="70" rx="6"/>
@@ -180,7 +197,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<circle class="energy-scene__battery-light" cx="646" cy="481" r="4"/>
 					</g>
 
-					<g class="energy-scene__home" aria-hidden="true">
+					<g class="energy-scene__home energy-scene__part" data-energy-part="home" role="button" tabindex="0" aria-label="Équipements : afficher l’explication">
 						<path d="m622 305 95-73 95 73" fill="url(#energy-roof)" stroke="#a95e37" stroke-linejoin="round" stroke-width="9"/>
 						<rect x="768" y="238" width="18" height="40" rx="2" fill="#b9714a"/>
 						<path d="M641 300v119h152V300l-76-59Z" fill="url(#energy-house)" stroke="#d6e1e3" stroke-width="2"/>
@@ -194,6 +211,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<path d="M671 430h94" stroke="#b8ced3" stroke-linecap="round" stroke-width="4"/>
 					</g>
 
+
+					<!-- Scénario : pompage agricole -->
+					<g class="energy-scene__pump energy-scene__part" data-energy-part="home" role="button" tabindex="0" aria-label="Pompe solaire : afficher l’explication">
+						<path d="M613 319v62h24" fill="none" stroke="#8aa1ab" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+						<path d="m626 380 36-26 36 26" fill="#d7824a" stroke="#a95e37" stroke-linejoin="round" stroke-width="7"/>
+						<rect x="636" y="380" width="52" height="39" rx="3" fill="url(#energy-house)" stroke="#d6e1e3" stroke-width="2"/>
+						<circle cx="662" cy="400" r="9" fill="#e8f5f8" stroke="#0785bd" stroke-width="2.5"/>
+						<path d="M662 394v12m-6-6h12" stroke="#0785bd" stroke-linecap="round" stroke-width="2"/>
+						<path d="M730 419l-12-92m70 92 12-92" fill="none" stroke="#526f7b" stroke-linecap="round" stroke-width="6"/>
+						<rect x="708" y="262" width="84" height="68" rx="12" fill="#eaf6fa" stroke="#bdcfd6" stroke-width="2"/>
+						<rect class="energy-scene__tank-fill" data-energy-tank-fill x="713" y="324" width="74" height="0" rx="7"/>
+						<path class="energy-scene__water" d="M688 402h42v-70"/>
+						<path d="M688 402h42v-70" fill="none" stroke="#8aa1ab" stroke-linecap="round" stroke-linejoin="round" stroke-opacity=".5" stroke-width="5"/>
+						<path d="M818 419v-18m-6 8 6-8m6 8-6-8m36 18v-22m-7 10 7-10m7 10-7-10m36 22v-16m-6 7 6-7m6 7-6-7" fill="none" stroke="#6faa84" stroke-linecap="round" stroke-width="3"/>
+						<path d="M792 428h96" stroke="#b8ced3" stroke-linecap="round" stroke-width="4"/>
+					</g>
+
+					<!-- Scénario : commerce &amp; froid solaire -->
+					<g class="energy-scene__shop energy-scene__part" data-energy-part="home" role="button" tabindex="0" aria-label="Commerce et froid solaire : afficher l’explication">
+						<path d="M641 300h152v119H641Z" fill="url(#energy-house)" stroke="#d6e1e3" stroke-width="2"/>
+						<path d="M630 298h174l-10 32H640Z" fill="#e68a36"/>
+						<path d="M660 300l-3 30m33-30-1 30m33-30v30m33-30 1 30m33-30 3 30" stroke="#fff" stroke-opacity=".55" stroke-width="9"/>
+						<rect x="690" y="270" width="64" height="20" rx="10" fill="#0785bd"/>
+						<path d="M722 274v12m-6-9 12 6m0-6-12 6" stroke="#fff" stroke-linecap="round" stroke-width="1.6"/>
+						<rect class="energy-scene__window" x="655" y="342" width="76" height="62" rx="4"/>
+						<rect x="679" y="350" width="28" height="48" rx="3" fill="#fff" stroke="#9fc3d0" stroke-width="2"/>
+						<path d="M679 372h28m-4-12v6m0 14v8" stroke="#9fc3d0" stroke-linecap="round" stroke-width="2"/>
+						<rect x="748" y="350" width="34" height="69" rx="3" fill="#b8ced3"/>
+						<circle cx="774" cy="388" r="2.5" fill="#6f8c96"/>
+						<path d="M671 430h94" stroke="#b8ced3" stroke-linecap="round" stroke-width="4"/>
+					</g>
+
 					<g class="energy-scene__label" aria-hidden="true">
 						<rect x="98" y="458" width="175" height="34" rx="17"/>
 						<text x="185" y="480" text-anchor="middle">PANNEAUX SOLAIRES</text>
@@ -202,10 +251,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<rect x="595" y="481" width="103" height="30" rx="15"/>
 						<text x="646" y="501" text-anchor="middle">BATTERIE</text>
 						<rect x="680" y="432" width="104" height="30" rx="15"/>
-						<text x="732" y="452" text-anchor="middle">ÉQUIPEMENTS</text>
+						<text x="732" y="452" text-anchor="middle" data-energy-equip-label>ÉQUIPEMENTS</text>
 					</g>
 				</svg>
 				<div class="energy-scene__daylight" aria-hidden="true"><span data-energy-daylight></span></div>
+				<div class="energy-scene__veil" aria-hidden="true"></div>
+				<div class="energy-scene__info" data-energy-info hidden>
+					<button type="button" class="energy-scene__info-close" data-energy-info-close aria-label="Fermer l’explication">&times;</button>
+					<strong data-energy-info-title></strong>
+					<p data-energy-info-text></p>
+				</div>
+			</div>
+
+			<div class="energy-scene__controls">
+				<div class="energy-scene__time-row">
+					<div class="energy-scene__time-readout">
+						<span data-energy-time>12:00</span>
+						<span class="energy-scene__state" data-energy-state aria-live="polite">Le soleil alimente la maison et recharge la batterie.</span>
+					</div>
+					<button class="energy-scene__play" type="button" data-energy-play aria-pressed="false" aria-label="Lancer l’animation du soleil">
+						<svg class="energy-scene__play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 12 7-12 7z"/></svg>
+						<svg class="energy-scene__pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm7 0h4v14h-4z"/></svg>
+						<span data-energy-play-label>Lancer la journée</span>
+					</button>
+				</div>
+				<label class="energy-scene__range-label" for="energy-time">Faire avancer le soleil</label>
+				<input class="energy-scene__range" id="energy-time" type="range" min="6" max="18" step="0.25" value="12" data-energy-range aria-valuetext="12 heures">
+				<div class="energy-scene__range-ends" aria-hidden="true"><span>6 h · lever</span><span>12 h · midi</span><span>18 h · coucher</span></div>
+				<fieldset class="energy-scene__weather">
+					<legend>Météo</legend>
+					<span class="energy-scene__seg">
+						<label><input type="radio" name="energy-weather" value="clear" checked><span>Ciel dégagé</span></label>
+						<label><input type="radio" name="energy-weather" value="variable"><span>Passages nuageux</span></label>
+						<label><input type="radio" name="energy-weather" value="overcast"><span>Couvert</span></label>
+					</span>
+				</fieldset>
+				<p class="energy-scene__legend"><span><i aria-hidden="true"></i> Production solaire</span><span><i aria-hidden="true"></i> Énergie stockée puis utilisée</span><span class="energy-scene__hint">Touchez un élément du schéma pour comprendre son rôle</span></p>
 			</div>
 
 			<div class="energy-scene__stats" aria-hidden="true">
@@ -227,24 +308,45 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 
-			<div class="energy-scene__controls">
-				<div class="energy-scene__time-row">
-					<div class="energy-scene__time-readout">
-						<span data-energy-time>12:00</span>
-						<span class="energy-scene__state" data-energy-state aria-live="polite">Le soleil alimente la maison et recharge la batterie.</span>
-					</div>
-					<button class="energy-scene__play" type="button" data-energy-play aria-pressed="false" aria-label="Lancer l’animation du soleil">
-						<svg class="energy-scene__play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 12 7-12 7z"/></svg>
-						<svg class="energy-scene__pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zm7 0h4v14h-4z"/></svg>
-						<span data-energy-play-label>Lancer la journée</span>
-					</button>
-				</div>
-				<label class="energy-scene__range-label" for="energy-time">Faire avancer le soleil</label>
-				<input class="energy-scene__range" id="energy-time" type="range" min="6" max="18" step="0.25" value="12" data-energy-range aria-valuetext="12 heures">
-				<div class="energy-scene__range-ends" aria-hidden="true"><span>6 h · lever</span><span>12 h · midi</span><span>18 h · coucher</span></div>
-				<p class="energy-scene__legend"><span><i aria-hidden="true"></i> Production solaire</span><span><i aria-hidden="true"></i> Énergie stockée puis utilisée</span></p>
+			<div class="energy-scene__chart">
+				<div class="energy-scene__chart-head"><span>Production, consommation et batterie</span><span>Touchez le graphique pour changer l’heure</span></div>
+				<svg data-energy-chart viewBox="0 0 600 140" role="img" aria-label="Courbes de production solaire, de consommation et de niveau de batterie de 6 h à 18 h"></svg>
+				<p class="energy-scene__chart-legend"><span><i style="background:#e68a36"></i> Production (kW)</span><span><i style="background:#0785bd"></i> Consommation (kW)</span><span><i style="background:#4fbf8b"></i> Batterie (%)</span></p>
 			</div>
 		</div>
+	</div>
+
+	<div class="energy-scene__lab" data-energy-lab>
+		<div class="energy-scene__lab-head">
+			<p class="energy-scene__eyebrow"><span aria-hidden="true"></span> Simulateur de dimensionnement</p>
+			<h3>Quel équipement pour <em>vos besoins ?</em></h3>
+			<p>Choisissez ce que vous voulez alimenter : la scène, la courbe et les chiffres se recalculent instantanément.</p>
+		</div>
+		<div class="energy-scene__lab-grid">
+			<fieldset class="energy-scene__appliances" data-energy-appliances>
+				<legend class="sr-only">Équipements à alimenter</legend>
+			</fieldset>
+			<div class="energy-scene__results">
+				<div class="energy-scene__res-grid">
+					<div class="energy-scene__res"><span>Consommation</span><b data-energy-res="daily">—</b><small data-energy-res-sub="daily"></small></div>
+					<div class="energy-scene__res"><span>Panneaux solaires</span><b data-energy-res="panels">—</b><small data-energy-res-sub="panels"></small></div>
+					<div class="energy-scene__res"><span>Batterie</span><b data-energy-res="battery">—</b><small data-energy-res-sub="battery"></small></div>
+					<div class="energy-scene__res"><span>Convertisseur</span><b data-energy-res="inverter">—</b><small data-energy-res-sub="inverter"></small></div>
+					<div class="energy-scene__res"><span>Autonomie sans soleil</span><b data-energy-res="autonomy">—</b><small data-energy-res-sub="autonomy"></small></div>
+				</div>
+				<div class="energy-scene__savings">
+					<div><span>Économie estimée</span><b data-energy-sav="money">—</b><small>par mois</small></div>
+					<div><span>Gasoil évité</span><b data-energy-sav="fuel">—</b><small>par mois</small></div>
+					<div><span>CO₂ évité</span><b data-energy-sav="co2">—</b><small>par mois</small></div>
+				</div>
+				<p class="energy-scene__assumptions" data-energy-assumptions></p>
+				<div class="energy-scene__cta">
+					<button type="button" class="energy-scene__btn energy-scene__btn--primary" data-energy-quote>Demander un devis</button>
+					<button type="button" class="energy-scene__btn energy-scene__btn--ghost" data-energy-share>Copier le lien de cette simulation</button>
+				</div>
+			</div>
+		</div>
+		<p class="sr-only" aria-live="polite" data-energy-sr></p>
 	</div>
 </section>
 
@@ -379,7 +481,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.pogo-slider.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/services-motion.js?v=1" defer></script>
-<script src="js/energy-scene-extra.js?v=1" defer></script>
 <!-- /js files -->
 </body>
 </html>
