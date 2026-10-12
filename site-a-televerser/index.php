@@ -13,8 +13,10 @@
 	<link rel="stylesheet" href="css/site-header.css">
 	<link rel="stylesheet" href="css/sections.css?v=2">
 	<link rel="stylesheet" href="css/project-planner.css?v=2">
+	<link rel="stylesheet" href="css/project-journey.css?v=1">
 	<script src="js/home-hero.js?v=2" defer></script>
 	<script src="js/project-planner.js?v=1" defer></script>
+	<script src="js/project-journey.js?v=1" defer></script>
 </head>
 <body>
 	<?php require __DIR__ . '/includes/header.php'; ?>
@@ -182,23 +184,132 @@
 			</div>
 
 			<div class="container">
-				<ol class="sx-method" aria-label="Notre méthode">
-					<li>
-						<span class="sx-method-n" aria-hidden="true">1</span>
-						<h3>Écouter</h3>
-						<p>Nous partons de votre besoin réel, de votre site et de vos usages avant de proposer quoi que ce soit.</p>
-					</li>
-					<li>
-						<span class="sx-method-n" aria-hidden="true">2</span>
-						<h3>Étudier</h3>
-						<p>Nous dimensionnons la solution et choisissons des équipements professionnels adaptés à votre projet.</p>
-					</li>
-					<li>
-						<span class="sx-method-n" aria-hidden="true">3</span>
-						<h3>Installer</h3>
-						<p>Nos techniciens qualifiés et habilités réalisent l’installation avec méthode, sécurité et exigence de qualité.</p>
-					</li>
-				</ol>
+				<section class="project-journey" data-project-journey aria-labelledby="project-journey-title">
+					<div class="project-journey__heading">
+						<p class="project-journey__eyebrow"><span aria-hidden="true"></span> Votre projet, pas à pas</p>
+						<h2 id="project-journey-title">Du premier besoin<br><em>à l’énergie en marche.</em></h2>
+						<p>Explorez les grandes étapes de notre accompagnement, de la compréhension de votre besoin à la mise en service de votre installation.</p>
+					</div>
+
+					<div class="project-journey__card" data-journey-step="0">
+						<div class="project-journey__scene" aria-hidden="true">
+							<svg class="project-journey__drawing" viewBox="0 0 820 330" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<defs>
+									<linearGradient id="journey-sky" x1="410" y1="0" x2="410" y2="330" gradientUnits="userSpaceOnUse">
+										<stop stop-color="#E7F5F8"/>
+										<stop offset="1" stop-color="#F7FAF7"/>
+									</linearGradient>
+									<radialGradient id="journey-sun">
+										<stop stop-color="#FFE2A3" stop-opacity=".8"/>
+										<stop offset="1" stop-color="#FFE2A3" stop-opacity="0"/>
+									</radialGradient>
+								</defs>
+								<rect width="820" height="330" rx="22" fill="url(#journey-sky)"/>
+								<circle cx="715" cy="62" r="94" fill="url(#journey-sun)"/>
+								<circle cx="715" cy="62" r="19" fill="#F4B84F" fill-opacity=".86"/>
+								<path d="M0 247C125 216 205 264 326 244C467 221 546 208 670 243C735 261 784 257 820 245V330H0V247Z" fill="#E6F1E9"/>
+								<path d="M0 273C135 248 230 281 357 268C501 253 634 247 820 276V330H0V273Z" fill="#D9EAE1"/>
+								<path class="project-journey__route-base" d="M81 228H739" pathLength="100"/>
+								<path class="project-journey__route-progress" data-journey-progress d="M81 228H739" pathLength="100" stroke-dasharray="0 100"/>
+
+								<g class="project-journey__station is-active" data-journey-node="0" transform="translate(81 0)">
+									<circle class="project-journey__station-halo" cx="0" cy="228" r="43"/>
+									<circle class="project-journey__station-ring" cx="0" cy="228" r="17"/>
+									<circle class="project-journey__station-center" cx="0" cy="228" r="5"/>
+									<g class="project-journey__icon">
+										<path d="M-33 109C-33 96-23 87-10 87H16C29 87 38 96 38 109V119C38 132 29 141 16 141H2L-12 153V141C-25 139-33 130-33 119V109Z" fill="#FFF" stroke="#9EC4CE" stroke-width="2"/>
+										<path d="M-20 111H23M-20 122H10" stroke="#1689B5" stroke-width="3" stroke-linecap="round"/>
+										<circle cx="29" cy="78" r="7" fill="#F2B24B"/>
+										<path d="M29 65V60M29 96V91M16 78H11M47 78H42M20 69L16 65M42 91L38 87M42 69L46 65" stroke="#E89A32" stroke-width="2" stroke-linecap="round"/>
+									</g>
+								</g>
+
+								<g class="project-journey__station" data-journey-node="1" transform="translate(245.5 0)">
+									<circle class="project-journey__station-halo" cx="0" cy="228" r="43"/>
+									<circle class="project-journey__station-ring" cx="0" cy="228" r="17"/>
+									<circle class="project-journey__station-center" cx="0" cy="228" r="5"/>
+									<g class="project-journey__icon">
+										<rect x="-33" y="88" width="66" height="61" rx="7" fill="#FFF" stroke="#9EC4CE" stroke-width="2"/>
+										<path d="M-22 100H22M-22 111H-2M-22 122H5M-22 133H-9" stroke="#C1D7DC" stroke-width="2" stroke-linecap="round"/>
+										<path d="M11 126C11 115 25 105 25 105C25 105 39 115 39 126A14 14 0 0 1 11 126Z" fill="#E9F5FA" stroke="#1689B5" stroke-width="2"/>
+										<circle cx="25" cy="125" r="4" fill="#1689B5"/>
+										<path d="M25 130V139" stroke="#1689B5" stroke-width="2"/>
+									</g>
+								</g>
+
+								<g class="project-journey__station" data-journey-node="2" transform="translate(410 0)">
+									<circle class="project-journey__station-halo" cx="0" cy="228" r="43"/>
+									<circle class="project-journey__station-ring" cx="0" cy="228" r="17"/>
+									<circle class="project-journey__station-center" cx="0" cy="228" r="5"/>
+									<g class="project-journey__icon">
+										<rect x="-35" y="83" width="70" height="67" rx="7" fill="#FFF" stroke="#9EC4CE" stroke-width="2"/>
+										<path d="M-22 96H22M-22 107H-8M-22 118H-1" stroke="#C1D7DC" stroke-width="2" stroke-linecap="round"/>
+										<path d="M-17 136 0 125 10 130 23 113" stroke="#0785BD" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+										<circle cx="23" cy="113" r="3" fill="#0785BD"/>
+										<path d="M-23 142H23" stroke="#E89A32" stroke-width="2" stroke-linecap="round"/>
+									</g>
+								</g>
+
+								<g class="project-journey__station" data-journey-node="3" transform="translate(574.5 0)">
+									<circle class="project-journey__station-halo" cx="0" cy="228" r="43"/>
+									<circle class="project-journey__station-ring" cx="0" cy="228" r="17"/>
+									<circle class="project-journey__station-center" cx="0" cy="228" r="5"/>
+									<g class="project-journey__icon">
+										<path d="M-37 124 0 103 37 124 29 146H-29L-37 124Z" fill="#D9EFF7" stroke="#1689B5" stroke-width="2"/>
+										<path d="M-23 123 4 108M-11 145 2 110M3 145 16 117M17 145 28 124M-32 132H33M-28 140H30" stroke="#88BDCE" stroke-width="1.5"/>
+										<path d="M-1 83 7 72 15 83 10 83 12 96 3 96 5 83H-1Z" fill="#E9A53D"/>
+										<path d="M-3 151V160M-16 151V160M10 151V160M23 151V160" stroke="#819DA8" stroke-width="2" stroke-linecap="round"/>
+									</g>
+								</g>
+
+								<g class="project-journey__station" data-journey-node="4" transform="translate(739 0)">
+									<circle class="project-journey__station-halo" cx="0" cy="228" r="43"/>
+									<circle class="project-journey__station-ring" cx="0" cy="228" r="17"/>
+									<circle class="project-journey__station-center" cx="0" cy="228" r="5"/>
+									<g class="project-journey__icon">
+										<path d="M-39 112 0 82 39 112" stroke="#BE7447" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+										<path d="M-30 109V150H30V109" fill="#FFF" stroke="#A9C3CB" stroke-width="2"/>
+										<path d="M-8 150V127A9 9 0 0 1 10 127V150" fill="#DCEBF0"/>
+										<rect x="-23" y="119" width="10" height="12" rx="2" fill="#FFE2A0"/>
+										<rect x="15" y="119" width="10" height="12" rx="2" fill="#FFE2A0"/>
+										<path d="M-18 125H-8M20 125H30" stroke="#E5A73B" stroke-width="2"/>
+										<path d="M-22 106 0 91 20 106" stroke="#0785BD" stroke-width="2" stroke-dasharray="3 4"/>
+									</g>
+								</g>
+								<path d="M93 293H727" stroke="#C8DCD9" stroke-width="2" stroke-linecap="round"/>
+								<circle cx="93" cy="293" r="3" fill="#F2B24B"/>
+								<circle cx="727" cy="293" r="3" fill="#0785BD"/>
+							</svg>
+						</div>
+
+						<div class="project-journey__detail" data-journey-detail aria-live="polite" aria-atomic="true">
+							<span class="project-journey__step-count" data-journey-count>ÉTAPE 01 / 05</span>
+							<h3 data-journey-title>Nous commençons par vous écouter.</h3>
+							<p data-journey-description>Vous nous parlez de vos besoins, de votre activité et de ce que vous souhaitez alimenter. Chaque projet part de vos usages.</p>
+							<a class="project-journey__cta" href="contact.php">Parlons de votre projet
+								<svg viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+							</a>
+						</div>
+
+						<div class="project-journey__steps" role="group" aria-label="Choisir une étape du parcours">
+							<button type="button" class="project-journey__step is-active" data-journey-button="0" aria-pressed="true">
+								<span>01</span><strong>Votre besoin</strong>
+							</button>
+							<button type="button" class="project-journey__step" data-journey-button="1" aria-pressed="false">
+								<span>02</span><strong>Le site</strong>
+							</button>
+							<button type="button" class="project-journey__step" data-journey-button="2" aria-pressed="false">
+								<span>03</span><strong>L’étude</strong>
+							</button>
+							<button type="button" class="project-journey__step" data-journey-button="3" aria-pressed="false">
+								<span>04</span><strong>L’installation</strong>
+							</button>
+							<button type="button" class="project-journey__step" data-journey-button="4" aria-pressed="false">
+								<span>05</span><strong>La mise en service</strong>
+							</button>
+						</div>
+					</div>
+				</section>
 			</div>
 		</section>
 
