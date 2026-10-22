@@ -116,22 +116,15 @@
 
 .seat-header__brand {
 	display: block;
-	flex: 0 0 172px;
+	flex: 0 0 88px;
 }
 
 .seat-header__brand img {
 	display: block;
-	width: 172px;
-	height: calc(var(--nav-h) - 16px);
+	width: 88px;
+	height: calc(var(--nav-h) - 8px);
 	object-fit: contain;
 	object-position: left center;
-	transform-origin: left center;
-	transition: transform .45s var(--ease);
-	will-change: transform;
-}
-
-.seat-header.is-scrolled .seat-header__brand img {
-	transform: scale(.84);
 }
 
 /* ---------- Pastilles de navigation — pureté maximale ---------- */
@@ -795,11 +788,11 @@
 	}
 
 	.seat-header__brand {
-		flex-basis: 144px;
+		flex-basis: 76px;
 	}
 
 	.seat-header__brand img {
-		width: 144px;
+		width: 76px;
 	}
 }
 

@@ -12,7 +12,7 @@ $realisationPages = ['realisations.php', 'realisationSolaire.php', 'realisationP
 	<div class="seat-header__navigation">
 		<div class="seat-header__inner seat-header__navigation-inner">
 			<a class="seat-header__brand" href="index.php" aria-label="SEAT Opus Global — accueil">
-				<img src="images/logo1.jfif" alt="SEAT Opus Global">
+				<img src="images/logo2.jpeg" alt="SEAT Opus Global">
 			</a>
 			<nav class="seat-header__desktop-nav" aria-label="Navigation principale">
 				<a href="index.php"<?php if ($currentPage === 'index.php') echo ' aria-current="page"'; ?>>Accueil</a>
