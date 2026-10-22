@@ -2707,7 +2707,7 @@ summary:focus-visible {
 
 .sx-logos img {
 	display: block;
-	width: clamp(86px, 8vw, 112px);
+	width: clamp(87px, 8vw, 112px);
 	max-width: none;
 	height: 50px;
 	flex: 0 0 auto;
