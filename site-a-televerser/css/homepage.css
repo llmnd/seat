@@ -2287,6 +2287,155 @@ summary:focus-visible {
 	line-height: 1.85;
 }
 
+.sx-leadership {
+	position: relative;
+	display: grid;
+	grid-template-columns: minmax(260px, .78fr) minmax(0, 1.22fr);
+	align-items: center;
+	gap: clamp(36px, 6vw, 84px);
+	margin-top: clamp(76px, 10vw, 132px);
+	padding: clamp(24px, 4vw, 52px);
+	overflow: hidden;
+	border: 1px solid rgba(16, 59, 89, .08);
+	border-radius: 28px;
+	background: linear-gradient(125deg, #fff 0%, #f5f9fa 62%, #e9f3f4 100%);
+	box-shadow: 0 24px 70px rgba(16, 59, 89, .08);
+}
+
+.sx-leadership::after {
+	position: absolute;
+	top: -130px;
+	right: -100px;
+	width: 340px;
+	height: 340px;
+	border: 1px solid rgba(0, 147, 217, .12);
+	border-radius: 50%;
+	box-shadow: 0 0 0 32px rgba(0, 147, 217, .035), 0 0 0 64px rgba(0, 147, 217, .025);
+	content: "";
+	pointer-events: none;
+}
+
+.sx-leadership__portrait {
+	position: relative;
+	z-index: 1;
+	margin: 0;
+}
+
+.sx-leadership__portrait img {
+	width: 100%;
+	max-height: 490px;
+	aspect-ratio: 4 / 5;
+	border-radius: 20px;
+	object-fit: cover;
+	object-position: center 38%;
+	box-shadow: 0 18px 42px rgba(16, 59, 89, .16);
+}
+
+.sx-leadership__portrait figcaption {
+	display: grid;
+	gap: 2px;
+	margin: 14px 4px 0;
+	color: var(--sx-ink);
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: .04em;
+}
+
+.sx-leadership__portrait figcaption span {
+	color: var(--sx-body);
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: .08em;
+	text-transform: uppercase;
+}
+
+.sx-leadership__copy {
+	position: relative;
+	z-index: 1;
+	max-width: 580px;
+	padding: 20px 0;
+}
+
+.sx-leadership__eyebrow {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 0 0 22px;
+	color: var(--sx-blue);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: .14em;
+	text-transform: uppercase;
+}
+
+.sx-leadership__eyebrow span {
+	width: 22px;
+	height: 2px;
+	border-radius: 2px;
+	background: var(--sx-sun);
+}
+
+.sx-leadership__copy h2 {
+	margin: 0 0 20px;
+	color: var(--sx-ink);
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: clamp(32px, 4.2vw, 54px);
+	font-weight: 500;
+	letter-spacing: -.045em;
+	line-height: 1.12;
+}
+
+.sx-leadership__copy h2 em {
+	color: var(--sx-blue);
+	font-weight: 500;
+}
+
+.sx-leadership__copy > p:not(.sx-leadership__eyebrow) {
+	max-width: 500px;
+	margin: 0;
+	color: var(--sx-body);
+	font-size: 16px;
+	line-height: 1.85;
+}
+
+.sx-leadership__signature {
+	display: flex;
+	align-items: center;
+	gap: 13px;
+	margin-top: 30px;
+	padding-top: 22px;
+	border-top: 1px solid var(--sx-line);
+}
+
+.sx-leadership__mark {
+	display: grid;
+	width: 42px;
+	height: 42px;
+	place-items: center;
+	border-radius: 50%;
+	color: #fff;
+	background: var(--sx-navy);
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 20px;
+	font-style: italic;
+}
+
+.sx-leadership__signature strong,
+.sx-leadership__signature small {
+	display: block;
+}
+
+.sx-leadership__signature strong {
+	color: var(--sx-ink);
+	font-size: 14px;
+}
+
+.sx-leadership__signature small {
+	margin-top: 2px;
+	color: var(--sx-body);
+	font-size: 12px;
+}
+
 .sx-checks {
 	max-width: 520px;
 	margin: 32px 0 36px;
@@ -2563,15 +2712,14 @@ summary:focus-visible {
 	height: 50px;
 	flex: 0 0 auto;
 	object-fit: contain;
-	filter: grayscale(1);
-	mix-blend-mode: multiply;
-	opacity: .72;
-	transition: filter .25s ease, opacity .25s ease;
+	filter: none;
+	mix-blend-mode: normal;
+	opacity: 1;
+	transition: transform .25s ease;
 }
 
 .sx-logos img:hover {
-	filter: grayscale(0);
-	opacity: 1;
+	transform: scale(1.04);
 }
 
 @keyframes sx-marquee {
@@ -2604,6 +2752,11 @@ summary:focus-visible {
 	.sx-about-grid {
 		grid-template-columns: 1fr;
 		gap: 48px;
+	}
+
+	.sx-leadership {
+		grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr);
+		gap: 32px;
 	}
 
 	.sx-about-media > img {
@@ -2649,6 +2802,26 @@ summary:focus-visible {
 @media (max-width: 680px) {
 	.sx-panel {
 		height: 340px;
+	}
+
+	.sx-leadership {
+		grid-template-columns: 1fr;
+		gap: 28px;
+		margin-top: 72px;
+		padding: 22px;
+	}
+
+	.sx-leadership__portrait {
+		max-width: 460px;
+	}
+
+	.sx-leadership__portrait img {
+		max-height: none;
+		aspect-ratio: 4 / 3.5;
+	}
+
+	.sx-leadership__copy {
+		padding: 0 2px 4px;
 	}
 
 	.sx-panel-icon,

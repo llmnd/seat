@@ -51,7 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="agileinfo-top-grids row">
 
 				<div class="col-lg-4 wthree-top-grid">
-					<img src="images/pompage1.PNG" class="img-responsive img-fluid" alt="" />
+					<img src="images/realisations/pompage-solaire-site-01.jpeg" class="img-responsive img-fluid" alt="Panneaux photovoltaïques sur un site de pompage solaire" />
 				</div>
 				<!--<div class="col-lg-4 wthree-top-grid">-->
 				<!--<img src="images/lampe1.jpg" class="img-responsive img-fluid" alt="" />-->
@@ -60,10 +60,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!--</div>-->
 
 				<div class="col-lg-4 wthree-top-grid">
-					<img src="images/pompage2.PNG" class="img-responsive img-fluid" alt="" />
+					<img src="images/realisations/pompage-solaire-regulateur-02.jpeg" class="img-responsive img-fluid" alt="Équipements de régulation sous les panneaux d’un site solaire" />
 				</div>
 				<div class="col-lg-4 wthree-top-grid">
-					<img src="images/pompage3.PNG" class="img-responsive img-fluid" alt="" />
+					<img src="images/realisations/pompage-solaire-panneaux-03.jpeg" class="img-responsive img-fluid" alt="Panneaux solaires et équipe sur un site de pompage" />
 				</div>
 
 				<!--<div class="col-lg-4 wthree-top-grid">

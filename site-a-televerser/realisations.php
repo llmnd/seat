@@ -78,7 +78,7 @@
 							</svg>
 						</div>
 						<div class="realisation-reveal__after" data-reveal-after>
-							<img src="images/solaire1.PNG" alt="Techniciens de SEAT installant des panneaux photovoltaïques sur le toit d’un établissement de santé" decoding="async">
+							<img src="images/realisations/solaire-panneaux-toiture-etablissement.jpeg" alt="Panneaux photovoltaïques installés sur la toiture d’un établissement" decoding="async">
 						</div>
 						<span class="realisation-reveal__label realisation-reveal__label--after" data-reveal-photo-label aria-hidden="true">Installation · énergie solaire</span>
 						<span class="realisation-reveal__label realisation-reveal__label--before" aria-hidden="true">Illustration pédagogique</span>
@@ -105,97 +105,97 @@
 					</div>
 					<div class="realisation-reveal__photos" id="realisation-photos-solaire" data-reveal-photos data-category="solaire">
 						<button class="realisation-reveal__photo is-active" type="button" data-reveal-photo
-							data-src="images/solaire1.PNG"
-							data-alt="Techniciens de SEAT installant des panneaux photovoltaïques sur le toit d’un établissement de santé"
-							data-caption="Une centrale solaire prend forme sur le terrain."
-							data-detail="Énergie solaire · établissement de santé"
+							data-src="images/realisations/solaire-panneaux-toiture-etablissement.jpeg"
+							data-alt="Panneaux photovoltaïques installés sur la toiture d’un établissement"
+							data-caption="Des panneaux photovoltaïques en toiture."
+							data-detail="Énergie solaire · installation en toiture"
 							data-label="Installation · énergie solaire"
 							aria-pressed="true">
-							<img src="images/solaire1.PNG" alt="" loading="lazy" decoding="async">
+							<img src="images/realisations/solaire-panneaux-toiture-etablissement.jpeg" alt="" loading="lazy" decoding="async">
 							<span>Installation solaire</span>
 						</button>
 						<button class="realisation-reveal__photo" type="button" data-reveal-photo
-							data-src="images/solaire3.PNG"
-							data-alt="Équipe SEAT travaillant sur une installation photovoltaïque"
-							data-caption="Des équipes mobilisées pour l’installation."
-							data-detail="Énergie solaire · installation photovoltaïque"
+							data-src="images/realisations/solaire-centrale-ombriere.jpeg"
+							data-alt="Ombrière photovoltaïque de grande dimension"
+							data-caption="Une ombrière photovoltaïque en cours d’installation."
+							data-detail="Énergie solaire · centrale photovoltaïque"
 							data-label="Équipe · installation solaire"
 							aria-pressed="false">
-							<img src="images/solaire3.PNG" alt="" loading="lazy" decoding="async">
+							<img src="images/realisations/solaire-centrale-ombriere.jpeg" alt="" loading="lazy" decoding="async">
 							<span>Équipe sur site</span>
 						</button>
 						<button class="realisation-reveal__photo" type="button" data-reveal-photo
-							data-src="images/solaire5.PNG"
-							data-alt="Panneaux photovoltaïques d’une installation solaire réalisée par SEAT"
-							data-caption="Des panneaux photovoltaïques installés sur le site."
+							data-src="images/realisations/solaire-panneaux-au-sol.jpeg"
+							data-alt="Panneaux photovoltaïques installés au sol"
+							data-caption="Un champ de panneaux photovoltaïques."
 							data-detail="Énergie solaire · équipements photovoltaïques"
 							data-label="Panneaux · installation solaire"
 							aria-pressed="false">
-							<img src="images/solaire5.PNG" alt="" loading="lazy" decoding="async">
+							<img src="images/realisations/solaire-panneaux-au-sol.jpeg" alt="" loading="lazy" decoding="async">
 							<span>Panneaux installés</span>
 						</button>
 					</div>
 					<div class="realisation-reveal__photos" id="realisation-photos-pompage" data-reveal-photos data-category="pompage" hidden>
 						<button class="realisation-reveal__photo is-active" type="button" data-reveal-photo
-							data-src="images/pompage1.PNG"
-							data-alt="Techniciens SEAT réalisant des travaux sur une installation de pompage solaire"
-							data-caption="Une équipe réalise les travaux sur le terrain."
+							data-src="images/realisations/pompage-solaire-site-01.jpeg"
+							data-alt="Panneaux photovoltaïques sur un site de pompage solaire"
+							data-caption="Les panneaux alimentent les équipements du site."
 							data-detail="Pompage solaire · installation sur site"
 							data-label="Équipe · pompage solaire"
 							aria-pressed="true">
-							<img src="images/pompage1.PNG" alt="" loading="lazy" decoding="async">
+							<img src="images/realisations/pompage-solaire-site-01.jpeg" alt="" loading="lazy" decoding="async">
 							<span>Travaux sur site</span>
 						</button>
 						<button class="realisation-reveal__photo" type="button" data-reveal-photo
-							data-src="images/pompage2.PNG"
-							data-alt="Équipement de pompage solaire préparé pour son installation"
-							data-caption="Les équipements sont préparés pour l’installation."
+							data-src="images/realisations/pompage-solaire-regulateur-02.jpeg"
+							data-alt="Technicien raccordant les équipements solaires sur site"
+							data-caption="Raccordement des équipements solaires."
 							data-detail="Pompage solaire · préparation des équipements"
 							data-label="Équipements · pompage solaire"
 							aria-pressed="false">
-							<img src="images/pompage2.PNG" alt="" loading="lazy" decoding="async">
+							<img src="images/realisations/pompage-solaire-regulateur-02.jpeg" alt="" loading="lazy" decoding="async">
 							<span>Équipements</span>
 						</button>
 						<button class="realisation-reveal__photo" type="button" data-reveal-photo
-							data-src="images/pompage3.PNG"
-							data-alt="Installation de pompage solaire réalisée par les équipes SEAT"
-							data-caption="Une solution de pompage solaire installée."
+							data-src="images/realisations/pompage-solaire-panneaux-03.jpeg"
+							data-alt="Panneaux photovoltaïques sur un site de pompage solaire"
+							data-caption="Installation photovoltaïque en zone rurale."
 							data-detail="Pompage solaire · réalisation SEAT"
 							data-label="Installation · pompage solaire"
 							aria-pressed="false">
-							<img src="images/pompage3.PNG" alt="" loading="lazy" decoding="async">
+							<img src="images/realisations/pompage-solaire-panneaux-03.jpeg" alt="" loading="lazy" decoding="async">
 							<span>Pompage solaire</span>
 						</button>
 					</div>
 					<div class="realisation-reveal__photos" id="realisation-photos-eclairage" data-reveal-photos data-category="eclairage" hidden>
 						<button class="realisation-reveal__photo is-active" type="button" data-reveal-photo
-							data-src="images/realisation2.PNG"
-							data-alt="Technicien SEAT installant un lampadaire solaire"
-							data-caption="Un lampadaire solaire installé par nos équipes."
+							data-src="images/realisations/eclairage-lampadaire-installation-01.jpeg"
+							data-alt="Pose d’un lampadaire solaire à l’aide d’un camion-grue"
+							data-caption="Pose d’un lampadaire solaire sur le terrain."
 							data-detail="Éclairage solaire · lampadaire"
 							data-label="Installation · éclairage solaire"
 							aria-pressed="true">
-							<img src="images/realisation2.PNG" alt="" loading="lazy" decoding="async">
+							<img src="images/realisations/eclairage-lampadaire-installation-01.jpeg" alt="" loading="lazy" decoding="async">
 							<span>Installation</span>
 						</button>
 						<button class="realisation-reveal__photo" type="button" data-reveal-photo
-							data-src="images/realisation.PNG"
-							data-alt="Technicien SEAT travaillant sur un lampadaire solaire"
-							data-caption="Une intervention sur un équipement d’éclairage solaire."
+							data-src="images/realisations/eclairage-lampadaire-installation-02.jpeg"
+							data-alt="Installation d’un lampadaire solaire sur un site rural"
+							data-caption="Installation d’un lampadaire sur un nouveau site."
 							data-detail="Éclairage solaire · intervention sur site"
 							data-label="Équipe · éclairage solaire"
 							aria-pressed="false">
-							<img src="images/realisation.PNG" alt="" loading="lazy" decoding="async">
+							<img src="images/realisations/eclairage-lampadaire-installation-02.jpeg" alt="" loading="lazy" decoding="async">
 							<span>Intervention</span>
 						</button>
 						<button class="realisation-reveal__photo" type="button" data-reveal-photo
-							data-src="images/realisation1.PNG"
-							data-alt="Équipement d’éclairage solaire installé par SEAT Opus Global"
-							data-caption="Un équipement d’éclairage solaire prêt à l’usage."
+							data-src="images/realisations/eclairage-lampadaire-nuit.jpeg"
+							data-alt="Lampadaire solaire allumé de nuit"
+							data-caption="Le lampadaire solaire en fonctionnement la nuit."
 							data-detail="Éclairage solaire · réalisation SEAT"
 							data-label="Équipement · éclairage solaire"
 							aria-pressed="false">
-							<img src="images/realisation1.PNG" alt="" loading="lazy" decoding="async">
+							<img src="images/realisations/eclairage-lampadaire-nuit.jpeg" alt="" loading="lazy" decoding="async">
 							<span>Éclairage solaire</span>
 						</button>
 					</div>
@@ -218,41 +218,25 @@
 				<p class="realisation-gallery__count" data-filter-count aria-live="polite"></p>
 				<div class="realisation-gallery__grid">
 					<?php
-					$realisationImages = [];
-					foreach ([1, 3, 4, 5, 6, 2, 7, 8] as $number) {
-						$realisationImages[] = [
-							'file' => "solaire{$number}.PNG",
-							'category' => 'solaire',
-							'category_label' => 'Énergie solaire',
-							'title' => 'Installation solaire photovoltaïque',
-						];
-					}
-					foreach ([9, 10, 11, 12] as $number) {
-						$realisationImages[] = [
-							'file' => "solaire{$number}.PNG",
-							'category' => 'solaire',
-							'category_label' => 'Énergie solaire',
-							'title' => 'Solution solaire autonome',
-						];
-					}
-					foreach ([1, 2, 3] as $number) {
-						$realisationImages[] = [
-							'file' => "pompage{$number}.PNG",
-							'category' => 'pompage',
-							'category_label' => 'Pompage solaire',
-							'title' => 'Installation de pompage solaire',
-						];
-					}
-					foreach (['realisation2.PNG', 'realisation.PNG', 'realisation1.PNG'] as $file) {
-						$realisationImages[] = [
-							'file' => $file,
-							'category' => 'eclairage',
-							'category_label' => 'Éclairage solaire',
-							'title' => 'Installation d’éclairage solaire',
-						];
-					}
+					$realisationImages = [
+						['file' => 'solaire-panneaux-toiture-etablissement.jpeg', 'category' => 'solaire', 'category_label' => 'Énergie solaire', 'title' => 'Panneaux photovoltaïques en toiture'],
+						['file' => 'solaire-centrale-ombriere.jpeg', 'category' => 'solaire', 'category_label' => 'Énergie solaire', 'title' => 'Ombrière photovoltaïque'],
+						['file' => 'solaire-panneaux-au-sol.jpeg', 'category' => 'solaire', 'category_label' => 'Énergie solaire', 'title' => 'Installation photovoltaïque au sol'],
+						['file' => 'solaire-installation-toiture.jpeg', 'category' => 'solaire', 'category_label' => 'Énergie solaire', 'title' => 'Intervention sur une installation solaire'],
+						['file' => 'solaire-onduleurs-batteries.jpeg', 'category' => 'solaire', 'category_label' => 'Énergie solaire', 'title' => 'Onduleurs et stockage par batteries'],
+						['file' => 'solaire-equipe-electrique.jpeg', 'category' => 'solaire', 'category_label' => 'Énergie solaire', 'title' => 'Installation des équipements électriques'],
+						['file' => 'pompage-solaire-site-01.jpeg', 'category' => 'pompage', 'category_label' => 'Pompage solaire', 'title' => 'Panneaux sur un site de pompage'],
+						['file' => 'pompage-solaire-regulateur-02.jpeg', 'category' => 'pompage', 'category_label' => 'Pompage solaire', 'title' => 'Raccordement des équipements du site'],
+						['file' => 'pompage-solaire-panneaux-03.jpeg', 'category' => 'pompage', 'category_label' => 'Pompage solaire', 'title' => 'Installation photovoltaïque en zone rurale'],
+						['file' => 'pompage-solaire-installation-04.jpeg', 'category' => 'pompage', 'category_label' => 'Pompage solaire', 'title' => 'Équipements solaires sur site'],
+						['file' => 'eclairage-lampadaire-installation-01.jpeg', 'category' => 'eclairage', 'category_label' => 'Éclairage solaire', 'title' => 'Pose d’un lampadaire solaire'],
+						['file' => 'eclairage-lampadaire-installation-02.jpeg', 'category' => 'eclairage', 'category_label' => 'Éclairage solaire', 'title' => 'Installation d’un lampadaire sur site'],
+						['file' => 'eclairage-lampadaire-chantier-03.jpeg', 'category' => 'eclairage', 'category_label' => 'Éclairage solaire', 'title' => 'Équipe sur un chantier d’éclairage'],
+						['file' => 'eclairage-lampadaire-nuit.jpeg', 'category' => 'eclairage', 'category_label' => 'Éclairage solaire', 'title' => 'Lampadaire solaire en fonctionnement'],
+						['file' => 'eclairage-lampadaire-installation-04.jpeg', 'category' => 'eclairage', 'category_label' => 'Éclairage solaire', 'title' => 'Installation d’un lampadaire le long d’un mur'],
+					];
 					foreach ($realisationImages as $image) :
-						$imagePath = 'images/' . $image['file'];
+						$imagePath = 'images/realisations/' . $image['file'];
 						if (!is_file(__DIR__ . '/' . $imagePath)) continue;
 					?>
 						<figure class="realisation-gallery__card" data-category="<?php echo htmlspecialchars($image['category'], ENT_QUOTES, 'UTF-8'); ?>">

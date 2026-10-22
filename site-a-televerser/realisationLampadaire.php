@@ -51,14 +51,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="agileinfo-top-grids row">
 
 				<div class="col-lg-4 wthree-top-grid">
-					<img src="images/realisation2.PNG" class="img-responsive img-fluid" alt="" />
+					<img src="images/realisations/eclairage-lampadaire-installation-01.jpeg" class="img-responsive img-fluid" alt="Pose d’un lampadaire solaire à l’aide d’un camion-grue" />
 				</div>
 				<div class="col-lg-4 wthree-top-grid">
-					<img src="images/realisation.PNG" class="img-responsive img-fluid" alt="" />
+					<img src="images/realisations/eclairage-lampadaire-installation-02.jpeg" class="img-responsive img-fluid" alt="Installation d’un lampadaire solaire sur un site rural" />
 				</div>
 
 				<div class="col-lg-4 wthree-top-grid">
-					<img src="images/realisation1.PNG" class="img-responsive img-fluid" alt="" />
+					<img src="images/realisations/eclairage-lampadaire-chantier-03.jpeg" class="img-responsive img-fluid" alt="Équipe installant un lampadaire solaire" />
+				</div>
+				<div class="col-lg-4 wthree-top-grid">
+					<img src="images/realisations/eclairage-lampadaire-nuit.jpeg" class="img-responsive img-fluid" alt="Lampadaire solaire allumé de nuit" />
+				</div>
+				<div class="col-lg-4 wthree-top-grid">
+					<img src="images/realisations/eclairage-lampadaire-installation-04.jpeg" class="img-responsive img-fluid" alt="Technicien installant un lampadaire solaire le long d’un mur" />
 				</div>
 
 				<div class="clearfix"> </div>

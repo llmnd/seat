@@ -57,42 +57,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="gallery-info">
 					<div class="col-md-3 gallery-grids">
 						<a class="gallery-box">
-							<img src="images/solaire1.PNG" alt="" class="img-responsive zoom-img">
+							<img src="images/realisations/solaire-panneaux-toiture-etablissement.jpeg" alt="Panneaux photovoltaïques sur la toiture d’un établissement" class="img-responsive zoom-img">
 						</a>
 					</div>
 					<div class="col-md-3 gallery-grids">
 						<a class="gallery-box">
-							<img src="images/solaire3.PNG" alt="" class="img-responsive zoom-img">
+							<img src="images/realisations/solaire-centrale-ombriere.jpeg" alt="Ombrière photovoltaïque de grande dimension" class="img-responsive zoom-img">
 						</a>
 					</div>
 					<div class="col-md-3 gallery-grids">
 						<a class="gallery-box">
-							<img src="images/solaire4.PNG" alt="" class="img-responsive zoom-img">
+							<img src="images/realisations/solaire-panneaux-au-sol.jpeg" alt="Installation photovoltaïque au sol" class="img-responsive zoom-img">
 						</a>
 					</div>
 					<div class="col-md-3 gallery-grids">
 						<a class="gallery-box">
-							<img src="images/solaire5.PNG" alt="" class="img-responsive zoom-img">
+							<img src="images/realisations/solaire-installation-toiture.jpeg" alt="Technicien travaillant sur une installation photovoltaïque" class="img-responsive zoom-img">
 						</a>
 					</div>
 					<div class="col-md-3 gallery-grids">
 						<a class="gallery-box">
-							<img src="images/solaire6.PNG" alt="" class="img-responsive zoom-img">
+							<img src="images/realisations/solaire-onduleurs-batteries.jpeg" alt="Onduleurs et batteries d’un système solaire" class="img-responsive zoom-img">
 						</a>
 					</div>
 					<div class="col-md-3 gallery-grids">
 						<a class="gallery-box">
-							<img src="images/solaire2.PNG" alt="" class="img-responsive zoom-img">
+							<img src="images/realisations/solaire-equipe-electrique.jpeg" alt="Équipe technique intervenant sur des équipements solaires" class="img-responsive zoom-img">
 						</a>
 					</div>
 					<div class="col-md-3 gallery-grids">
 						<a class="gallery-box">
-							<img src="images/solaire7.PNG" alt="" class="img-responsive zoom-img">
+							<img src="images/realisations/solaire-panneaux-champ.jpeg" alt="Panneaux photovoltaïques en cours d’installation" class="img-responsive zoom-img">
 						</a>
 					</div>
 					<div class="col-md-3 gallery-grids">
 						<a class="gallery-box">
-							<img src="images/solaire8.PNG" alt="" class="img-responsive zoom-img">
+							<img src="images/realisations/solaire-panneaux-installation-terrain.jpeg" alt="Technicien devant des panneaux photovoltaïques installés au sol" class="img-responsive zoom-img">
 						</a>
 					</div>
 					<div class="clearfix"> </div>
@@ -116,22 +116,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="gallery-info">
 				<div class="col-md-3 gallery-grids">
 					<a class="gallery-box">
-						<img src="images/solaire9.PNG" alt="" class="img-responsive zoom-img">
+						<img src="images/realisations/solaire-panneaux-toiture-chantier.jpeg" alt="Installation de panneaux photovoltaïques sur toiture" class="img-responsive zoom-img">
 					</a>
 				</div>
 				<div class="col-md-3 gallery-grids">
 					<a class="gallery-box">
-						<img src="images/solaire10.PNG" alt="" class="img-responsive zoom-img">
+						<img src="images/realisations/solaire-banc-batteries.jpeg" alt="Batteries de stockage d’une installation autonome" class="img-responsive zoom-img">
 					</a>
 				</div>
 				<div class="col-md-3 gallery-grids">
 					<a class="gallery-box">
-						<img src="images/solaire11.PNG" alt="" class="img-responsive zoom-img">
+						<img src="images/realisations/solaire-onduleur-central.jpeg" alt="Onduleur d’une installation photovoltaïque" class="img-responsive zoom-img">
 					</a>
 				</div>
 				<div class="col-md-3 gallery-grids">
 					<a class="gallery-box">
-						<img src="images/solaire12.PNG" alt="" class="img-responsive zoom-img">
+						<img src="images/realisations/solaire-armoire-electrique.jpeg" alt="Armoire électrique d’un système solaire autonome" class="img-responsive zoom-img">
 					</a>
 				</div>
 				<div class="clearfix"> </div>

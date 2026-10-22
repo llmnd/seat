@@ -46,20 +46,18 @@
 				<div class="hx-stage" data-hero-carousel role="region" aria-roledescription="carrousel" aria-label="Nos réalisations en images">
 					<div class="hx-frame">
 						<img class="hero-slide is-active" src="images/solaire1.jpg" alt="Technicien installant des panneaux solaires sur une toiture">
-						<img class="hero-slide" data-src="images/solaire.jpg" alt="Équipe installant des panneaux solaires" aria-hidden="true">
-						<img class="hero-slide" data-src="images/solaire3.jpg" alt="Panneaux solaires et éoliennes au coucher du soleil" aria-hidden="true">
-						<img class="hero-slide hero-slide-pompage" data-src="images/pompage1.png" alt="Installation de pompage solaire" aria-hidden="true">
-						<img class="hero-slide" data-src="images/solaire2.PNG" alt="Installation de panneaux solaires" aria-hidden="true">
-						<img class="hero-slide" data-src="images/pompage2.PNG" alt="Projet de pompage solaire sur le terrain" aria-hidden="true">
+						<img class="hero-slide" data-src="images/b2.jpeg" alt="Rangées de panneaux photovoltaïques sous un ciel dégagé" aria-hidden="true">
+						<img class="hero-slide" data-src="images/baner.jpg" alt="Panneaux solaires alimentant une installation de pompage agricole" aria-hidden="true">
+						<img class="hero-slide" data-src="images/banner3.jpeg" alt="Détail lumineux d’un équipement électrique" aria-hidden="true">
+						<img class="hero-slide hero-slide-pompage" data-src="images/pompage.jpg" alt="Installation de pompage solaire au bord d’un champ" aria-hidden="true">
 						<span class="hx-shade" aria-hidden="true"></span>
 
 						<div class="hero-slide-controls" aria-label="Choisir une image">
-							<button type="button" data-hero-slide="0" aria-label="Afficher le technicien installant les panneaux" aria-pressed="true">01</button>
-							<button type="button" data-hero-slide="1" aria-label="Afficher l’équipe solaire" aria-pressed="false">02</button>
-							<button type="button" data-hero-slide="2" aria-label="Afficher les panneaux et éoliennes" aria-pressed="false">03</button>
-							<button type="button" data-hero-slide="3" aria-label="Afficher le pompage solaire" aria-pressed="false">04</button>
-							<button type="button" data-hero-slide="4" aria-label="Afficher une autre installation solaire" aria-pressed="false">05</button>
-							<button type="button" data-hero-slide="5" aria-label="Afficher un projet de pompage solaire" aria-pressed="false">06</button>
+							<button type="button" data-hero-slide="0" aria-label="Afficher un technicien installant des panneaux solaires" aria-pressed="true">01</button>
+							<button type="button" data-hero-slide="1" aria-label="Afficher des panneaux photovoltaïques" aria-pressed="false">02</button>
+							<button type="button" data-hero-slide="2" aria-label="Afficher une installation de pompage solaire agricole" aria-pressed="false">03</button>
+							<button type="button" data-hero-slide="3" aria-label="Afficher un détail d’équipement électrique" aria-pressed="false">04</button>
+							<button type="button" data-hero-slide="4" aria-label="Afficher une installation de pompage solaire" aria-pressed="false">05</button>
 						</div>
 					</div>
 				</div>
@@ -106,7 +104,7 @@
 
 				<div class="sx-panels">
 					<a class="sx-panel sx-panel--solar" href="monocristallin.php">
-						<img src="images/solaire1.jpg" alt="" loading="eager" decoding="async">
+						<img src="images/realisations/solaire-panneaux-toiture-etablissement.jpeg" alt="" loading="eager" decoding="async">
 						<span class="sx-panel-icon" aria-hidden="true">
 							<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="1.7"/><path d="M24 4v6m0 28v6M4 24h6m28 0h6M9.86 9.86l4.24 4.24m19.8 19.8 4.24 4.24m0-28.28-4.24 4.24m-19.8 19.8-4.24 4.24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
 						</span>
@@ -121,7 +119,7 @@
 					</a>
 
 					<a class="sx-panel sx-panel--electric" href="service.php">
-						<img src="images/realisation2.PNG" alt="" loading="eager" decoding="async">
+						<img src="images/realisations/solaire-equipe-electrique.jpeg" alt="" loading="eager" decoding="async">
 						<span class="sx-panel-icon" aria-hidden="true">
 							<svg viewBox="0 0 48 48" fill="none"><path d="M27.5 4 11 26h11l-1.5 18L37 21H25l2.5-17Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
 						</span>
@@ -136,7 +134,7 @@
 					</a>
 
 					<a class="sx-panel sx-panel--water" href="realisationPompage.php">
-						<img src="images/pompage.jpg" alt="" loading="eager" decoding="async">
+						<img src="images/realisations/pompage-solaire-site-01.jpeg" alt="" loading="eager" decoding="async">
 						<span class="sx-panel-icon" aria-hidden="true">
 							<svg viewBox="0 0 48 48" fill="none"><path d="M24 5s13 14 13 24a13 13 0 1 1-26 0C11 19 24 5 24 5Z" stroke="currentColor" stroke-width="1.7"/><path d="M18 30c.7 3 2.6 4.7 5.8 5.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
 						</span>
@@ -181,6 +179,24 @@
 					</ul>
 					<a class="sx-btn" href="service.php">En savoir plus sur nos services <span aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></a>
 				</div>
+			</div>
+
+			<div class="container">
+				<section class="sx-leadership" aria-labelledby="leadership-title">
+					<figure class="sx-leadership__portrait">
+						<img src="images/ceo.jpeg" alt="Le CEO de SEAT Opus Global au milieu des équipements solaires" loading="lazy" decoding="async">
+						<figcaption>SEAT Opus Global <span>Énergie · Expertise · Engagement</span></figcaption>
+					</figure>
+					<div class="sx-leadership__copy">
+						<p class="sx-leadership__eyebrow"><span aria-hidden="true"></span> Une vision portée sur le terrain</p>
+						<h2 id="leadership-title">L’énergie de demain<br><em>se construit ensemble.</em></h2>
+						<p>À la tête de SEAT Opus Global, notre CEO porte une ambition : proposer des solutions énergétiques fiables, adaptées aux réalités du terrain et pensées pour durer.</p>
+						<div class="sx-leadership__signature">
+							<span class="sx-leadership__mark" aria-hidden="true">S</span>
+							<span><strong>Le CEO</strong><small>SEAT Opus Global</small></span>
+						</div>
+					</div>
+				</section>
 			</div>
 
 			<div class="container">
@@ -323,7 +339,7 @@
 
 				<div class="sx-projects-grid">
 					<a class="sx-project sx-project--feature" href="realisationSolaire.php">
-						<img src="images/realisation.PNG" alt="Centrale solaire de 100 kW destinée à l’alimentation d’un hôpital de district" loading="lazy">
+						<img src="images/realisations/solaire-panneaux-toiture-etablissement.jpeg" alt="Panneaux photovoltaïques installés sur la toiture d’un établissement" loading="lazy">
 						<span class="sx-project-kw" aria-label="Puissance du projet : 100 kilowatts">100 kW</span>
 						<span class="sx-project-body">
 							<span class="sx-project-tag">Solaire · Santé</span>
@@ -332,7 +348,7 @@
 					</a>
 
 					<a class="sx-project" href="realisationPompage.php">
-						<img src="images/pompage1.PNG" alt="Projet de pompage solaire sur le terrain" loading="lazy">
+						<img src="images/realisations/pompage-solaire-panneaux-03.jpeg" alt="Panneaux et équipements solaires sur un site de pompage" loading="lazy">
 						<span class="sx-project-body">
 							<span class="sx-project-tag">Pompage solaire</span>
 							<span class="sx-project-name">L’énergie au service de l’eau <span aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></span>
@@ -340,7 +356,7 @@
 					</a>
 
 					<a class="sx-project" href="realisationLampadaire.php">
-						<img src="images/realisation1.PNG" alt="Équipement solaire installé par l’équipe SEAT" loading="lazy">
+						<img src="images/realisations/eclairage-lampadaire-installation-01.jpeg" alt="Installation d’un lampadaire solaire sur le terrain" loading="lazy">
 						<span class="sx-project-body">
 							<span class="sx-project-tag">Éclairage</span>
 							<span class="sx-project-name">Des solutions pour chaque espace <span aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M7 7h10v10"/></svg></span></span>
