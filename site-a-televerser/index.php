@@ -102,7 +102,7 @@
 
 				<div class="sx-panels">
 					<a class="sx-panel sx-panel--solar" href="monocristallin.php">
-						<img src="images/realisations/solaire-panneaux-toiture-etablissement.jpeg" alt="" loading="eager" decoding="async">
+						<img src="images/realisations/solaire-panneaux-champ.jpeg" alt="" loading="eager" decoding="async">
 						<span class="sx-panel-icon" aria-hidden="true">
 							<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="1.7"/><path d="M24 4v6m0 28v6M4 24h6m28 0h6M9.86 9.86l4.24 4.24m19.8 19.8 4.24 4.24m0-28.28-4.24 4.24m-19.8 19.8-4.24 4.24" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
 						</span>
@@ -337,7 +337,7 @@
 
 				<div class="sx-projects-grid">
 					<a class="sx-project sx-project--feature" href="realisationSolaire.php">
-						<img src="images/realisations/solaire-panneaux-toiture-etablissement.jpeg" alt="Panneaux photovoltaïques installés sur la toiture d’un établissement" loading="lazy">
+						<img src="images/realisations/solaire-panneaux-champ.jpeg" alt="Champ de panneaux photovoltaïques" loading="lazy">
 						<span class="sx-project-kw" aria-label="Puissance du projet : 100 kilowatts">100 kW</span>
 						<span class="sx-project-body">
 							<span class="sx-project-tag">Solaire · Santé</span>
