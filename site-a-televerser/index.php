@@ -48,14 +48,16 @@
 						<img class="hero-slide is-active" src="images/solaire1.jpg" alt="Technicien installant des panneaux solaires sur une toiture">
 						<img class="hero-slide" data-src="images/b2.jpeg" alt="Rangées de panneaux photovoltaïques sous un ciel dégagé" aria-hidden="true">
 						<img class="hero-slide" data-src="images/solaire.jpg" alt="Panneaux solaires alimentant une installation de pompage agricole" aria-hidden="true">
+						<img class="hero-slide" data-src="images/realisations/solaire-onduleurs-batteries.jpeg" alt="Onduleurs et batteries d’une installation solaire" aria-hidden="true">
+						<img class="hero-slide" data-src="images/realisations/solaire-panneaux-champ.jpeg" alt="Rangées de panneaux solaires dans un champ" aria-hidden="true">
 						<span class="hx-shade" aria-hidden="true"></span>
 
 						<div class="hero-slide-controls" aria-label="Choisir une image">
 							<button type="button" data-hero-slide="0" aria-label="Afficher un technicien installant des panneaux solaires" aria-pressed="true">01</button>
 							<button type="button" data-hero-slide="1" aria-label="Afficher des panneaux photovoltaïques" aria-pressed="false">02</button>
 							<button type="button" data-hero-slide="2" aria-label="Afficher une installation de pompage solaire agricole" aria-pressed="false">03</button>
-							<button type="button" data-hero-slide="3" aria-label="Afficher un détail d’équipement électrique" aria-pressed="false">04</button>
-							<button type="button" data-hero-slide="4" aria-label="Afficher une installation de pompage solaire" aria-pressed="false">05</button>
+							<button type="button" data-hero-slide="3" aria-label="Afficher les onduleurs et batteries d’une installation solaire" aria-pressed="false">04</button>
+							<button type="button" data-hero-slide="4" aria-label="Afficher des panneaux solaires dans un champ" aria-pressed="false">05</button>
 						</div>
 					</div>
 				</div>
