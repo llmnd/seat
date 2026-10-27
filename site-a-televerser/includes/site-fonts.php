@@ -16,7 +16,7 @@
 <script src="js/solar-advisor.js?v=8" defer></script>
 <?php
 $catalogPages = ['kit.php', 'monocristallin.php', 'polycristallin.php', 'lampe.php', 'Lampadaire.php', 'batterie.php', 'tubular.php', 'convertisseurSolaire.php', 'convertisseurChargeur.php', 'chargeur.php', 'regulateur.php', 'pompe.php'];
-if (in_array(basename($_SERVER['SCRIPT_NAME'] ?? ''), $catalogPages, true)) :
+if (in_array(basename(isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : ''), $catalogPages, true)) :
 ?>
 <link rel="stylesheet" href="css/product-catalog.css?v=4">
 <?php endif; ?>

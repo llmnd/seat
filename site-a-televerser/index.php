@@ -48,8 +48,6 @@
 						<img class="hero-slide is-active" src="images/solaire1.jpg" alt="Technicien installant des panneaux solaires sur une toiture">
 						<img class="hero-slide" data-src="images/b2.jpeg" alt="Rangées de panneaux photovoltaïques sous un ciel dégagé" aria-hidden="true">
 						<img class="hero-slide" data-src="images/solaire.jpg" alt="Panneaux solaires alimentant une installation de pompage agricole" aria-hidden="true">
-						<img class="hero-slide" data-src="images/banner.jpeg" alt="Détail lumineux d’un équipement électrique" aria-hidden="true">
-						<img class="hero-slide hero-slide-pompage" data-src="images/pompage.jpg" alt="Installation de pompage solaire au bord d’un champ" aria-hidden="true">
 						<span class="hx-shade" aria-hidden="true"></span>
 
 						<div class="hero-slide-controls" aria-label="Choisir une image">

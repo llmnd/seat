@@ -1,5 +1,5 @@
 <?php
-$currentPage = basename($_SERVER['SCRIPT_NAME'] ?? '');
+$currentPage = basename(isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : '');
 $productPages = ['kit.php', 'monocristallin.php', 'polycristallin.php', 'lampe.php', 'Lampadaire.php', 'batterie.php', 'tubular.php', 'convertisseurSolaire.php', 'convertisseurChargeur.php', 'chargeur.php', 'regulateur.php', 'pompe.php'];
 $realisationPages = ['realisations.php', 'realisationSolaire.php', 'realisationPompage.php', 'realisationLampadaire.php'];
 ?>

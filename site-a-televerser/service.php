@@ -27,8 +27,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="css/site-header.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/pages.css" type="text/css" media="all">
 	<link rel="stylesheet" href="css/services-motion.css?v=1" type="text/css" media="all">
-	<!-- Nouvelle version de la scène énergie (chargée après services-motion.css) -->
-	<link rel="stylesheet" href="css/energy-scene.css?v=2" type="text/css" media="all">
+	<link rel="stylesheet" href="css/service-cards.css?v=2" type="text/css" media="all">
 	<!-- /css files -->
 	<!-- js files -->
 	<script src="js/modernizr.custom.js"></script>
@@ -351,84 +350,145 @@ $energy_contact    = 'contact.php';
 </section>
 
 <!-- services section -->
-<section class="service-w3ls">
-	<div class="container">
-		<h3 class="text-center slideanim">Nos Services</h3>
-		<p class="text-center slideanim">
+<section class="service-w3ls svc-section" aria-labelledby="svc-title">
+	<div class="svc-shell">
+		<div class="svc-heading">
+			<p class="svc-eyebrow"><span aria-hidden="true"></span> Notre savoir-faire</p>
+			<h2 id="svc-title">Des solutions utiles,<br><em>de l’idée au terrain.</em></h2>
+			<p class="svc-intro">De l’étude à la mise en service, nous vous accompagnons avec des solutions électriques et solaires adaptées à vos besoins.</p>
+		</div>
 
-		Fort de son expertise dans le domaine d’électricité générale,
-		SEAT Opus Global assure sa place avec une forte compétence théorique et pratique.
-		Nous apportons à nos clients le conseil en matière de sureté,
-		de conformité et des solutions innovantes dans le choix des équipements durable et leurs efficacités énergétiques.
+		<div class="svc-grid">
+			<article class="svc-card" data-service-card="electricity">
+				<div class="svc-card__top">
+					<span class="svc-icon" aria-hidden="true">
+						<svg viewBox="0 0 48 48" fill="none"><path d="M24 5v38M5 24h38M10.6 10.6l26.8 26.8m0-26.8L10.6 37.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="24" cy="24" r="8" fill="currentColor" opacity=".16"/><circle cx="24" cy="24" r="4" fill="currentColor"/></svg>
+					</span>
+					<span class="svc-number">01</span>
+				</div>
+				<span class="svc-recommendation" data-service-match hidden>Conseillé pour votre projet</span>
+				<h3>Électricité générale</h3>
+				<p>Des installations fiables et conformes, entretenues par une équipe à votre écoute.</p>
+				<ul><li>Conception et réalisation</li><li>Dépannage et mise en conformité</li></ul>
+			</article>
 
-		</p>
-	</div>
-	<!-- services -->
-	<div class="services">
-		<div class="container">
-			<div class="services-w3lsrow">
-				<div class="col-md-4 services-grids top">
-					<i class="fa fa-database" aria-hidden="true"></i>
-					<h4 style="color: #201815">Electricité Générale</h4>
-					<p>
-						Nous assurons la Conception et réalisation, le
-						Dépannage rapide et aussi la
-						Mise en conformité.
-						<br>
-						<br>
-						<br>
-					</p>
+			<article class="svc-card svc-card--featured" data-service-card="renewable">
+				<div class="svc-card__top">
+					<span class="svc-icon" aria-hidden="true">
+						<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2.5"/><path d="M24 4v6m0 28v6M4 24h6m28 0h6M9.9 9.9l4.2 4.2m19.8 19.8 4.2 4.2m0-28.2-4.2 4.2m-19.8 19.8-4.2 4.2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+					</span>
+					<span class="svc-number">02</span>
 				</div>
-				<div class="col-md-4 services-grids top-1">
-					<i class="fa fa-external-link" aria-hidden="true"></i>
-					<h4 style="color: #201815">Energies renouvelables </h4>
-					<p>
-						Notre objectif est de promouvoir les énergies renouvelables.Nous proposons
-						des solutions liées au développement et à la diffusion des énergies renouvelables fournies par le soleil.
-					</p>
+				<span class="svc-recommendation" data-service-match hidden>Conseillé pour votre projet</span>
+				<p class="svc-card__tag">Énergie solaire</p>
+				<h3>Énergies renouvelables</h3>
+				<p>Produisez une énergie durable grâce à des équipements solaires pensés pour votre quotidien.</p>
+				<ul><li>Solaire photovoltaïque</li><li>Solutions autonomes et efficaces</li></ul>
+			</article>
+
+			<article class="svc-card" data-service-card="studies">
+				<div class="svc-card__top">
+					<span class="svc-icon" aria-hidden="true">
+						<svg viewBox="0 0 48 48" fill="none"><path d="M8 39V13l16-7 16 7v26M5 39h38M17 39V27h14v12M14 17h4m12 0h4m-20 6h4m12 0h4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+					</span>
+					<span class="svc-number">03</span>
 				</div>
-				<div class="col-md-4 services-grids top-2">
-					<i class="fa fa-cubes" aria-hidden="true"></i>
-					<h4 style="color: #201815">Études et Conceptions</h4>
-					<p>
-						De l'Etude à la conception et à l'installation, SEAT OPUS Global s'occupe de votre électricité générale.
-						Particulier ou Professionnel, notre metier c'est de satisfaire votre besoin.
-						<br>
-					</p>
+				<span class="svc-recommendation" data-service-match hidden>Conseillé pour votre projet</span>
+				<h3>Études &amp; conception</h3>
+				<p>Nous étudions votre projet pour définir une solution adaptée à votre site et à vos usages.</p>
+				<ul><li>Conseil technique</li><li>Dimensionnement des équipements</li></ul>
+			</article>
+
+			<article class="svc-card" data-service-card="logistics">
+				<div class="svc-card__top">
+					<span class="svc-icon" aria-hidden="true">
+						<svg viewBox="0 0 48 48" fill="none"><path d="M7 16h34v25H7zM4 11h40v7H4zM18 11V6h12v5m-6 7v6m-5-3h10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+					</span>
+					<span class="svc-number">04</span>
 				</div>
-				<div class="col-md-4 services-grids top-3">
-					<i class="fa fa-gears icon" aria-hidden="true"></i>
-					<h4 style="color: #201815">Logistique et Fournitures</h4>
-					<br>
-					<p>
-						SEAT OPUS Global offre de l'Appui Logistique et Fournitures d'équipements aux projets
-						et Organisations. Car pour nous, tout client est important!
-						<br><br><br>
-					</p>
+				<span class="svc-recommendation" data-service-match hidden>Conseillé pour votre projet</span>
+				<h3>Logistique &amp; fournitures</h3>
+				<p>Un appui matériel et logistique pour faciliter la réalisation de vos projets.</p>
+				<ul><li>Approvisionnement en équipements</li><li>Appui aux projets et organisations</li></ul>
+			</article>
+
+			<article class="svc-card" data-service-card="installation">
+				<div class="svc-card__top">
+					<span class="svc-icon" aria-hidden="true">
+						<svg viewBox="0 0 48 48" fill="none"><path d="M6 22 24 8l18 14M11 20v21h26V20M20 41V28h8v13M17 18l14-4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="m22 13-2 5h4l-2 5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+					</span>
+					<span class="svc-number">05</span>
 				</div>
-				<div class="col-md-4 services-grids top-4">
-					<i class="fa fa-external-link" aria-hidden="true"></i>
-					<h4 style="color: #201815">Installation </h4>
-					<br>
-					<p>
-						Nous assurons l'installation des panneaux solaires, des kits solaires photovoltaïques, des pompages solaires
-						et aussi des Frigo et congélateur solaire.
-						<br><br><br>
-					</p>
+				<span class="svc-recommendation" data-service-match hidden>Conseillé pour votre projet</span>
+				<h3>Installation solaire</h3>
+				<p>Des installations réalisées avec soin, de la pose des panneaux à la mise en service.</p>
+				<ul><li>Kits et panneaux photovoltaïques</li><li>Pompage et froid solaires</li></ul>
+			</article>
+
+			<article class="svc-card" data-service-card="equipment">
+				<div class="svc-card__top">
+					<span class="svc-icon" aria-hidden="true">
+						<svg viewBox="0 0 48 48" fill="none"><path d="M6 17h36v24H6zM4 10h40v8H4zM12 10l4 7m8-7v7m8-7-4 7M14 25v8m-4-4h8m10-4 8 8m0-8-8 8" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+					</span>
+					<span class="svc-number">06</span>
 				</div>
-				<div class="col-md-4 services-grids top-5">
-					<i class="fa fa-briefcase icon" aria-hidden="true"></i>
-					<h4 style="color: #201815">Vente des Matériels Electriques</h4>
-					<p>
-						Nous disposons des différents matériels electriques dont les lampes mobiles, les lampadaires, les convertisseur
-						solaire et chargeur, les chargeur batteries et les regulateurs de charge solaire et assurons leurs garantie.
-					</p>
+				<span class="svc-recommendation" data-service-match hidden>Conseillé pour votre projet</span>
+				<h3>Matériel électrique</h3>
+				<p>Un choix d’équipements pour vos installations, avec conseil et garantie.</p>
+				<ul><li>Lampes, lampadaires et convertisseurs</li><li>Chargeurs et régulateurs</li></ul>
+			</article>
+		</div>
+
+		<div class="svc-planner" data-service-planner>
+			<div class="svc-planner__intro">
+				<p class="svc-eyebrow"><span aria-hidden="true"></span> Votre projet, en quelques clics</p>
+				<h3>Par où commencer ?</h3>
+				<p>Choisissez votre situation et votre priorité : nous vous indiquons les services à explorer.</p>
+			</div>
+			<div class="svc-planner__controls">
+				<fieldset class="svc-choice-group">
+					<legend><span>01</span> Quel est votre projet ?</legend>
+					<div class="svc-choice-list">
+						<button type="button" data-planner-place="home" aria-pressed="true">Maison / logement</button>
+						<button type="button" data-planner-place="business" aria-pressed="false">Commerce / entreprise</button>
+						<button type="button" data-planner-place="farm" aria-pressed="false">Agriculture</button>
+					</div>
+				</fieldset>
+				<fieldset class="svc-choice-group">
+					<legend><span>02</span> Quel est votre besoin principal ?</legend>
+					<div class="svc-choice-list svc-choice-list--needs">
+						<button type="button" data-planner-need="solar" aria-pressed="true">Énergie solaire</button>
+						<button type="button" data-planner-need="pump" aria-pressed="false">Pompage d’eau</button>
+						<button type="button" data-planner-need="electricity" aria-pressed="false">Installation électrique</button>
+						<button type="button" data-planner-need="cold" aria-pressed="false">Froid / conservation</button>
+					</div>
+				</fieldset>
+			</div>
+			<div class="svc-planner__result" aria-live="polite">
+				<div class="svc-planner__result-head">
+					<div>
+						<p class="svc-planner__result-label">Votre première piste</p>
+						<h4 data-planner-title>Une solution solaire pour votre logement</h4>
+					</div>
 				</div>
-				<div class="clearfix"> </div>
+				<p class="svc-planner__result-copy" data-planner-description>Nous pouvons étudier une installation photovoltaïque adaptée à vos usages, avec les équipements de stockage nécessaires selon votre besoin.</p>
+				<div class="svc-planner__steps" data-planner-services aria-label="Services à explorer">
+					<span><b>1</b><span>Études &amp; conception</span></span>
+					<span><b>2</b><span>Énergies renouvelables</span></span>
+					<span><b>3</b><span>Installation solaire</span></span>
+				</div>
+				<div class="svc-planner__result-foot">
+					<p>Orientation indicative, sans calcul de puissance. Le dimensionnement se fait après étude de votre site et de vos équipements.</p>
+					<a href="contact.php?project_type=%C3%89nergie%20solaire&amp;details=Je%20souhaite%20une%20%C3%A9tude%20pour%20une%20solution%20solaire%20adapt%C3%A9e%20%C3%A0%20mon%20projet." data-planner-contact>Parler de ce projet <span aria-hidden="true">↗</span></a>
+				</div>
 			</div>
 		</div>
+
+		<div class="svc-cta">
+			<div><span>Un projet en tête ?</span><p>Parlons ensemble de la solution adaptée à votre besoin.</p></div>
+			<a href="contact.php">Échanger avec notre équipe <span aria-hidden="true">↗</span></a>
+		</div>
 	</div>
-	<!-- //services -->
 </section>
 <!-- /services section -->
 
@@ -481,6 +541,7 @@ $energy_contact    = 'contact.php';
 <script src="js/jquery.pogo-slider.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/services-motion.js?v=1" defer></script>
+<script src="js/service-configurator.js?v=1" defer></script>
 <!-- /js files -->
 </body>
 </html>

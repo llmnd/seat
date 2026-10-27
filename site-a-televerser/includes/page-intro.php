@@ -21,9 +21,9 @@ $pageDetails = [
 	'success.php' => ['Merci pour votre message', 'Contact'],
 	'tubular.php' => ['Batteries Tubular Plate', 'Produits'],
 ];
-$pageKey = basename($_SERVER['SCRIPT_NAME'] ?? '');
-$pageTitle = $pageDetails[$pageKey][0] ?? 'Nos solutions';
-$pageSection = $pageDetails[$pageKey][1] ?? 'Nos activités';
+$pageKey = basename(isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : '');
+$pageTitle = isset($pageDetails[$pageKey][0]) ? $pageDetails[$pageKey][0] : 'Nos solutions';
+$pageSection = isset($pageDetails[$pageKey][1]) ? $pageDetails[$pageKey][1] : 'Nos activités';
 ?>
 <section class="page-hero" data-page-section="<?php echo htmlspecialchars($pageSection, ENT_QUOTES, 'UTF-8'); ?>" aria-labelledby="page-title">
 	<div class="page-hero__inner">

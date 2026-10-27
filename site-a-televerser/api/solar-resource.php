@@ -1,24 +1,22 @@
 <?php
-declare(strict_types=1);
-
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 
-function respond(int $status, array $body): void
+function respond($status, $body)
 {
 	http_response_code($status);
 	echo json_encode($body, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 	exit;
 }
 
-if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'GET') {
+if ((isset($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : 'GET') !== 'GET') {
 	header('Allow: GET');
 	respond(405, ['error' => 'Méthode non autorisée.']);
 }
 
-function queryNumber(string $name, float $min, float $max): float
+function queryNumber($name, $min, $max)
 {
-	$value = $_GET[$name] ?? null;
+	$value = isset($_GET[$name]) ? $_GET[$name] : null;
 	if (!is_string($value) || !is_numeric($value)) {
 		respond(400, ['error' => 'Paramètre numérique invalide : ' . $name . '.']);
 	}
@@ -77,7 +75,7 @@ if (function_exists('curl_init')) {
 	$response = @file_get_contents($url, false, $context);
 	$status = 0;
 	$transportError = '';
-	foreach ($http_response_header ?? [] as $header) {
+	foreach (isset($http_response_header) ? $http_response_header : [] as $header) {
 		if (preg_match('/^HTTP\/\S+\s+(\d{3})/', $header, $matches)) {
 			$status = (int) $matches[1];
 		}
@@ -94,23 +92,22 @@ if (!is_string($response) || $status < 200 || $status >= 300) {
 	respond(502, ['error' => 'Le service de données solaires est temporairement indisponible. Réessayez dans un instant.']);
 }
 
-try {
-	$data = json_decode($response, true, 512, JSON_THROW_ON_ERROR);
-} catch (JsonException $exception) {
-	error_log('PVGIS returned invalid JSON: ' . $exception->getMessage());
+$data = json_decode($response, true);
+if (json_last_error() !== JSON_ERROR_NONE) {
+	error_log('PVGIS returned invalid JSON.');
 	respond(502, ['error' => 'Le service solaire a renvoyé une réponse illisible. Réessayez plus tard.']);
 }
 
-$monthly = $data['outputs']['monthly']['fixed'] ?? null;
-$annual = $data['outputs']['totals']['fixed']['H(i)_d'] ?? null;
+$monthly = isset($data['outputs']['monthly']['fixed']) ? $data['outputs']['monthly']['fixed'] : null;
+$annual = isset($data['outputs']['totals']['fixed']['H(i)_d']) ? $data['outputs']['totals']['fixed']['H(i)_d'] : null;
 if (!is_array($monthly) || !is_numeric($annual) || count($monthly) !== 12) {
 	respond(502, ['error' => 'Les données solaires de ce lieu sont incomplètes ou indisponibles.']);
 }
 
 $values = [];
 foreach ($monthly as $month) {
-	$monthNumber = $month['month'] ?? null;
-	$irradiation = $month['H(i)_d'] ?? null;
+	$monthNumber = isset($month['month']) ? $month['month'] : null;
+	$irradiation = isset($month['H(i)_d']) ? $month['H(i)_d'] : null;
 	if (!is_numeric($monthNumber) || !is_numeric($irradiation) || $irradiation <= 0) {
 		respond(502, ['error' => 'Les données mensuelles de ce lieu sont incomplètes ou indisponibles.']);
 	}
@@ -127,10 +124,10 @@ respond(200, [
 	],
 	'tilt' => $angle,
 	'aspect' => $aspect,
-	'database' => $data['inputs']['meteo_data']['radiation_db'] ?? 'PVGIS-ERA5',
+	'database' => isset($data['inputs']['meteo_data']['radiation_db']) ? $data['inputs']['meteo_data']['radiation_db'] : 'PVGIS-ERA5',
 	'years' => [
-		'from' => $data['inputs']['meteo_data']['year_min'] ?? null,
-		'to' => $data['inputs']['meteo_data']['year_max'] ?? null,
+		'from' => isset($data['inputs']['meteo_data']['year_min']) ? $data['inputs']['meteo_data']['year_min'] : null,
+		'to' => isset($data['inputs']['meteo_data']['year_max']) ? $data['inputs']['meteo_data']['year_max'] : null,
 	],
 	'annual_daily_irradiation' => (float) $annual,
 	'monthly' => $values,

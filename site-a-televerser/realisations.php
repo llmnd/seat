@@ -78,7 +78,7 @@
 							</svg>
 						</div>
 						<div class="realisation-reveal__after" data-reveal-after>
-							<img src="images/realisations/solaire-panneaux-toiture-etablissement.jpeg" alt="Panneaux photovoltaïques installés sur la toiture d’un établissement" decoding="async">
+							<img src="images/realisations/solaire-panneaux-au-sol.jpeg" alt="Rangées de panneaux photovoltaïques propres installées au sol" decoding="async">
 						</div>
 						<span class="realisation-reveal__label realisation-reveal__label--after" data-reveal-photo-label aria-hidden="true">Installation · énergie solaire</span>
 						<span class="realisation-reveal__label realisation-reveal__label--before" aria-hidden="true">Illustration pédagogique</span>
@@ -89,8 +89,8 @@
 						<input id="realisation-reveal-range" class="realisation-reveal__range" data-reveal-range type="range" min="0" max="100" value="50" step="1" aria-valuetext="Moitié illustration, moitié photo du projet">
 					</div>
 					<figcaption class="realisation-reveal__caption">
-						<span data-reveal-caption-title>Une centrale solaire prend forme sur le terrain.</span>
-						<span data-reveal-caption-detail>Énergie solaire · établissement de santé</span>
+						<span data-reveal-caption-title>Des panneaux photovoltaïques propres, prêts à produire.</span>
+						<span data-reveal-caption-detail>Énergie solaire · panneaux installés au sol</span>
 					</figcaption>
 				</figure>
 				<div class="realisation-reveal__gallery" data-reveal-gallery>
@@ -105,34 +105,34 @@
 					</div>
 					<div class="realisation-reveal__photos" id="realisation-photos-solaire" data-reveal-photos data-category="solaire">
 						<button class="realisation-reveal__photo is-active" type="button" data-reveal-photo
-							data-src="images/realisations/solaire-panneaux-toiture-etablissement.jpeg"
-							data-alt="Panneaux photovoltaïques installés sur la toiture d’un établissement"
-							data-caption="Des panneaux photovoltaïques en toiture."
-							data-detail="Énergie solaire · installation en toiture"
+							data-src="images/realisations/solaire-panneaux-au-sol.jpeg"
+							data-alt="Rangées de panneaux photovoltaïques propres installées au sol"
+							data-caption="Des panneaux photovoltaïques propres, prêts à produire."
+							data-detail="Énergie solaire · panneaux installés au sol"
 							data-label="Installation · énergie solaire"
 							aria-pressed="true">
-							<img src="images/realisations/solaire-panneaux-toiture-etablissement.jpeg" alt="" loading="lazy" decoding="async">
-							<span>Installation solaire</span>
-						</button>
-						<button class="realisation-reveal__photo" type="button" data-reveal-photo
-							data-src="images/realisations/solaire-centrale-ombriere.jpeg"
-							data-alt="Ombrière photovoltaïque de grande dimension"
-							data-caption="Une ombrière photovoltaïque en cours d’installation."
-							data-detail="Énergie solaire · centrale photovoltaïque"
-							data-label="Équipe · installation solaire"
-							aria-pressed="false">
-							<img src="images/realisations/solaire-centrale-ombriere.jpeg" alt="" loading="lazy" decoding="async">
-							<span>Équipe sur site</span>
-						</button>
-						<button class="realisation-reveal__photo" type="button" data-reveal-photo
-							data-src="images/realisations/solaire-panneaux-au-sol.jpeg"
-							data-alt="Panneaux photovoltaïques installés au sol"
-							data-caption="Un champ de panneaux photovoltaïques."
-							data-detail="Énergie solaire · équipements photovoltaïques"
-							data-label="Panneaux · installation solaire"
-							aria-pressed="false">
 							<img src="images/realisations/solaire-panneaux-au-sol.jpeg" alt="" loading="lazy" decoding="async">
-							<span>Panneaux installés</span>
+							<span>Panneaux au sol</span>
+						</button>
+						<button class="realisation-reveal__photo" type="button" data-reveal-photo
+							data-src="images/realisations/solaire-panneaux-champ.jpeg"
+							data-alt="Rangées de panneaux photovoltaïques dans un champ"
+							data-caption="Un champ de panneaux photovoltaïques en plein soleil."
+							data-detail="Énergie solaire · champ photovoltaïque"
+							data-label="Panneaux · champ solaire"
+							aria-pressed="false">
+							<img src="images/realisations/solaire-panneaux-champ.jpeg" alt="" loading="lazy" decoding="async">
+							<span>Panneaux au champ</span>
+						</button>
+						<button class="realisation-reveal__photo" type="button" data-reveal-photo
+							data-src="images/realisations/solaire-panneaux-installation-terrain.jpeg"
+							data-alt="Technicien devant des panneaux photovoltaïques propres installés sur le terrain"
+							data-caption="Une installation photovoltaïque sur le terrain."
+							data-detail="Énergie solaire · installation photovoltaïque"
+							data-label="Installation · panneaux solaires"
+							aria-pressed="false">
+							<img src="images/realisations/solaire-panneaux-installation-terrain.jpeg" alt="" loading="lazy" decoding="async">
+							<span>Installation terrain</span>
 						</button>
 					</div>
 					<div class="realisation-reveal__photos" id="realisation-photos-pompage" data-reveal-photos data-category="pompage" hidden>
@@ -219,10 +219,10 @@
 				<div class="realisation-gallery__grid">
 					<?php
 					$realisationImages = [
-						['file' => 'solaire-panneaux-toiture-etablissement.jpeg', 'category' => 'solaire', 'category_label' => 'Énergie solaire', 'title' => 'Panneaux photovoltaïques en toiture'],
+						['file' => 'solaire-panneaux-au-sol.jpeg', 'category' => 'solaire', 'category_label' => 'Énergie solaire', 'title' => 'Panneaux photovoltaïques au sol'],
+						['file' => 'solaire-panneaux-champ.jpeg', 'category' => 'solaire', 'category_label' => 'Énergie solaire', 'title' => 'Champ de panneaux photovoltaïques'],
+						['file' => 'solaire-panneaux-installation-terrain.jpeg', 'category' => 'solaire', 'category_label' => 'Énergie solaire', 'title' => 'Installation photovoltaïque sur le terrain'],
 						['file' => 'solaire-centrale-ombriere.jpeg', 'category' => 'solaire', 'category_label' => 'Énergie solaire', 'title' => 'Ombrière photovoltaïque'],
-						['file' => 'solaire-panneaux-au-sol.jpeg', 'category' => 'solaire', 'category_label' => 'Énergie solaire', 'title' => 'Installation photovoltaïque au sol'],
-						['file' => 'solaire-installation-toiture.jpeg', 'category' => 'solaire', 'category_label' => 'Énergie solaire', 'title' => 'Intervention sur une installation solaire'],
 						['file' => 'solaire-onduleurs-batteries.jpeg', 'category' => 'solaire', 'category_label' => 'Énergie solaire', 'title' => 'Onduleurs et stockage par batteries'],
 						['file' => 'solaire-equipe-electrique.jpeg', 'category' => 'solaire', 'category_label' => 'Énergie solaire', 'title' => 'Installation des équipements électriques'],
 						['file' => 'pompage-solaire-site-01.jpeg', 'category' => 'pompage', 'category_label' => 'Pompage solaire', 'title' => 'Panneaux sur un site de pompage'],
